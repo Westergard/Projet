@@ -21,4 +21,23 @@ public class ChangementScene : MonoBehaviour
     {
         SceneManager.LoadScene("Jeu");
     }
+
+    public void ClickSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+    public void ClickBackToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

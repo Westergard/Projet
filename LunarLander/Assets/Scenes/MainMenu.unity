@@ -210,7 +210,7 @@ RectTransform:
   m_Children:
   - {fileID: 1458033066}
   m_Father: {fileID: 1618298802}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -260,7 +260,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 86718763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 188519652}
+        m_TargetAssemblyTypeName: ChangementScene, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &86718763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +760,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 629542824}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 188519652}
+        m_TargetAssemblyTypeName: ChangementScene, Assembly-CSharp
+        m_MethodName: ClickSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &629542824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,7 +1180,7 @@ RectTransform:
   m_Children:
   - {fileID: 2094135397}
   m_Father: {fileID: 1618298802}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1518,9 +1542,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 86718761}
-  - {fileID: 629542822}
   - {fileID: 1081241009}
+  - {fileID: 629542822}
+  - {fileID: 86718761}
   m_Father: {fileID: 1030074291}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
