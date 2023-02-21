@@ -31,14 +31,14 @@ public class Vaisseau : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if(gameObject.transform.rotation.z != 90)
+            if(gameObject.transform.rotation.z < 90)
             {
-                transform.Rotate(new Vector3(0, 0, (float)0.2));
+                transform.Rotate(new Vector3(0, 0, (float)0.2));   
             }
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (gameObject.transform.rotation.z != -90)
+            if (gameObject.transform.rotation.z > -90)
             {
                 transform.Rotate(new Vector3(0, 0, (float)-0.2));
             }

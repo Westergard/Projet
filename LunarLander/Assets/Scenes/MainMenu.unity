@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 388479995}
   - component: {fileID: 388479994}
   m_Layer: 0
-  m_Name: fotor_2023-2-21_11_6_15
+  m_Name: Vaisseau flou
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 1387833980}
   - component: {fileID: 1387833979}
   m_Layer: 0
-  m_Name: fotor_2023-2-21_8_54_52
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
