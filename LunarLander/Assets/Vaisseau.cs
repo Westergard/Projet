@@ -30,15 +30,15 @@ public class Vaisseau : MonoBehaviour
 
             if (myRigidBody.transform.rotation.z < 0.72 && myRigidBody.transform.rotation.z > 0)
             {
-                pushX = 1 * Mathf.Sin(myRigidBody.transform.rotation.z);
-                pushY = 1 * Mathf.Cos(myRigidBody.transform.rotation.z);
+                pushX = 0.5f * Mathf.Sin((myRigidBody.transform.rotation.z * 90) / 0.72f);
+                pushY = 0.5f * Mathf.Cos((myRigidBody.transform.rotation.z * 90) / 0.72f);
 
                 myRigidBody.velocity = new Vector2(-pushX, pushY);
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
-                pushX = 1 * Mathf.Sin(myRigidBody.transform.rotation.z);
-                pushY = 1 * Mathf.Cos(myRigidBody.transform.rotation.z);
+                pushX = 0.5f * Mathf.Sin((myRigidBody.transform.rotation.z * 90) / 0.72f);
+                pushY = 0.5f * Mathf.Cos((myRigidBody.transform.rotation.z * 90) / 0.72f);
 
                 myRigidBody.velocity = new Vector2(-pushX, pushY);
             }
