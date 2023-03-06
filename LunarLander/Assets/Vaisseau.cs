@@ -55,22 +55,22 @@ public class Vaisseau : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if(myRigidBody.transform.rotation.z < 0.71)
+            if(myRigidBody.transform.rotation.z < 0.72)
             {
                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.2));   
             }
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (myRigidBody.transform.rotation.z > -0.71)
+            if (myRigidBody.transform.rotation.z > -0.72)
             {
                 myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.2));
             }
         }
 
-        altitude.text = alt.ToString();
-        XVelocity.text = velocity.x.ToString();
-        YVelocity.text = velocity.y.ToString();
+        altitude.text = alt.ToString("F2");
+        XVelocity.text = velocity.x.ToString("F3");
+        YVelocity.text = velocity.y.ToString("F3");
     }
 
     void vaisseauAvecFeu()
