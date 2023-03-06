@@ -30,17 +30,17 @@ public class Vaisseau : MonoBehaviour
 
             if (myRigidBody.transform.rotation.z < 0.72 && myRigidBody.transform.rotation.z > 0)
             {
-                pushX = 0.5f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.715f) * Mathf.Deg2Rad);
-                pushY = 0.5f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.715f) * Mathf.Deg2Rad);
+                pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
+                pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.velocity = new Vector2(-pushX, pushY);
+                myRigidBody.AddForce(new Vector2(0.05f * -pushX, 0.05f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
-                pushX = 0.5f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.715f) * Mathf.Deg2Rad);
-                pushY = 0.5f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.715f) * Mathf.Deg2Rad);
+                pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
+                pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.velocity = new Vector2(-pushX, pushY);
+                myRigidBody.AddForce(new Vector2(0.05f * -pushX, 0.05f * pushY));
             }
             if(myRigidBody.transform.rotation.z <0.01 && myRigidBody.transform.rotation.z > -0.01)
             {
@@ -55,14 +55,14 @@ public class Vaisseau : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if(myRigidBody.transform.rotation.z < 0.72)
+            if(myRigidBody.transform.rotation.z < 0.715)
             {
                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.2));   
             }
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (myRigidBody.transform.rotation.z > -0.72)
+            if (myRigidBody.transform.rotation.z > -0.715)
             {
                 myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.2));
             }
