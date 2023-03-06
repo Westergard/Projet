@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class Vaisseau : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
-    private SpriteRenderer rend;
-    public Sprite VAF, VSF;
     public Text altitude;
     public Text XVelocity;
     public Text YVelocity;
+    Animator m_Animator;
 
     void Start()
     {
-        rend = gameObject.GetComponent<SpriteRenderer>();
+        m_Animator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -26,7 +25,6 @@ public class Vaisseau : MonoBehaviour
         float pushY;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            vaisseauAvecFeu();
 
             if (myRigidBody.transform.rotation.z < 0.72 && myRigidBody.transform.rotation.z > 0)
             {
@@ -48,9 +46,13 @@ public class Vaisseau : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow))
         {
-            vaisseauSansFeu();
+            m_Animator.SetTrigger("NFeu");
+        }
+        else if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            m_Animator.SetTrigger("Feu");
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -71,14 +73,5 @@ public class Vaisseau : MonoBehaviour
         altitude.text = alt.ToString("F2");
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
-    }
-
-    void vaisseauAvecFeu()
-    {
-        rend.sprite = VAF;
-    }
-    void vaisseauSansFeu()
-    {
-        rend.sprite = VSF;
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d0814012657dfd4495f98fe5d730f12
+guid: 89769bc751721b940959a87d86c3e091
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,106 +117,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vaisseau_0
+      name: Vaisseau-2_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 26
-        width: 480
-        height: 444
-      alignment: 9
-      pivot: {x: 0.5038396, y: 0.47509447}
-      border: {x: 4, y: 3, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e10b6f53d9f27bc44a49671095df9e7d
-      internalID: 81212902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vaisseau_1
-      rect:
-        serializedVersion: 2
-        x: 510
-        y: 26
-        width: 480
-        height: 444
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5539618}
-      border: {x: 2, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0ab6568ccd680047a95ddebbed55bed
-      internalID: -505217281
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vaisseau_2
-      rect:
-        serializedVersion: 2
-        x: 1011
-        y: 26
-        width: 480
-        height: 444
+        x: 0
+        y: 157.5
+        width: 158.4
+        height: 157.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21e086fc7d36d90469de7343e867d93b
-      internalID: -783798579
+      spriteID: 9d902572cb1aa8b499a2c520dd5209b2
+      internalID: -1448512597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vaisseau_3
+      name: Vaisseau-2_1
       rect:
         serializedVersion: 2
-        x: 1511
-        y: 26
-        width: 480
-        height: 444
+        x: 158
+        y: 157.5
+        width: 158.4
+        height: 157.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 694cf89c72233c94b83799a5554e0092
-      internalID: -1288887869
+      spriteID: 73a3b1d659d0a704a8a63b8862729300
+      internalID: -1746141961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vaisseau_4
+      name: Vaisseau-2_2
       rect:
         serializedVersion: 2
-        x: 2012
-        y: 26
-        width: 480
-        height: 444
+        x: 316
+        y: 157.5
+        width: 158.4
+        height: 157.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcf07329dbf4de54caa0c6409bf88697
-      internalID: -991163077
+      spriteID: 37b5f75680ff6244f89b2fac558c165d
+      internalID: 27259718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaisseau-2_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 157.5
+        width: 158.4
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfe26feff1f12d41a8122c32e233e3f
+      internalID: -451360114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaisseau-2_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 157.5
+        width: 158.4
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0f80f64274e4a40b3635eff0c39fc2
+      internalID: -1867242821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaisseau-2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.5
+        width: 158.4
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e852e450351515f4baa3664f67f6f420
+      internalID: -1045490323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaisseau-2_6
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0.5
+        width: 158.4
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79edbd7d6bee60646a27ccb9b60ec9dd
+      internalID: -449920838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaisseau-2_7
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0.5
+        width: 158.4
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79aa7948c71377142ab339aebdec9b77
+      internalID: 300370864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaisseau-2_8
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0.5
+        width: 158.4
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40513206c538638479c83aa31448d8b3
+      internalID: -769083707
       vertices: []
       indices: 
       edges: []
@@ -232,11 +316,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Vaisseau_0: 81212902
-      Vaisseau_1: -505217281
-      Vaisseau_4: -1288887869
-      Vaisseau_2: -783798579
-      Vaisseau_3: 1537674840
+      Vaisseau-2_8: -769083707
+      Vaisseau-2_1: -1746141961
+      Vaisseau-2_6: -449920838
+      Vaisseau-2_5: -1045490323
+      Vaisseau-2_2: 27259718
+      Vaisseau-2_0: -1448512597
+      Vaisseau-2_9: -1317728126
+      Vaisseau-2_4: -1867242821
+      Vaisseau-2_7: 300370864
+      Vaisseau-2_3: -451360114
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
