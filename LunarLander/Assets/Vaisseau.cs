@@ -9,6 +9,7 @@ public class Vaisseau : MonoBehaviour
     public Text altitude;
     public Text XVelocity;
     public Text YVelocity;
+    public Collider collider;
     Animator m_Animator;
 
     void Start()
@@ -85,6 +86,21 @@ public class Vaisseau : MonoBehaviour
         else if (gameObject.transform.position.y >= 5)
         {
             gameObject.transform.position = new Vector2(transform.position.x, 5);
+            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.gameObject.name == "tile(Clone)")
+        {
+            m_Animator.SetTrigger("Explosion");
+            Destroy(gameObject);
+        }
+        if (c.gameObject.name == "Tourelle")
+        {
+            m_Animator.SetTrigger("Explosion");
+            Destroy(gameObject);
         }
     }
 }
