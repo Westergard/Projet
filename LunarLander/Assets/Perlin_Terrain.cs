@@ -8,7 +8,7 @@ public class Perlin_Terrain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 26f; i++)
+        for(int i = 0; i < 50f; i++)
         {
             GameObject bx = GameObject.Instantiate(bType);
 

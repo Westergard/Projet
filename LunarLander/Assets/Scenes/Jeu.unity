@@ -123,6 +123,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &102976816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3976508662678375733, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+  m_PrefabInstance: {fileID: 3976508661779051953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &102976822
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102976816}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.17196198}
+  m_Size: {x: 3.1680002, y: 2.4680629}
+  m_Direction: 0
 --- !u!1 &107717109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1345,10 @@ PrefabInstance:
     - target: {fileID: 3976508662678375733, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_Name
       value: Vaisseau
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976508662678375734, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3976508662678375735, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_RootOrder
