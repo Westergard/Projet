@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 510364176}
   - component: {fileID: 510364175}
   - component: {fileID: 510364174}
+  - component: {fileID: 510364177}
   m_Layer: 5
   m_Name: Perdu
   m_TagString: Untagged
@@ -330,6 +331,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 52.035}
   m_SizeDelta: {x: 1200.4404, y: 447.9298}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &510364177
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510364173}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a9749496228a8d4386b9a4075650c69, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &558562393
 GameObject:
   m_ObjectHideFlags: 0
