@@ -20,29 +20,24 @@ public class Vaisseau : MonoBehaviour
     {
         float alt = (gameObject.transform.position.y + 5) * 10;
         Vector2 velocity = myRigidBody.velocity;
-
+        bords();
         float pushX;
         float pushY;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-
             if (myRigidBody.transform.rotation.z < 0.72 && myRigidBody.transform.rotation.z > 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.05f * -pushX, 0.05f * pushY));
+                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.05f * -pushX, 0.05f * pushY));
-            }
-            if(myRigidBody.transform.rotation.z <0.01 && myRigidBody.transform.rotation.z > -0.01)
-            {
-                myRigidBody.velocity = new Vector2(0, 1);
+                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
             }
 
         }
@@ -73,5 +68,22 @@ public class Vaisseau : MonoBehaviour
         altitude.text = alt.ToString("F2");
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
+    }
+
+    public void bords()
+    {
+
+        if(gameObject.transform.position.x >= 9.2)
+        {
+            gameObject.transform.position = new Vector2(-9.1f, transform.position.y);
+        }
+        else if (gameObject.transform.position.x <= -9.2)
+        {
+            gameObject.transform.position = new Vector2(9.1f, transform.position.y);
+        }
+        else if (gameObject.transform.position.y >= 5)
+        {
+            gameObject.transform.position = new Vector2(transform.position.x, 5);
+        }
     }
 }
