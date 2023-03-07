@@ -956,11 +956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795134530}
   m_CullTransparentMesh: 1
---- !u!1 &1800482666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3976508662678375733, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
-  m_PrefabInstance: {fileID: 3976508661779051953}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1947139994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1108,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1992353742
 =======
@@ -1269,6 +1265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vaisseau: {fileID: 1800482666}
 >>>>>>> 9e7488570feb994b460c2a0c9c725328a61702db
+=======
+>>>>>>> parent of 9e74885 (Changements)
 --- !u!1 &2043762793
 GameObject:
   m_ObjectHideFlags: 0
