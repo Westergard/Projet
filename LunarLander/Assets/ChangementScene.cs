@@ -19,7 +19,7 @@ public class ChangementScene : MonoBehaviour
 
     public void ClickStart()
     {
-        SceneManager.LoadScene("Jeu");
+        SceneManager.LoadScene("Jeu Perlin");
     }
 
     public void ClickSettings()

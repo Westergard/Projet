@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/TechnoGami/2d UI button/ExmpleScene/TechnoGami1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Jeu.unity
+    path: Assets/Scenes/Jeu Perlin.unity
     guid: dd327300e2fed29498279ea7afeb7871
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
