@@ -30,14 +30,14 @@ public class Vaisseau : MonoBehaviour
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
+                myRigidBody.AddForce(new Vector2(0.6f * -pushX, 1f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
+                myRigidBody.AddForce(new Vector2(0.6f * -pushX, 1f * pushY));
             }
 
         }
@@ -54,7 +54,8 @@ public class Vaisseau : MonoBehaviour
         {
             if(myRigidBody.transform.rotation.z < 0.715)
             {
-               myRigidBody.transform.Rotate(new Vector3(0, 0, (float)1));   
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)1));
+
             }
         }
         if (Input.GetKey(KeyCode.RightArrow))
