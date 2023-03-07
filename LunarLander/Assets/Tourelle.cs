@@ -14,13 +14,17 @@ public class Tourelle : MonoBehaviour
 
     void Update()
     {
-        if(Vaisseau.transform.position.x > gameObject.transform.position.x)
+        if(Vaisseau != null)
         {
-            m_Animator.SetTrigger("Droite");
+            if (Vaisseau.transform.position.x > gameObject.transform.position.x)
+            {
+                m_Animator.SetTrigger("Droite");
+            }
+            else if (Vaisseau.transform.position.x < gameObject.transform.position.x)
+            {
+                m_Animator.SetTrigger("Gauche");
+            }
         }
-        else if(Vaisseau.transform.position.x < gameObject.transform.position.x)
-        {
-            m_Animator.SetTrigger("Gauche");
-        }
+        
     }
 }

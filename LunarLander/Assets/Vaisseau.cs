@@ -9,12 +9,13 @@ public class Vaisseau : MonoBehaviour
     public Text altitude;
     public Text XVelocity;
     public Text YVelocity;
-    public Collider collider;
+    public Text Perdu;
     Animator m_Animator;
 
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
+        Perdu.enabled = false;
     }
 
     void Update()
@@ -31,14 +32,14 @@ public class Vaisseau : MonoBehaviour
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.6f * -pushX, 1f * pushY));
+                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.6f * -pushX, 1f * pushY));
+                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
             }
 
         }
@@ -55,7 +56,7 @@ public class Vaisseau : MonoBehaviour
         {
             if(myRigidBody.transform.rotation.z < 0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)1));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.2));
 
             }
         }
@@ -63,7 +64,7 @@ public class Vaisseau : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z > -0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-1));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.2));
             }
         }
 
@@ -90,17 +91,18 @@ public class Vaisseau : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D c)
+    IEnumerator OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "tile(Clone)")
+        if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle")
         {
             m_Animator.SetTrigger("Explosion");
+            yield return new WaitForSeconds(1);
+            altitude.text = "0.00";
+            XVelocity.text = "0.000";
+            YVelocity.text = "0.000";
+            Perdu.enabled = true;
             Destroy(gameObject);
-        }
-        if (c.gameObject.name == "Tourelle")
-        {
-            m_Animator.SetTrigger("Explosion");
-            Destroy(gameObject);
+
         }
     }
 }
