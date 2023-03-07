@@ -54,14 +54,14 @@ public class Vaisseau : MonoBehaviour
         {
             if(myRigidBody.transform.rotation.z < 0.715)
             {
-               myRigidBody.transform.Rotate(new Vector3(0, 0, (float)1));   
+               myRigidBody.transform.Rotate(new Vector3(0, 0, (float)1.5));   
             }
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             if (myRigidBody.transform.rotation.z > -0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-1));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-1.5));
             }
         }
 
