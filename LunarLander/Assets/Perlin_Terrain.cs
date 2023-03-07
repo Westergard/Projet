@@ -8,12 +8,12 @@ public class Perlin_Terrain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 75f; i++)
+        for(int i = 0; i < 750f; i++)
         {
             GameObject bx = GameObject.Instantiate(bType);
 
-            float xPosition = -9.8f + i / 4f;
-            float yPosition = -6f + Mathf.PerlinNoise(i / 50f, 0f) * 4f;
+            float xPosition = -9.8f + i / 18f;
+            float yPosition = -9f + Mathf.PerlinNoise(i / 90f, 0f) * 6f;
 
             bx.transform.position = new Vector3(xPosition, yPosition);
         }
