@@ -141,8 +141,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17196198}
-  m_Size: {x: 3.1680002, y: 2.4680629}
+  m_Offset: {x: 0, y: 0.007288848}
+  m_Size: {x: 3.1680002, y: 2.947586}
   m_Direction: 0
 --- !u!1 &107717109
 GameObject:
@@ -1218,7 +1218,7 @@ GameObject:
   - component: {fileID: 1947139996}
   - component: {fileID: 1947139995}
   m_Layer: 0
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
