@@ -5,7 +5,9 @@ using UnityEngine;
 public class Tourelle : MonoBehaviour
 {
     public GameObject Vaisseau;
+    public GameObject Laser;
     Animator m_Animator;
+    GameObject newLaser;
 
     void Start()
     {
@@ -14,8 +16,13 @@ public class Tourelle : MonoBehaviour
 
     void Update()
     {
-        if(Vaisseau != null)
+        
+        if (Vaisseau != null)
         {
+            if (newLaser == null)
+            {
+                newLaser = Instantiate(Laser);
+            }
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
                 m_Animator.SetTrigger("Droite");
@@ -25,6 +32,7 @@ public class Tourelle : MonoBehaviour
                 m_Animator.SetTrigger("Gauche");
             }
         }
-        
     }
 }
+
+

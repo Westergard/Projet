@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class Vaisseau : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
+    public SpriteRenderer spriteRenderer;
     public Text altitude;
     public Text XVelocity;
     public Text YVelocity;
     public Text Perdu;
+    public Sprite newSprite;
     Animator m_Animator;
 
     void Start()
@@ -93,8 +95,10 @@ public class Vaisseau : MonoBehaviour
 
     IEnumerator OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle")
+        if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
         {
+            spriteRenderer.sprite = newSprite;
+            gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
             m_Animator.SetTrigger("Explosion");
             yield return new WaitForSeconds(1);
             altitude.text = "0.00";
@@ -102,7 +106,6 @@ public class Vaisseau : MonoBehaviour
             YVelocity.text = "0.000";
             Perdu.enabled = true;
             Destroy(gameObject);
-
         }
     }
 }
