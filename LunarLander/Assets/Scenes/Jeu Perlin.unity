@@ -144,6 +144,11 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.007288848}
   m_Size: {x: 3.1680002, y: 2.947586}
   m_Direction: 0
+--- !u!212 &102976826 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3976508662678375732, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+  m_PrefabInstance: {fileID: 3976508661779051953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &107717109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,6 +1541,10 @@ PrefabInstance:
       propertyPath: YVelocity
       value: 
       objectReference: {fileID: 2043762795}
+    - target: {fileID: 3976508662678375737, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 102976826}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
 --- !u!1001 &8205873506464584820
@@ -1555,11 +1564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.32
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.39
+      value: -2.61
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.z
