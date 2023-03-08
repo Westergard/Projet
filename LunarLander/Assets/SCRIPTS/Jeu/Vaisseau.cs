@@ -93,7 +93,7 @@ public class Vaisseau : MonoBehaviour
 
     IEnumerator OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle")
+        if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
         {
             m_Animator.SetTrigger("Explosion");
             yield return new WaitForSeconds(1);
@@ -102,7 +102,6 @@ public class Vaisseau : MonoBehaviour
             YVelocity.text = "0.000";
             Perdu.enabled = true;
             Destroy(gameObject);
-
         }
     }
 }
