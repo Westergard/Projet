@@ -14,8 +14,8 @@ public class Path {
         points = new List<Vector2>
         {
             centre+Vector2.left,
-            centre+(Vector2.left+Vector2.down)*3,
-            centre + (Vector2.right * Random.Range(0,8) * .25f + Vector2.down * Random.Range(-8,8)*.25f),
+            centre+(Vector2.left+Vector2.up),
+            centre + (Vector2.right * Random.Range(1,9) * .25f + Vector2.down * Random.Range(-8,8)*.25f),
             centre + (Vector2.right * 2) 
         };
         for (int i = 2; i < 11; i++)
@@ -23,7 +23,9 @@ public class Path {
             AddSegment(centre + Vector2.right * i * 2 + Vector2.down * Random.Range(-8,8) * .25f );
         }
         AddSegment(centre + Vector2.right * 22);// sa termine tu direct dessu ou sa continu plus loin ---------------------------------------------
-        
+        AddSegmentCustom(centre + Vector2.right * 24 + Vector2.down * 5, Vector2.right + Vector2.up);
+        AddSegmentCustom(centre + Vector2.down * 5, Vector2.right + Vector2.down);
+        AddSegmentCustom(centre + Vector2.left, Vector2.up);
     }
 
     public Vector2 this[int i]
@@ -50,12 +52,19 @@ public class Path {
         }
     }
 
-    public void AddSegment(Vector2 anchorPos)
+    public void AddSegment(Vector2 NextAnchorPoint)
     {
         points.Add(points[points.Count - 1] * 2 - points[points.Count - 2]);
-        //points.Add((points[points.Count - 1] + anchorPos) * .5f);
-        points.Add(anchorPos + Vector2.left * Random.Range(0,8) * .25f + Vector2.down * Random.Range(-8,8) * .25f );
-        points.Add(anchorPos);
+        //points.Add((points[points.Count - 1] + NextAnchorPoint) * .5f);
+        points.Add(NextAnchorPoint + Vector2.left * Random.Range(1,9) * .25f + Vector2.down * Random.Range(-8,8) * .25f );
+        points.Add(NextAnchorPoint);
+    }
+    public void AddSegmentCustom(Vector2 NextAnchorPoint, Vector2 OtherPoint)
+    {
+        points.Add(points[points.Count - 1] * 2 - points[points.Count - 2]);
+        //points.Add((points[points.Count - 1] + NextAnchorPoint) * .5f);
+        points.Add(NextAnchorPoint + OtherPoint);
+        points.Add(NextAnchorPoint);
     }
 
     public Vector2[] GetPointsInSegment(int i)

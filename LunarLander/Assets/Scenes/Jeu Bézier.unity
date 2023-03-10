@@ -255,6 +255,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
   m_PrefabInstance: {fileID: 1264442861}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &589145264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589145266}
+  m_Layer: 0
+  m_Name: bezier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &589145266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589145264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699255376
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +339,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.000001
+  orthographic size: 5.1899934
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -926,6 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vaisseau: {fileID: 102976816}
+  Laser: {fileID: 0}
 --- !u!1 &1351551934
 GameObject:
   m_ObjectHideFlags: 0

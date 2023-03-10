@@ -15,7 +15,7 @@ public class PathEditor : Editor {
         Draw();
     }
 
-    void Input()
+    /*void Input()
     {
         Event guiEvent = Event.current;
         Vector2 mousePos = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition).origin;
@@ -25,7 +25,7 @@ public class PathEditor : Editor {
             Undo.RecordObject(creator, "Add segment");
             path.AddSegment(mousePos);
         }
-    }
+    }*/
 
     void Draw()
     {
