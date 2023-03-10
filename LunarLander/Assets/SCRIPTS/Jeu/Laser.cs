@@ -19,7 +19,9 @@ public class Laser : MonoBehaviour
         float Xposition = positionVaisseau.x - myRigidBody.position.x;
         float Yposition = positionVaisseau.y - myRigidBody.position.y;
         float Xvelocity = Xposition / 3;
-        float Yvelocity = ((-0.01f) * Mathf.Pow(2, 2) + 2 * Yposition) / (2 * 2); ;
+        float Yvelocity = ((-0.01f) * Mathf.Pow(2, 2) + 2 * Yposition) / (2 * 2);
+        float angleVaisseau = Mathf.Atan(Yposition / Xposition) * Mathf.Deg2Rad;
+        myRigidBody.transform.Rotate(new Vector3(0, 0, angleVaisseau));
         myRigidBody.velocity = new Vector2(Xvelocity, Yvelocity);
     }
 
