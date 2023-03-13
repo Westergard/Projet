@@ -11,7 +11,7 @@ public class PathEditor : Editor {
 
     void OnSceneGUI()
     {
-        Input();
+        //Input();
         Draw();
     }
 
