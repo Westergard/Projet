@@ -98,7 +98,9 @@ public class Vaisseau : MonoBehaviour
         if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
         {
             spriteRenderer.sprite = newSprite;
-            gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
+            gameObject.transform.localScale  = new Vector3(0.8f, 0.8f, 0);
+            myRigidBody.rotation = 0;
+            myRigidBody.velocity = new Vector3(0, 0, 0);
             m_Animator.SetTrigger("Explosion");
             yield return new WaitForSeconds(1);
             altitude.text = "0.00";

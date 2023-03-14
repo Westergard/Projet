@@ -144,6 +144,11 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.17196198}
   m_Size: {x: 3.1680002, y: 2.4680629}
   m_Direction: 0
+--- !u!212 &102976826 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3976508662678375732, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+  m_PrefabInstance: {fileID: 3976508661779051953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &107717109
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +260,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
   m_PrefabInstance: {fileID: 1264442861}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &589145264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589145266}
+  m_Layer: 0
+  m_Name: bezier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &589145266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589145264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699255376
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +344,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.000001
+  orthographic size: 5.1899934
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -926,6 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vaisseau: {fileID: 102976816}
+  Laser: {fileID: 0}
 --- !u!1 &1351551934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1123,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464907341}
   m_CullTransparentMesh: 1
+--- !u!114 &1522342498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4915739614037291283, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
+  m_PrefabInstance: {fileID: 1264442861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1723518363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1683,7 @@ PrefabInstance:
     - target: {fileID: 3976508662678375737, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: Perdu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1522342498}
     - target: {fileID: 3976508662678375737, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: altitude
       value: 
@@ -1648,5 +1696,9 @@ PrefabInstance:
       propertyPath: YVelocity
       value: 
       objectReference: {fileID: 2043762795}
+    - target: {fileID: 3976508662678375737, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 102976826}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
