@@ -2,24 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class ChangementScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public TMPro.TMP_Dropdown m_Dropdown;
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void ClickStart()
     {
-        SceneManager.LoadScene("Jeu Perlin");
+        if(PlayerPrefs.GetInt("Scene") == 0)
+        {
+            SceneManager.LoadScene("Jeu Perlin");
+        }
+        else
+        {
+            SceneManager.LoadScene("Jeu Bézier");
+        }
+        
     }
 
     public void ClickSettings()
@@ -29,6 +37,13 @@ public class ChangementScene : MonoBehaviour
 
     public void ClickBackToMain()
     {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ClickSaveSettings()
+    {
+        PlayerPrefs.SetInt("Scene", m_Dropdown.value);
+
         SceneManager.LoadScene("MainMenu");
     }
 
