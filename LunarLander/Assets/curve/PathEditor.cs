@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+[RequireComponent(typeof(LineRenderer))]
 [CustomEditor(typeof(PathCreator))]
 public class PathEditor : Editor {
 
@@ -10,11 +10,12 @@ public class PathEditor : Editor {
     Path path;
     LineRenderer lineRenderer;
     int SEGMENT_COUNT = 50;
+    //List<Vector2> dot;
 
     void OnSceneGUI()
     {
         //Input();
-        Draw();
+        DrawCurve();
     }
 
     /*void Input()
@@ -29,7 +30,7 @@ public class PathEditor : Editor {
         }
     }*/
 
-    void Draw()
+    /*void Draw()
     {
 
         for (int i = 0; i < path.NumSegments; i++)
@@ -41,7 +42,7 @@ public class PathEditor : Editor {
             Handles.DrawBezier(points[0], points[3], points[1], points[2], Color.green, null, 2);
         }
 
-        /*Handles.color = Color.red;
+        Handles.color = Color.red;
         for (int i = 0; i < path.NumPoints; i++)
         {
             Vector2 newPos = Handles.FreeMoveHandle(path[i], Quaternion.identity, .1f, Vector2.zero, Handles.CylinderHandleCap);
@@ -50,32 +51,35 @@ public class PathEditor : Editor {
                 Undo.RecordObject(creator, "Move point");
                 path.MovePoint(i, newPos);
             }
-        }*/
-    }
-    /*void DrawCurve()
+        }
+    }*/
+    /**/void DrawCurve()
     {
+        Handles.color = Color.red;
         for (int j = 0; j < path.NumSegments; j++)
         {
             Vector2[] points = path.GetPointsInSegment(j);
-            Vector2 temp;  
+            //Handles.DrawBezier(points[0], points[3], points[1], points[2], Color.green, null, 2);
+            Vector2 temp = points[0];  
             for (int i = 1; i <= SEGMENT_COUNT; i++)
-            {
+           {
                 float t = i / (float)SEGMENT_COUNT;
-                int nodeIndex = j * 3;
                 Vector2 pixel = CalculateCubicBezierPoint(t, points[0], points[1], points[2], points[3]);
+                //dot.Add(pixel);
                 
-                if (i>2) {
-                    Handles.color = Color.green;
-                    Handles.DrawLine(pixel, temp);
-                }
+                Handles.DrawLine(pixel, temp);
                 temp = pixel;
-                lineRenderer.SetVertexCount(((j * SEGMENT_COUNT) + i));
-                lineRenderer.SetPosition((j * SEGMENT_COUNT) + (i - 1), pixel);
+                //lineRenderer.SetVertexCount(((j * SEGMENT_COUNT) + i));
+                //lineRenderer.SetPosition((j * SEGMENT_COUNT) + (i - 1), pixel);
             }
         }
+        //Handles.color = Color.red;
+        //for (int j = 1; j < dot.Count; j++){
+        //    Handles.DrawLine(dot[j], dot[j-1]);
+        //}
 
         
-    }*/
+    }
     Vector2 CalculateCubicBezierPoint(float t, Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
     {
         float u = 1 - t;
@@ -92,7 +96,7 @@ public class PathEditor : Editor {
         return p;
     }
 
-    void OnEnable()
+    /*void OnEnable()
     {
         creator = (PathCreator)target;
         if (creator.path == null)
@@ -100,5 +104,5 @@ public class PathEditor : Editor {
             creator.CreatePath();
         }
         path = creator.path;
-    }
+    }*/
 }

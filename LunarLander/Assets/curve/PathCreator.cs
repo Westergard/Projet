@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PathCreator : MonoBehaviour {
 
     [HideInInspector]
@@ -11,4 +12,8 @@ public class PathCreator : MonoBehaviour {
     {
         path = new Path(transform.position);
     }
+    
+
+   
+
 }
