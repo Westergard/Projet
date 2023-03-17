@@ -17,14 +17,7 @@ public class Example : MonoBehaviour
         lineRenderer.SetColors(c1, c2);
         lineRenderer.SetWidth(0.2f, 0.2f);
         lineRenderer.SetVertexCount(lengthOfLineRenderer);
-        //LineRenderer lineRenderer = GetComponent<LineRenderer>();
         var points = new Vector3[lengthOfLineRenderer];
-        //var t = Time.time;
-        for (int i = 0; i < lengthOfLineRenderer; i++)
-        {
-            points[i] = new Vector3(i * 0.5f, Mathf.Sin(i + 1), 0);
-        }
-        lineRenderer.SetPositions(points);
     }
 
     void Update()

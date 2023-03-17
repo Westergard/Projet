@@ -22,10 +22,10 @@ public class Path {
         {
             AddSegment(centre + Vector2.right * i * 2 + Vector2.down * Random.Range(-8,8) * .25f );
         }
-        AddSegment(centre + Vector2.right * 22);// sa termine tu direct dessu ou sa continu plus loin ---------------------------------------------
-        AddSegmentCustom(centre + Vector2.right * 24 + Vector2.down * 5, Vector2.right + Vector2.up);
+        AddSegment(centre + Vector2.right * 22);
+        /*AddSegmentCustom(centre + Vector2.right * 24 + Vector2.down * 5, Vector2.right + Vector2.up);
         AddSegmentCustom(centre + Vector2.down * 5, Vector2.right + Vector2.down);
-        AddSegmentCustom(centre + Vector2.left, Vector2.up);
+        AddSegmentCustom(centre + Vector2.left, Vector2.up);*/
     }
 
     public Vector2 this[int i]
