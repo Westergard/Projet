@@ -31,10 +31,10 @@ public class Example : MonoBehaviour
     {
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         var points = new Vector3[lengthOfLineRenderer];
-        //var t = Time.time;
+        var t = Time.time;
         for (int i = 0; i < lengthOfLineRenderer; i++)
         {
-            points[i] = new Vector3(i * 0.5f, Mathf.Sin(i + 1), 0);
+            points[i] = new Vector3(i * 0.5f, Mathf.Sin(i + t), 0);
         }
         lineRenderer.SetPositions(points);
     }
