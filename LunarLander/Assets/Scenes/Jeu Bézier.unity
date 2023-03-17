@@ -270,7 +270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 589145266}
   - component: {fileID: 589145268}
-  - component: {fileID: 589145267}
   - component: {fileID: 589145269}
   m_Layer: 0
   m_Name: bezier
@@ -287,14 +286,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589145264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: -2.5, z: 0}
+  m_LocalPosition: {x: -5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &589145267
+--- !u!120 &589145268
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,7 +336,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -345,7 +344,7 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 1
+        time: 0
         value: 1
         inSlope: 0
         outSlope: 0
@@ -393,28 +392,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!68 &589145268
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589145264}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!114 &589145269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,7 +401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 589145264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e385a38d1b6b80d4889b1d2f84882813, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b305ffbdace22041be0b68e13566358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &699255376
@@ -1489,7 +1466,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 6bd9c10f8ba363e438fd481fe6af9abc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1509,7 +1486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947139994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 0.32, z: 0}
+  m_LocalPosition: {x: -30.07, y: 0.32, z: 0}
   m_LocalScale: {x: 4.0104113, y: 2.9880903, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

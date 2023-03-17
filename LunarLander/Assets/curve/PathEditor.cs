@@ -55,7 +55,7 @@ public class PathEditor : Editor {
     }*/
     /**/void DrawCurve()
     {
-        Handles.color = Color.red;
+        Handles.color = Color.green;
         for (int j = 0; j < path.NumSegments; j++)
         {
             Vector2[] points = path.GetPointsInSegment(j);
@@ -96,7 +96,7 @@ public class PathEditor : Editor {
         return p;
     }
 
-    /*void OnEnable()
+    void OnEnable()
     {
         creator = (PathCreator)target;
         if (creator.path == null)
@@ -104,5 +104,5 @@ public class PathEditor : Editor {
             creator.CreatePath();
         }
         path = creator.path;
-    }*/
+    }
 }

@@ -15,16 +15,16 @@ public class Bezier : MonoBehaviour
     {
         if (!lineRenderer)
         {
-            lineRenderer = GetComponent<LineRenderer>();
+            //lineRenderer = GetComponent<LineRenderer>();
         }
-        lineRenderer.sortingLayerID = layerOrder;
-        curveCount = (int)controlPoints.Length / 3;
+        //lineRenderer.sortingLayerID = layerOrder;
+        //curveCount = (int)controlPoints.Length / 3;
     }
 
     void Update()
     {
        
-        DrawCurve();
+        //DrawCurve();
 
     }
     

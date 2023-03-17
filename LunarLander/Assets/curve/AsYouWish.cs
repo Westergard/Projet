@@ -20,14 +20,18 @@ public class AsYouWish : MonoBehaviour
     void Start()
     {
         
-        DrawCurve();
+        //DrawCurve();
+        //myLine.SetVertexCount(2);
+        //myLine.SetPosition(0, new Vector3(-1, 0, 0));
+        //myLine.SetPosition(0, new Vector3(2, 0, 0));
+        //SetEdgeCollider(myLine);
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        SetEdgeCollider(myLine);
+        
     }
 
     void SetEdgeCollider(LineRenderer lineRenderer)
@@ -60,7 +64,7 @@ public class AsYouWish : MonoBehaviour
                 //Handles.DrawLine(pixel, temp);
                 //temp = pixel;
                 myLine.SetVertexCount(((j * SEGMENT_COUNT) + i));
-                Vector3 temp = pixel;
+                Vector3 temp = new Vector3(pixel.x, pixel.y, 0);
                 myLine.SetPosition((j * SEGMENT_COUNT) + (i - 1), temp);
             }
         }
