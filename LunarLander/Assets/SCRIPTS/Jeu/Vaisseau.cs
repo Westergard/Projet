@@ -78,17 +78,17 @@ public class Vaisseau : MonoBehaviour
     public void bords()
     {
 
-        if(gameObject.transform.position.x >= 9.2)
+        if(gameObject.transform.position.x >= 210)
         {
-            gameObject.transform.position = new Vector2(-9.1f, transform.position.y);
+            gameObject.transform.position = new Vector2(29.5f, transform.position.y);
         }
-        else if (gameObject.transform.position.x <= -9.2)
+        else if (gameObject.transform.position.x <= 29.5)
         {
-            gameObject.transform.position = new Vector2(9.1f, transform.position.y);
+            gameObject.transform.position = new Vector2(210, transform.position.y);
         }
-        else if (gameObject.transform.position.y >= 5)
+        else if (gameObject.transform.position.y >= 158.5)
         {
-            gameObject.transform.position = new Vector2(transform.position.x, 5);
+            gameObject.transform.position = new Vector2(transform.position.x, 158.5f);
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
         }
     }
