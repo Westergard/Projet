@@ -5,6 +5,7 @@ using UnityEngine;
 public class AllowDeliveryScript : MonoBehaviour
 {
     public bool accessible = false;
+    public bool packageAllowed = true;
     public Rigidbody2D player;
     public Rigidbody2D package;
 
@@ -17,18 +18,15 @@ public class AllowDeliveryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && accessible)
-        {
-            deliverPackage();
-        }
+        
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         accessible = true;
     }
 
-    private void OnTriggerExit(Collider collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         accessible = false;
     }
@@ -41,5 +39,6 @@ public class AllowDeliveryScript : MonoBehaviour
 
         Rigidbody2D packageInstance = Instantiate(package, player.transform.position, player.transform.rotation);
         packageInstance.velocity = new Vector2(v_x, v_y);
+        packageAllowed = false;
     }
 }
