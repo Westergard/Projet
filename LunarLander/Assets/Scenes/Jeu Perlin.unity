@@ -149,6 +149,11 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3976508662678375732, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
   m_PrefabInstance: {fileID: 3976508661779051953}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &102976829 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3976508662678375734, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+  m_PrefabInstance: {fileID: 3976508661779051953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &107717109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1485,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3976508662678375734, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976508662678375734, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
@@ -1501,11 +1510,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976508662678375735, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 204.6
+      value: 106.5
       objectReference: {fileID: 0}
     - target: {fileID: 3976508662678375735, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 116.2
+      value: 129.7
       objectReference: {fileID: 0}
     - target: {fileID: 3976508662678375735, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1563,6 +1572,30 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 102976826}
+    - target: {fileID: 6364199766789249171, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: Perdu
+      value: 
+      objectReference: {fileID: 372813826}
+    - target: {fileID: 6364199766789249171, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: altitude
+      value: 
+      objectReference: {fileID: 1104990938}
+    - target: {fileID: 6364199766789249171, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: XVelocity
+      value: 
+      objectReference: {fileID: 756485820}
+    - target: {fileID: 6364199766789249171, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: YVelocity
+      value: 
+      objectReference: {fileID: 2043762795}
+    - target: {fileID: 6364199766789249171, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: myRigidBody
+      value: 
+      objectReference: {fileID: 102976829}
+    - target: {fileID: 6364199766789249171, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 102976826}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
 --- !u!1001 &8205873506464584820
@@ -1594,11 +1627,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 100.36
+      value: 50.8
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 99.91
+      value: 85.5
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.z
