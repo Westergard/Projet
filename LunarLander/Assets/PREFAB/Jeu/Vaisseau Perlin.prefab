@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3976508662678375735}
   - component: {fileID: 3976508662678375732}
   - component: {fileID: 3976508662678375734}
-  - component: {fileID: 3976508662678375737}
   - component: {fileID: 3976508662678375736}
+  - component: {fileID: 6364199766789249171}
   m_Layer: 0
   m_Name: Vaisseau Perlin
   m_TagString: Untagged
@@ -108,22 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3976508662678375737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976508662678375733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a92976015ecf9f4c9970445a977e4ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidBody: {fileID: 3976508662678375734}
-  altitude: {fileID: 0}
-  XVelocity: {fileID: 0}
-  YVelocity: {fileID: 0}
 --- !u!95 &3976508662678375736
 Animator:
   serializedVersion: 5
@@ -144,3 +128,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6364199766789249171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976508662678375733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3284f4362a9c7846a8595d72314ee53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
