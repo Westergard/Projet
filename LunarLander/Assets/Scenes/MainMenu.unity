@@ -311,6 +311,94 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86718760}
   m_CullTransparentMesh: 1
+--- !u!1001 &103909725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145123, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145132, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145132, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399210223946145133, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+      propertyPath: m_Name
+      value: BackgroundMusique
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+--- !u!1 &103909726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3399210223946145133, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+  m_PrefabInstance: {fileID: 103909725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &103909728 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3399210223946145132, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+  m_PrefabInstance: {fileID: 103909725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &103909730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103909726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e38d5788f1178249baee75260b6ad1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 103909728}
 --- !u!1 &188519648
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2f27fbab3a70c4eb0338b08925b3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 1
   m_Dropdown: {fileID: 0}
+  m_SliderVolumePincipale: {fileID: 0}
+  m_SliderEffetSonore: {fileID: 0}
+  m_SliderMusique: {fileID: 0}
 --- !u!1 &388479993
 GameObject:
   m_ObjectHideFlags: 0

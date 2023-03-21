@@ -4490,6 +4490,7 @@ MonoBehaviour:
   m_SliderVolumePincipale: {fileID: 1269987768}
   m_SliderEffetSonore: {fileID: 955167539}
   m_SliderMusique: {fileID: 129671043}
+  audio: {fileID: 0}
 --- !u!1 &1745052679
 GameObject:
   m_ObjectHideFlags: 0
