@@ -70,9 +70,13 @@ public class MapBezier : MonoBehaviour
         }
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
-        int temp = Random.Range(75,525);
+        int temp;
+        do{
+            temp = Random.Range(75,525);
+            CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
+        } while (PenteTourette > 50|| PenteTourette < -50 );
         PositionTourelle = lineRenderer.GetPosition(temp);
-        CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
+        
         
     }
     Vector2 CalculateCubicBezierPoint(float t, Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
