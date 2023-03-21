@@ -72,7 +72,7 @@ public class Path {
         return new Vector2[] { points[i * 3], points[i * 3 + 1], points[i * 3 + 2], points[i * 3 + 3] };
     }
 
-    public void MovePoint(int i, Vector2 pos)
+    /*public void MovePoint(int i, Vector2 pos)
     {
         Vector2 deltaMove = pos - points[i];
         points[i] = pos;
@@ -101,6 +101,6 @@ public class Path {
                 points[correspondingControlIndex] = points[anchorIndex] + dir * dst;
             }
         }
-    }
+    }*/
 
 }

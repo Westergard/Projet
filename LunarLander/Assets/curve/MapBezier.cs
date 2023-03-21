@@ -2,25 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsYouWish : MonoBehaviour
+public class MapBezier : MonoBehaviour
 {
     public Path path;
     int SEGMENT_COUNT = 50;
     float OffsetX = -12f, OffsetY = -3f;
     Color c1 = Color.yellow;
     Color c2 = Color.red;
+    Tourelle tourelle;
+    public GameObject tourel;
+    Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
+    public float PenteTourette = 180;
+    public float PenteTouretteNegattif = -180;
+    //Mesh mesh = new Mesh();
 
     // Start is called before the first frame update
     void Start()
     {
+        tourelle = tourel.GetComponent<Tourelle>();
         path = new Path(transform.position);
         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
         EdgeCollider2D edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.SetColors(c1, c2);
-        lineRenderer.SetWidth(0.2f, 0.2f);
+        lineRenderer.SetWidth(0.07f, 0.07f);
         lineRenderer.SetVertexCount(SEGMENT_COUNT * path.NumSegments);
         DrawCurve();
+        MeshOfTriangle(lineRenderer);
         //SetEdgeCollider(lineRenderer);
     }
     
@@ -28,7 +36,7 @@ public class AsYouWish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        tourelle.transform.position = PositionTourelle;
     }
 
     /*void SetEdgeCollider(LineRenderer myLine)
@@ -62,6 +70,9 @@ public class AsYouWish : MonoBehaviour
         }
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
+        int temp = Random.Range(75,525);
+        PositionTourelle = lineRenderer.GetPosition(temp);
+        CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
         
     }
     Vector2 CalculateCubicBezierPoint(float t, Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
@@ -78,5 +89,54 @@ public class AsYouWish : MonoBehaviour
         p += ttt * p3; 
         
         return p;
+    }
+    void CalculePente (Vector3 Point1, Vector3 Point2){
+        float DeltaY, DeltaX, Pent;
+        DeltaX = Point1.x - Point2.x;
+        DeltaY = Point1.y - Point2.y;
+        Pent = DeltaY / DeltaX;
+
+        PenteTourette = Mathf.Atan(Pent) * 180 / 3.1416f;
+        PenteTouretteNegattif = -PenteTourette;
+    }
+    void MeshOfTriangle(LineRenderer myLine){/*
+
+        Vector3[] filledGraphPoints = new Vector3[myLine.positionCount * 2]; // one point below each line point
+     for (int j = 0; j < myLine.positionCount; ++j) {
+         filledGraphPoints[2 * j] = new Vector3(myLine.GetPosition(j).x, 0, 0);
+         filledGraphPoints[2 * j + 1] = myLine.GetPosition(j);
+     }
+ 
+     int numTriangles = (myLine.positionCount -1) * 2;
+     int[] triangles = new int[numTriangles * 3]; 
+ 
+     int i = 0;
+     for (int t = 0; t < numTriangles; t += 2) {
+         // lower left triangle
+         triangles[i++] = 2 * t;
+         triangles[i++] = 2 * t +1;
+         triangles[i++] = 2 * t +2;
+         // upper right triangle - you might need to experiment what are the correct indices
+         triangles[i++] = 2 * t + 1;
+         triangles[i++] = 2 * t + 2;
+         triangles[i++] = 2 * t + 3;
+     }
+ 
+     // create mesh
+     /*
+     Mesh filledGraphMesh = new Mesh();
+     filledGraphMesh.vertices = filledGraphPoints;
+     filledGraphMesh.triangles = triangles;
+     // you might need to assign texture coordinates as well
+ 
+     // create game object and add renderer and mesh to it
+     GameObject filledGraph = new GameObject("Filled graph");
+     MeshRenderer renderer = filledGraph.AddComponent<MeshRenderer>();
+     renderer.mesh = filledGraphMesh;*//*
+
+     mesh.vertices = filledGraphPoints;
+     mesh.triangles = triangles;
+     
+     GetComponent<MeshFilter>().mesh = mesh;*/
     }
 }
