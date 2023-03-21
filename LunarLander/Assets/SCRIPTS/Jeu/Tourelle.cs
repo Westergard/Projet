@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tourelle : MonoBehaviour
 {
+    public AudioSource audioSource;
     public GameObject Vaisseau;
     public GameObject Laser;
     Animator m_Animator;
@@ -22,6 +23,7 @@ public class Tourelle : MonoBehaviour
             if (newLaser == null)
             {
                 newLaser = Instantiate(Laser);
+                audioSource.Play();
             }
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
