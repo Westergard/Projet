@@ -12,9 +12,13 @@ public class ChangementScene : MonoBehaviour
     public Slider m_SliderVolumePincipale;
     public Slider m_SliderEffetSonore;
     public Slider m_SliderMusique;
+    public AudioSource bgMusic;
+    public AudioSource soundEffects;
 
     void Start()
     {
+        bgMusic = GameObject.Find("BackrgroundMusique").GetComponent<AudioSource>();
+        soundEffects = GameObject.Find("Sound effect").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -50,6 +54,10 @@ public class ChangementScene : MonoBehaviour
         PlayerPrefs.SetFloat("VolumePrincipale", m_SliderVolumePincipale.value);
         PlayerPrefs.SetFloat("EffetSonore", m_SliderEffetSonore.value);
         PlayerPrefs.SetFloat("Musique", m_SliderMusique.value);
+
+        bgMusic.volume = (float)((m_SliderVolumePincipale.value * m_SliderMusique.value) * 0.5);
+        soundEffects.volume = (float)((m_SliderVolumePincipale.value * m_SliderEffetSonore.value) * 0.5);
+
 
         SceneManager.LoadScene("MainMenu");
     }

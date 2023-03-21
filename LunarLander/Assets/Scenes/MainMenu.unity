@@ -500,6 +500,8 @@ MonoBehaviour:
   m_SliderVolumePincipale: {fileID: 0}
   m_SliderEffetSonore: {fileID: 0}
   m_SliderMusique: {fileID: 0}
+  bgMusic: {fileID: 103909728}
+  soundEffects: {fileID: 1799760490}
 --- !u!1 &388479993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1704,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094135396
 GameObject:
