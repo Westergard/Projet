@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Vaisseau : MonoBehaviour
+public class VaisseauPerlin : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
     public SpriteRenderer spriteRenderer;
@@ -12,12 +12,10 @@ public class Vaisseau : MonoBehaviour
     public Text YVelocity;
     public Text Perdu;
     public Sprite newSprite;
-    public LogicScript logic;
     Animator m_Animator;
 
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         m_Animator = gameObject.GetComponent<Animator>();
         Perdu.enabled = false;
     }
@@ -36,14 +34,14 @@ public class Vaisseau : MonoBehaviour
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
+                myRigidBody.AddForce(new Vector2(1f * -pushX, 2.5f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
+                myRigidBody.AddForce(new Vector2(1f * -pushX, 2.5f * pushY));
             }
 
         }
@@ -51,14 +49,14 @@ public class Vaisseau : MonoBehaviour
         {
             m_Animator.SetTrigger("NFeu");
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             m_Animator.SetTrigger("Feu");
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if(myRigidBody.transform.rotation.z < 0.715)
+            if (myRigidBody.transform.rotation.z < 0.715)
             {
                 myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.2));
 
@@ -75,25 +73,22 @@ public class Vaisseau : MonoBehaviour
         altitude.text = alt.ToString("F2");
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
-
-        logic.playerPos = transform.position;
-        logic.playerV = velocity;
     }
 
     public void bords()
     {
 
-        if(gameObject.transform.position.x >= 10)
+        if (gameObject.transform.position.x >= 210)
         {
-            gameObject.transform.position = new Vector2(-10f, transform.position.y);
+            gameObject.transform.position = new Vector2(29.5f, transform.position.y);
         }
-        else if (gameObject.transform.position.x <= -10)
+        else if (gameObject.transform.position.x <= 29.5)
         {
-            gameObject.transform.position = new Vector2(10f, transform.position.y);
+            gameObject.transform.position = new Vector2(210, transform.position.y);
         }
-        else if (gameObject.transform.position.y >= 5.5)
+        else if (gameObject.transform.position.y >= 158.5)
         {
-            gameObject.transform.position = new Vector2(transform.position.x, 5.5f);
+            gameObject.transform.position = new Vector2(transform.position.x, 158.5f);
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
         }
     }
