@@ -12,6 +12,7 @@ public class VaisseauPerlin : MonoBehaviour
     public Text YVelocity;
     public Text Perdu;
     public Sprite newSprite;
+    public AudioSource explosion, reacteur;
     Animator m_Animator;
 
     void Start()
@@ -48,10 +49,15 @@ public class VaisseauPerlin : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             m_Animator.SetTrigger("NFeu");
+            reacteur.Play();
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             m_Animator.SetTrigger("Feu");
+        }
+        else
+        {
+            reacteur.Stop();
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -95,12 +101,13 @@ public class VaisseauPerlin : MonoBehaviour
 
     IEnumerator OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
+        if (c.gameObject.name == "Grass(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
         {
             spriteRenderer.sprite = newSprite;
             gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
             m_Animator.SetTrigger("Explosion");
-            yield return new WaitForSeconds(1);
+            explosion.Play();
+            yield return new WaitForSeconds(2);
             altitude.text = "0.00";
             XVelocity.text = "0.000";
             YVelocity.text = "0.000";
