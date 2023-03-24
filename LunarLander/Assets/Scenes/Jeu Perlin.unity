@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13865637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13865639}
+  - component: {fileID: 13865638}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &13865638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13865637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a633d25852c0d543a4257e7bce17831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musique: {fileID: 337400113}
+  SE: {fileID: 1345606825}
+--- !u!4 &13865639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13865637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4066541, y: 1.0820332, z: -9.955598}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &102976816 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3976508662678375733, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
@@ -517,6 +563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+--- !u!82 &337400113 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3399210223946145132, guid: 052205e9da2b7484aab36862196b9ec8, type: 3}
+  m_PrefabInstance: {fileID: 337400112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &372813824 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
