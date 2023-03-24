@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 2384664981512992325}
   - component: {fileID: 2384664981512992324}
   - component: {fileID: 2384664981512992379}
+<<<<<<< Updated upstream
   - component: {fileID: 2384664981512992378}
+=======
+  - component: {fileID: 767658125567189429}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Target
   m_TagString: Target
@@ -101,8 +105,13 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Radius: 2
 --- !u!114 &2384664981512992378
+=======
+  m_Radius: 0.2
+--- !u!114 &767658125567189429
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +120,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2384664981512992377}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 69e197de879355f41bf19887d20e7494, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 34f5966a020541c459dd2becddecfc72, type: 3}
+>>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: 
   accessible: 0
