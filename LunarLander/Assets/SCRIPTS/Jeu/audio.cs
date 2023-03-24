@@ -5,7 +5,8 @@ using UnityEngine;
 public class audioPerlin : MonoBehaviour
 {
     public AudioSource musique;
-    public AudioSource SE;
+    public AudioSource Vaisseau;
+    public AudioSource Tourelle;
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class audioPerlin : MonoBehaviour
         float se = PlayerPrefs.GetFloat("EffetSonore");
 
         musique.volume = 0.5f * m * vP;
-        SE.volume = 1 * se * vP;
+        Vaisseau.volume = 1 * se * vP;
+        Tourelle.volume = 1 * se * vP;
     }
 }

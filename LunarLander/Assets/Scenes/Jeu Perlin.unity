@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musique: {fileID: 337400113}
-  SE: {fileID: 102976833}
+  Vaisseau: {fileID: 102976833}
+  Tourelle: {fileID: 1345606825}
 --- !u!4 &13865639
 Transform:
   m_ObjectHideFlags: 0
