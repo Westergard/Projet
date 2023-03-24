@@ -10,6 +10,8 @@ public class DontDestroyAudio : MonoBehaviour
 
     void Update()
     {
+        audio.volume = PlayerPrefs.GetFloat("BGM");
+
         string currentScene = SceneManager.GetActiveScene().name;
         if (currentScene == "Jeu Perlin")
         {
