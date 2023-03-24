@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class volumeMenu : MonoBehaviour
+public class audioPerlin : MonoBehaviour
 {
+    public AudioSource musique;
     public AudioSource SE;
 
     void Start()
@@ -11,12 +12,7 @@ public class volumeMenu : MonoBehaviour
         float vP = PlayerPrefs.GetFloat("VolumePrincipale");
         float m = PlayerPrefs.GetFloat("Musique");
         float se = PlayerPrefs.GetFloat("EffetSonore");
-        SE.volume =  se * vP;
-    }
-    void Update()
-    {
-        float vP = PlayerPrefs.GetFloat("VolumePrincipale");
-        float m = PlayerPrefs.GetFloat("Musique");
-        PlayerPrefs.SetFloat("BGM", 0.5f * m * vP);
+
+        musique.volume = 0.5f * m * vP;
     }
 }
