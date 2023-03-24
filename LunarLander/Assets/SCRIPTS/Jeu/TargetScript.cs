@@ -16,10 +16,11 @@ public class TargetScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (logic.killTarget)
+        if (logic.changeTarget)
         {
+            logic.changeTarget = false;
             Destroy(gameObject);
-            logic.killTarget = false;
+            logic.spawnTarget();
         }
     }
 }

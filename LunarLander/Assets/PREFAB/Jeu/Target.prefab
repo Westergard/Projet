@@ -10,8 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2384664981512992325}
   - component: {fileID: 2384664981512992324}
-  - component: {fileID: 2117096976145867956}
-  - component: {fileID: -5931970260385330364}
+  - component: {fileID: 2384664981512992379}
+<<<<<<< Updated upstream
+  - component: {fileID: 2384664981512992378}
+=======
+  - component: {fileID: 767658125567189429}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Target
   m_TagString: Target
@@ -86,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2117096976145867956
+--- !u!58 &2384664981512992379
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,13 +100,18 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
+<<<<<<< Updated upstream
+  m_Radius: 2
+--- !u!114 &2384664981512992378
+=======
   m_Radius: 0.2
---- !u!114 &-5931970260385330364
+--- !u!114 &767658125567189429
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +120,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2384664981512992377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40c331738f3b2146a61fc08ada29c9e, type: 3}
+<<<<<<< Updated upstream
+  m_Script: {fileID: 11500000, guid: 69e197de879355f41bf19887d20e7494, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 34f5966a020541c459dd2becddecfc72, type: 3}
+>>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: 
-  logic: {fileID: 0}
+  accessible: 0
+  player: {fileID: 0}
+  package: {fileID: 6437212689423125851, guid: 32ba17a07960a8b478cb712241abf131, type: 3}
