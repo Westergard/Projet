@@ -14,5 +14,6 @@ public class audioPerlin : MonoBehaviour
         float se = PlayerPrefs.GetFloat("EffetSonore");
 
         musique.volume = 0.5f * m * vP;
+        SE.volume = 1 * se * vP;
     }
 }
