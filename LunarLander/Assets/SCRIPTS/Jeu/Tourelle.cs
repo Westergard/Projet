@@ -29,9 +29,7 @@ public class Tourelle : MonoBehaviour
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
                 //m_Animator.SetTrigger("Droite");
-                //map.Tourne180Degreer = 180f;
-                //map.PenteTourette *= -1;
-                transform.rotation = Quaternion.Euler(0, 180, map.PenteTouretteNegattif);
+                transform.rotation = Quaternion.Euler(0, 180, -map.PenteTourette);
             }
             else if (Vaisseau.transform.position.x < gameObject.transform.position.x)
             {

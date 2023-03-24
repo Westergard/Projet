@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapBezier : MonoBehaviour
 {
     public Path path;
-    int SEGMENT_COUNT = 50;
+    int SEGMENT_COUNT = 10;
     float OffsetX = -12f, OffsetY = -3f;
     Color c1 = Color.yellow;
     Color c2 = Color.red;
@@ -13,8 +13,7 @@ public class MapBezier : MonoBehaviour
     public GameObject tourel;
     Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
     public float PenteTourette = 180;
-    public float PenteTouretteNegattif = -180;
-    //Mesh mesh = new Mesh();
+    private SpriteRenderer m_SpriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +29,10 @@ public class MapBezier : MonoBehaviour
         DrawCurve();
         MeshOfTriangle(lineRenderer);
         //SetEdgeCollider(lineRenderer);
+
+
+        //m_SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        //ChangeSprite(lineRenderer);
     }
     
 
@@ -71,10 +74,11 @@ public class MapBezier : MonoBehaviour
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
         int temp;
-        do{
-            temp = Random.Range(75,525);
+        //do{
+            //temp = Random.Range(75,525);
+            temp = 10;
             CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
-        } while (PenteTourette > 50|| PenteTourette < -50 );
+        //} while (PenteTourette > 50|| PenteTourette < -50 );
         PositionTourelle = lineRenderer.GetPosition(temp);
         
         
@@ -101,15 +105,14 @@ public class MapBezier : MonoBehaviour
         Pent = DeltaY / DeltaX;
 
         PenteTourette = Mathf.Atan(Pent) * 180 / 3.1416f;
-        PenteTouretteNegattif = -PenteTourette;
     }
-    void MeshOfTriangle(LineRenderer myLine){/*
+    void MeshOfTriangle(LineRenderer myLine){//*
 
-        Vector3[] filledGraphPoints = new Vector3[myLine.positionCount * 2]; // one point below each line point
-     for (int j = 0; j < myLine.positionCount; ++j) {
-         filledGraphPoints[2 * j] = new Vector3(myLine.GetPosition(j).x, 0, 0);
-         filledGraphPoints[2 * j + 1] = myLine.GetPosition(j);
-     }
+    Vector3[] filledGraphPoints = new Vector3[myLine.positionCount * 2]; // one point below each line point
+    for (int j = 0; j < myLine.positionCount; ++j) {
+        filledGraphPoints[2 * j] = new Vector3(myLine.GetPosition(j).x, 0, 0);
+        filledGraphPoints[2 * j + 1] = myLine.GetPosition(j);
+    }
  
      int numTriangles = (myLine.positionCount -1) * 2;
      int[] triangles = new int[numTriangles * 3]; 
@@ -135,12 +138,49 @@ public class MapBezier : MonoBehaviour
  
      // create game object and add renderer and mesh to it
      GameObject filledGraph = new GameObject("Filled graph");
+     GetComponent<MeshFilter>().mesh = filledGraphMesh;
      MeshRenderer renderer = filledGraph.AddComponent<MeshRenderer>();
-     renderer.mesh = filledGraphMesh;*//*
+     renderer.mesh = filledGraphMesh;*//**/
+
+     Mesh mesh = new Mesh();
 
      mesh.vertices = filledGraphPoints;
      mesh.triangles = triangles;
      
-     GetComponent<MeshFilter>().mesh = mesh;*/
+     GetComponent<MeshFilter>().mesh = mesh;
+    
+     //MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
+     //renderer.mesh = mesh;
+    }
+
+    void ChangeSprite(LineRenderer myLine)
+    {
+        //Fetch the Sprite and vertices from the SpriteRenderer
+        Sprite sprite = m_SpriteRenderer.sprite;
+        //Vector2[] spriteVertices = sprite.vertices;
+        Vector2[] spriteVertices = new Vector2[myLine.positionCount * 2];
+
+    for (int j = 0; j < myLine.positionCount; ++j) {
+         spriteVertices[2 * j] = new Vector2(myLine.GetPosition(j).x, 0);
+         spriteVertices[2 * j + 1] = new Vector2(myLine.GetPosition(j).x, myLine.GetPosition(j).y);
+     }
+ 
+     int numTriangles = (myLine.positionCount -1) * 2;
+     uint[] triangles = new uint[numTriangles * 3 + 0]; 
+ 
+     int i = 0;
+     for (uint t = 0; t < numTriangles; t += 2) {
+         // lower left triangle
+         triangles[i++] = 2 * t;
+         triangles[i++] = 2 * t +1;
+         triangles[i++] = 2 * t +2;
+         // upper right triangle - you might need to experiment what are the correct indices
+         triangles[i++] = 2 * t + 1;
+         triangles[i++] = 2 * t + 2;
+         triangles[i++] = 2 * t + 3;
+     }
+
+        //Override the geometry with the new vertices
+        //sprite.OverrideGeometry(spriteVertices, triangles);
     }
 }
