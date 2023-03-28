@@ -88,9 +88,9 @@ public class MapBezier : MonoBehaviour
     }
     void MeshOfTriangle(LineRenderer myLine){
 
-    Vector3[] MeshVertices = new Vector3[myLine.positionCount * 2]; // one point below each line point
+    Vector3[] MeshVertices = new Vector3[myLine.positionCount * 2];
     for (int j = 0; j < myLine.positionCount; ++j) {
-        MeshVertices[2 * j] = new Vector3(myLine.GetPosition(j).x, -6, 0);
+        MeshVertices[2 * j] = new Vector3(myLine.GetPosition(j).x, -6, -1);
         MeshVertices[2 * j + 1] = myLine.GetPosition(j);
     }
  
@@ -104,15 +104,23 @@ public class MapBezier : MonoBehaviour
          triangles[i++] = t +1;
          triangles[i++] = t +2;
          //triangle en haut a droite
-         triangles[i++] = t + 1;
-         triangles[i++] = t + 2;
          triangles[i++] = t + 3;
+         triangles[i++] = t + 2;
+         triangles[i++] = t + 1;
      }
-
+    
      Mesh mesh = new Mesh();
      mesh.vertices = MeshVertices;
      mesh.triangles = triangles;
      GetComponent<MeshFilter>().mesh = mesh;
+
+     var materials  = GetComponent<Renderer>().materials;
+        // foreach (var material in materials) {
+        //     Debug.Log(material);
+        // }
+         
+        materials[0].color = c1;
+        
 
     }
 }

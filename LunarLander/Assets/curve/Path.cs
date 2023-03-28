@@ -20,7 +20,7 @@ public class Path {
         };
         for (int i = 2; i < 11; i++)
         {
-            AddSegment(centre + Vector2.right * i * 2 + Vector2.down * Random.Range(-8,8) * .25f );
+            AddSegment(centre + Vector2.right * i * 2 + Vector2.down * Random.Range(-12,8) * .08f );
         }
         AddSegment(centre + Vector2.right * 22);
         /*AddSegmentCustom(centre + Vector2.right * 24 + Vector2.down * 5, Vector2.right + Vector2.up);
@@ -56,7 +56,7 @@ public class Path {
     {
         points.Add(points[points.Count - 1] * 2 - points[points.Count - 2]);
         //points.Add((points[points.Count - 1] + NextAnchorPoint) * .5f);
-        points.Add(NextAnchorPoint + Vector2.left * Random.Range(1,9) * .25f + Vector2.down * Random.Range(-8,8) * .25f );
+        points.Add(NextAnchorPoint + Vector2.left * Random.Range(1,9) * .1f + Vector2.down * Random.Range(-8,8) * .25f );
         points.Add(NextAnchorPoint);
     }
     public void AddSegmentCustom(Vector2 NextAnchorPoint, Vector2 OtherPoint)
