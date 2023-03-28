@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PackageScript : MonoBehaviour
+public class PackageScriptPerlin : MonoBehaviour
 {
-    public LogicScript logic;
+    public LogicScriptPerlin logic;
 
     private int SCORE_FOR_TARGET = 50;
 
@@ -16,7 +16,7 @@ public class PackageScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
         //v1 = myRigidBody.velocity.y;
     }
 

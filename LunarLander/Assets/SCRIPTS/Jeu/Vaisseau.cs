@@ -12,12 +12,12 @@ public class Vaisseau : MonoBehaviour
     public Text YVelocity;
     public Text Perdu;
     public Sprite newSprite;
-    public LogicScript logic;
+    //public LogicScript logic;
     Animator m_Animator;
 
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        //logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         m_Animator = gameObject.GetComponent<Animator>();
         Perdu.enabled = false;
     }
@@ -76,8 +76,8 @@ public class Vaisseau : MonoBehaviour
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
 
-        logic.playerPos = transform.position;
-        logic.playerV = velocity;
+        //logic.playerPos = transform.position;
+        //logic.playerV = velocity;
     }
 
     public void bords()
