@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombScript : MonoBehaviour
+public class BombScriptPerlin : MonoBehaviour
 {
-    public LogicScript logic;
+    public LogicScriptPerlin logic;
     public Rigidbody2D myRigidBody;
 
     private int SCORE_FOR_TURRET = 100;
@@ -12,7 +12,7 @@ public class BombScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
     }
 
     // Update is called once per frame

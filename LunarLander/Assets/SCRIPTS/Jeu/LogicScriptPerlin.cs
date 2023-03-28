@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LogicScript : MonoBehaviour
+public class LogicScriptPerlin : MonoBehaviour
 {
     private static int maxNumTurrets = 3;
 

@@ -13,10 +13,14 @@ public class VaisseauPerlin : MonoBehaviour
     public Text Perdu;
     public Sprite newSprite;
     public AudioSource explosion, reacteur;
+
+    public LogicScriptPerlin logic;
+
     Animator m_Animator;
 
     void Start()
     {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
         m_Animator = gameObject.GetComponent<Animator>();
         Perdu.enabled = false;
     }
@@ -79,6 +83,9 @@ public class VaisseauPerlin : MonoBehaviour
         altitude.text = alt.ToString("F2");
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
+
+        logic.playerPos = transform.position;
+        logic.playerV = velocity;
     }
 
     public void bords()
