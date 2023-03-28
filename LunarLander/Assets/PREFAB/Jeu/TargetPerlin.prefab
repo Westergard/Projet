@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2384664981512992379}
   - component: {fileID: 767658125567189429}
   m_Layer: 0
-  m_Name: Target
+  m_Name: TargetPerlin
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2384664981512992377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6, y: 1.47, z: -6.7813587}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10.5, y: 10.5, z: 10.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2384664981512992377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f5966a020541c459dd2becddecfc72, type: 3}
+  m_Script: {fileID: 11500000, guid: d40c331738f3b2146a61fc08ada29c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}

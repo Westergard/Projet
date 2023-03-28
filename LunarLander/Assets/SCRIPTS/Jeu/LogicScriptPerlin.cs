@@ -29,16 +29,16 @@ public class LogicScript : MonoBehaviour
 
     public float deliveryDist = 20.0f;
 
-    public float shipRadius = 1.1f;
-    public float shipScale = 0.2810039f;
+    public float shipRadius = 3.168f;
+    public float shipScale = 1.719646f;
     public float packageRadius = 0.1f;
-    public float packageScale = 0.13f;
+    public float packageScale = 1.0f;
     public float bombRadius = 4.34f;
-    public float bombScale = 0.03f;
+    public float bombScale = 0.36f;
     public float targetRadius = 0.2f;
-    public float targetScale = 1.0f;
+    public float targetScale = 10.5f;
     public float turretRadius = 1.25f;
-    public float turretScale = 0.6515145f;
+    public float turretScale = 6.15f;
 
     // Start is called before the first frame update
     void Start()
@@ -121,7 +121,7 @@ public class LogicScript : MonoBehaviour
     {
         foreach(Vector3 turret in turretPositions)
         {
-            if (Vector3.Distance(bombPos, turret) < ((bombRadius * bombScale * 2) + (turretScale * turretRadius)))
+            if (Vector3.Distance(bombPos, turret) < ((4 * bombRadius * bombScale) + (turretScale * turretRadius)))
             {
                 return true;
             }
@@ -131,6 +131,6 @@ public class LogicScript : MonoBehaviour
 
     public bool checkBombTargetDist(Vector3 packagePos)
     {
-        return (Vector3.Distance(packagePos, targetPos) < ((2 * bombRadius * bombScale) + (targetRadius * targetScale)));
+        return (Vector3.Distance(packagePos, targetPos) < ((4 * bombRadius * bombScale) + (targetRadius * targetScale)));
     }
 }

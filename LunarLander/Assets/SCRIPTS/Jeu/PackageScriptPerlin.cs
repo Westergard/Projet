@@ -17,7 +17,7 @@ public class PackageScript : MonoBehaviour
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        v1 = myRigidBody.velocity.y;
+        //v1 = myRigidBody.velocity.y;
     }
 
     // Update is called once per frame
