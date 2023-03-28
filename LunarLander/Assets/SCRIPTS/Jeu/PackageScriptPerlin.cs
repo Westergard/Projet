@@ -42,6 +42,8 @@ public class PackageScriptPerlin : MonoBehaviour
             Debug.Log(accelAve.ToString());
         }
         */
+
+        bords();
     }
 
     void OnCollisionEnter2D(Collision2D collider)
@@ -53,5 +55,23 @@ public class PackageScriptPerlin : MonoBehaviour
         }
         Destroy(gameObject);
         logic.packageAllowed = true;
+    }
+
+    private void bords()
+    {
+
+        if (gameObject.transform.position.x >= 210)
+        {
+            gameObject.transform.position = new Vector2(29.5f, transform.position.y);
+        }
+        else if (gameObject.transform.position.x <= 29.5)
+        {
+            gameObject.transform.position = new Vector2(210, transform.position.y);
+        }
+        else if (gameObject.transform.position.y >= 158.5)
+        {
+            gameObject.transform.position = new Vector2(transform.position.x, 158.5f);
+            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
+        }
     }
 }

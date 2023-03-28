@@ -13,6 +13,7 @@ public class LogicScriptPerlin : MonoBehaviour
     public Rigidbody2D bomb;
 
     public Text score;
+    public Text time;
 
     public Vector3 targetPos;
     public Vector3 playerPos;
@@ -22,10 +23,13 @@ public class LogicScriptPerlin : MonoBehaviour
     public bool packageAllowed = true;
     public bool changeTarget = false;
     public bool bombAllowed = true;
+    public bool timerIsRunning;
 
     public float bombDelay = 2.0f;
 
     public float firstTargetDelay = 1.0f;
+
+    public float timeRemaining = 90.0f;
 
     public int playerScore = 0;
 
@@ -45,7 +49,7 @@ public class LogicScriptPerlin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        timerIsRunning = true;
     }
 
     // Update is called once per frame
@@ -80,13 +84,38 @@ public class LogicScriptPerlin : MonoBehaviour
                 spawnTarget();
             }
         }
+
+        if(timerIsRunning)
+        {
+            if(timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                adjustTime(timeRemaining);
+            }
+            else
+            {
+                timeRemaining = 0;
+                timerIsRunning = false;
+
+                //game over
+            }
+        }
+    }
+
+    private void adjustTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+        int minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        int seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        time.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     private void sendPackage()
     {
         packageAllowed = false;
 
-        float time = 2.5f;
+        float time = 1.5f;
         float acceleration = -0.101547565f;
         float v_x = ((targetPos.x - playerPos.x) / time);
         float v_y = ((targetPos.y - (playerPos.y + (0.5f * time * time * acceleration))) / time);
@@ -114,7 +143,7 @@ public class LogicScriptPerlin : MonoBehaviour
 
     public void spawnTarget()
     {
-        Instantiate(target, new Vector3(Random.Range(40.0f, 200.0f), Random.Range(75.0f, 150.0f), playerPos.z), Quaternion.identity);
+        Instantiate(target, new Vector3(Random.Range(40.0f, 200.0f), Random.Range(100.0f, 150.0f), playerPos.z), Quaternion.identity);
     }
 
     public void addScore(int scoreToAdd)

@@ -120,6 +120,8 @@ public class VaisseauPerlin : MonoBehaviour
             YVelocity.text = "0.000";
             Perdu.enabled = true;
             Destroy(gameObject);
+
+            logic.timerIsRunning = false;
         }
     }
 }
