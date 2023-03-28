@@ -1898,6 +1898,7 @@ MonoBehaviour:
   changeTarget: 0
   bombAllowed: 1
   bombDelay: 2
+  firstTargetDelay: 1
   playerScore: 0
   deliveryDist: 20
   shipRadius: 3.168
@@ -2225,11 +2226,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.8
+      value: 35.6
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 85.5
+      value: 79.6
       objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554341, guid: 1b03031786c200047afd8cd3c54b748e, type: 3}
       propertyPath: m_LocalPosition.z
