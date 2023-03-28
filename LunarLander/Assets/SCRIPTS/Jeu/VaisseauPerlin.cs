@@ -39,14 +39,14 @@ public class VaisseauPerlin : MonoBehaviour
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(1f * -pushX, 2.5f * pushY));
+                myRigidBody.AddForce(new Vector2(5f * -pushX, 8f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(1f * -pushX, 2.5f * pushY));
+                myRigidBody.AddForce(new Vector2(5f * -pushX, 8f * pushY));
             }
 
         }
@@ -68,7 +68,7 @@ public class VaisseauPerlin : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z < 0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.2));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.8));
 
             }
         }
@@ -76,7 +76,7 @@ public class VaisseauPerlin : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z > -0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.2));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.8));
             }
         }
 
