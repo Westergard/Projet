@@ -25,6 +25,8 @@ public class LogicScriptPerlin : MonoBehaviour
 
     public float bombDelay = 2.0f;
 
+    public float firstTargetDelay = 1.0f;
+
     public int playerScore = 0;
 
     public float deliveryDist = 20.0f;
@@ -43,7 +45,7 @@ public class LogicScriptPerlin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTarget();
+        
     }
 
     // Update is called once per frame
@@ -67,6 +69,15 @@ public class LogicScriptPerlin : MonoBehaviour
             {
                 bombDelay = 2;
                 bombAllowed = true;
+            }
+        }
+
+        if (firstTargetDelay > 0)
+        {
+            firstTargetDelay -= Time.deltaTime;
+            if(firstTargetDelay <= 0)
+            {
+                spawnTarget();
             }
         }
     }
@@ -103,7 +114,7 @@ public class LogicScriptPerlin : MonoBehaviour
 
     public void spawnTarget()
     {
-        Instantiate(target, new Vector3(Random.Range(-5.0f, 5.0f), Random.Range(-2.0f, 4.0f), playerPos.z), Quaternion.identity);
+        Instantiate(target, new Vector3(Random.Range(40.0f, 200.0f), Random.Range(75.0f, 150.0f), playerPos.z), Quaternion.identity);
     }
 
     public void addScore(int scoreToAdd)
