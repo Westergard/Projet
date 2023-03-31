@@ -5,6 +5,8 @@ public class ProceduralGeneration : MonoBehaviour
     [SerializeField] int width,height;
     [SerializeField] int minStoneheight, maxStoneHeight;
     [SerializeField] GameObject dirt,grass,stone;
+
+    public GameObject RandomTile;
     void Start()
     {
         Generation();
