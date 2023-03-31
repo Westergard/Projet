@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapBezier : MonoBehaviour
 {
     public Path path;
-    int SEGMENT_COUNT = 50;
+    int SEGMENT_COUNT = 10;
     Vector3 Offset = new Vector2(-12, -3);
     Color c1 = Color.yellow;
     Color c2 = Color.red;
@@ -22,7 +22,7 @@ public class MapBezier : MonoBehaviour
         path = new Path(transform.position + Offset);
         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
         EdgeCollider2D edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        //lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.SetColors(c1, c2);
         lineRenderer.SetWidth(0.07f, 0.07f);
         lineRenderer.SetVertexCount(SEGMENT_COUNT * path.NumSegments);
@@ -54,9 +54,9 @@ public class MapBezier : MonoBehaviour
         }
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
-        int temp;
+        int temp, SEGMENT_COUNT_Halve = (int)Mathf.Floor(SEGMENT_COUNT * .5f);
         do{
-            temp = Random.Range(75,525);
+            temp = Random.Range(SEGMENT_COUNT_Halve + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Halve);
             CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
         } while (PenteTourette > 50|| PenteTourette < -50 );
         PositionTourelle = lineRenderer.GetPosition(temp);
@@ -88,10 +88,13 @@ public class MapBezier : MonoBehaviour
     }
     void MeshOfTriangle(LineRenderer myLine){
 
+    Vector2[] uv = new Vector2[myLine.positionCount * 2];
     Vector3[] MeshVertices = new Vector3[myLine.positionCount * 2];
     for (int j = 0; j < myLine.positionCount; ++j) {
         MeshVertices[2 * j] = new Vector3(myLine.GetPosition(j).x, -6, -1);
         MeshVertices[2 * j + 1] = myLine.GetPosition(j);
+        uv[2 * j] = new Vector2(j%50 *.02f, 1);
+        uv[2 * j + 1] = new Vector2(j%50*.02f, 0); 
     }
  
      int numTriangles = (myLine.positionCount -1) * 2; // le premier point n'a pas de triangle et les autre n'on deux chaque.
@@ -111,6 +114,7 @@ public class MapBezier : MonoBehaviour
     
      Mesh mesh = new Mesh();
      mesh.vertices = MeshVertices;
+     mesh.uv = uv;
      mesh.triangles = triangles;
      GetComponent<MeshFilter>().mesh = mesh;
 
@@ -119,7 +123,7 @@ public class MapBezier : MonoBehaviour
         //     Debug.Log(material);
         // }
          
-        materials[0].color = c1;
+        //materials[0].color = c1;
         
 
     }
