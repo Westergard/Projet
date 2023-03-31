@@ -9,10 +9,13 @@ public class Tourelle : MonoBehaviour
     public GameObject Laser;
     Animator m_Animator;
     GameObject newLaser;
+    MapBezier map;
+    public GameObject bezier;
 
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
+        map = bezier.GetComponent<MapBezier>();
     }
 
     void Update()
@@ -27,11 +30,15 @@ public class Tourelle : MonoBehaviour
             }
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
-                m_Animator.SetTrigger("Droite");
+                //m_Animator.SetTrigger("Droite");
+                transform.rotation = Quaternion.Euler(0, 180, -map.PenteTourette);
             }
             else if (Vaisseau.transform.position.x < gameObject.transform.position.x)
             {
-                m_Animator.SetTrigger("Gauche");
+                //m_Animator.SetTrigger("Gauche");
+                //map.Tourne180Degreer = 0f;
+                //map.PenteTourette *= -1;
+                transform.rotation = Quaternion.Euler(0, 0f, map.PenteTourette);
             }
         }
     }

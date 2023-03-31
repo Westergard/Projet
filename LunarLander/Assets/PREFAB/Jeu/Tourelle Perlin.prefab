@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 8205873505621554362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.42, y: -3.77, z: -0.4639552}
-  m_LocalScale: {x: 0.65151453, y: 0.5676267, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 6.15, y: 5.358137, z: 9.439544}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -167,5 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a498726f4c0a2b4388d1c51cee05e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   Vaisseau: {fileID: 0}
   Laser: {fileID: 2046729471075100678, guid: 34269e7972aa8ec4697d620e7b05c169, type: 3}

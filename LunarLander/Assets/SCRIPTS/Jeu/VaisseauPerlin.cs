@@ -13,10 +13,14 @@ public class VaisseauPerlin : MonoBehaviour
     public Text Perdu;
     public Sprite newSprite;
     public AudioSource explosion, reacteur;
+
+    public LogicScriptPerlin logic;
+
     Animator m_Animator;
 
     void Start()
     {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
         m_Animator = gameObject.GetComponent<Animator>();
         Perdu.enabled = false;
     }
@@ -35,14 +39,14 @@ public class VaisseauPerlin : MonoBehaviour
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(1f * -pushX, 2.5f * pushY));
+                myRigidBody.AddForce(new Vector2(5f * -pushX, 8f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(1f * -pushX, 2.5f * pushY));
+                myRigidBody.AddForce(new Vector2(5f * -pushX, 8f * pushY));
             }
 
         }
@@ -64,7 +68,7 @@ public class VaisseauPerlin : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z < 0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.2));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.8));
 
             }
         }
@@ -72,13 +76,25 @@ public class VaisseauPerlin : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z > -0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.2));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.8));
             }
         }
 
         altitude.text = alt.ToString("F2");
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
+
+        logic.playerPos = transform.position;
+        logic.playerV = velocity;
+
+        if (!logic.gameActive)
+        {
+            altitude.text = "0.00";
+            XVelocity.text = "0.000";
+            YVelocity.text = "0.000";
+            Perdu.enabled = true;
+            Destroy(gameObject);
+        }
     }
 
     public void bords()
@@ -113,6 +129,8 @@ public class VaisseauPerlin : MonoBehaviour
             YVelocity.text = "0.000";
             Perdu.enabled = true;
             Destroy(gameObject);
+
+            logic.timerIsRunning = false;
         }
     }
 }
