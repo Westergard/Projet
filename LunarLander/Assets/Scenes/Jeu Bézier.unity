@@ -149,6 +149,30 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3976508662678375732, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
   m_PrefabInstance: {fileID: 3976508661779051953}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &102976829 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3976508662678375734, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+  m_PrefabInstance: {fileID: 3976508661779051953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &102976831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102976816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb1236432cb0d242a5b03d609cf4284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRigidBody: {fileID: 102976829}
+  spriteRenderer: {fileID: 102976826}
+  altitude: {fileID: 1104990938}
+  XVelocity: {fileID: 756485820}
+  YVelocity: {fileID: 2043762795}
+  Perdu: {fileID: 1522342498}
+  newSprite: {fileID: 0}
 --- !u!1 &107717109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a498726f4c0a2b4388d1c51cee05e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   Vaisseau: {fileID: 102976816}
   Laser: {fileID: 2046729471075100678, guid: 34269e7972aa8ec4697d620e7b05c169, type: 3}
   bezier: {fileID: 589145264}
