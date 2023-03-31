@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tourelle : MonoBehaviour
+public class TourelleBezier : MonoBehaviour
 {
     public AudioSource audioSource;
     public GameObject Vaisseau;

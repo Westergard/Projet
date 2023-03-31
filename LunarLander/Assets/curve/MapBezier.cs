@@ -9,7 +9,7 @@ public class MapBezier : MonoBehaviour
     Vector3 Offset = new Vector2(-12, -3);
     Color c1 = Color.yellow;
     Color c2 = Color.red;
-    Tourelle tourelle;
+    TourelleBezier tourelle;
     public GameObject tourel;
     Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
     public float PenteTourette = 180;
@@ -18,7 +18,7 @@ public class MapBezier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tourelle = tourel.GetComponent<Tourelle>();
+        tourelle = tourel.GetComponent<TourelleBezier>();
         path = new Path(transform.position + Offset);
         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
         EdgeCollider2D edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
