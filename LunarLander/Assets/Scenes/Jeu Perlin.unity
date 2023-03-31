@@ -879,11 +879,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1200.4404
+      value: 1420
       objectReference: {fileID: 0}
     - target: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 447.9298
+      value: 425
       objectReference: {fileID: 0}
     - target: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
       propertyPath: m_LocalPosition.x
@@ -919,7 +919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 52.035
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4915739614037291277, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -936,6 +936,10 @@ PrefabInstance:
     - target: {fileID: 4915739614037291280, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
       propertyPath: m_Name
       value: Perdu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915739614037291283, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
+      propertyPath: m_Text
+      value: Game Over
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}

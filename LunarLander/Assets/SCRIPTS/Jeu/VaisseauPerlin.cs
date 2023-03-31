@@ -86,6 +86,15 @@ public class VaisseauPerlin : MonoBehaviour
 
         logic.playerPos = transform.position;
         logic.playerV = velocity;
+
+        if (!logic.gameActive)
+        {
+            altitude.text = "0.00";
+            XVelocity.text = "0.000";
+            YVelocity.text = "0.000";
+            Perdu.enabled = true;
+            Destroy(gameObject);
+        }
     }
 
     public void bords()

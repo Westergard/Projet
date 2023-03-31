@@ -23,7 +23,8 @@ public class LogicScriptPerlin : MonoBehaviour
     public bool packageAllowed = true;
     public bool changeTarget = false;
     public bool bombAllowed = true;
-    public bool timerIsRunning;
+    public bool timerIsRunning = true;
+    public bool gameActive = true;
 
     public float bombDelay = 2.0f;
 
@@ -97,11 +98,13 @@ public class LogicScriptPerlin : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
 
-                //game over
+                gameActive = false;
             }
         }
     }
 
+    //le code pour le "timer" est pris d'Internet
+    //https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/#code_example
     private void adjustTime(float timeToDisplay)
     {
         timeToDisplay += 1;
