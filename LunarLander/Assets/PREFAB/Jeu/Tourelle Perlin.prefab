@@ -167,5 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a498726f4c0a2b4388d1c51cee05e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Vaisseau: {fileID: 0}
+  audioSource: {fileID: 0}
+  Vaisseau: {fileID: 3976508662678375733, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
   Laser: {fileID: 2046729471075100678, guid: 34269e7972aa8ec4697d620e7b05c169, type: 3}
