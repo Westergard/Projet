@@ -131,6 +131,7 @@ public class VaisseauPerlin : MonoBehaviour
             Destroy(gameObject);
 
             logic.timerIsRunning = false;
+            logic.gameActive = false;
         }
     }
 }

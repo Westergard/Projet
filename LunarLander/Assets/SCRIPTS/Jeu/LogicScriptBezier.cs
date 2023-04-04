@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LogicScriptPerlin : MonoBehaviour
+public class LogicScriptBezier : MonoBehaviour
 {
     private static int maxNumTurrets = 3;
 
@@ -37,15 +37,15 @@ public class LogicScriptPerlin : MonoBehaviour
     public float deliveryDist = 20.0f;
 
     public float shipRadius = 3.168f;
-    public float shipScale = 1.719646f;
+    public float shipScale = 0.2810039f;
     public float packageRadius = 0.1f;
-    public float packageScale = 1.0f;
+    public float packageScale = 0.15f;
     public float bombRadius = 4.34f;
-    public float bombScale = 0.36f;
+    public float bombScale = 0.04f;
     public float targetRadius = 0.2f;
-    public float targetScale = 10.5f;
+    public float targetScale = 1.25f;
     public float turretRadius = 1.25f;
-    public float turretScale = 6.15f;
+    public float turretScale = 0.83f;
 
     // Start is called before the first frame update
     void Start()
@@ -59,10 +59,11 @@ public class LogicScriptPerlin : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(Vector3.Distance(playerPos, targetPos) < deliveryDist && packageAllowed)
+            if (Vector3.Distance(playerPos, targetPos) < deliveryDist && packageAllowed)
             {
                 sendPackage();
-            }else if (bombAllowed)
+            }
+            else if (bombAllowed)
             {
                 dropBomb();
             }
@@ -71,7 +72,7 @@ public class LogicScriptPerlin : MonoBehaviour
         if (!bombAllowed)
         {
             bombDelay -= Time.deltaTime;
-            if(bombDelay <= 0)
+            if (bombDelay <= 0)
             {
                 bombDelay = 2;
                 bombAllowed = true;
@@ -81,15 +82,15 @@ public class LogicScriptPerlin : MonoBehaviour
         if (firstTargetDelay > 0)
         {
             firstTargetDelay -= Time.deltaTime;
-            if(firstTargetDelay <= 0)
+            if (firstTargetDelay <= 0)
             {
                 spawnTarget();
             }
         }
 
-        if(timerIsRunning)
+        if (timerIsRunning)
         {
-            if(timeRemaining > 0)
+            if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
                 adjustTime(timeRemaining);
@@ -163,7 +164,7 @@ public class LogicScriptPerlin : MonoBehaviour
 
     public bool checkBombTurretDist(Vector3 bombPos)
     {
-        foreach(Vector3 turret in turretPositions)
+        foreach (Vector3 turret in turretPositions)
         {
             if (Vector3.Distance(bombPos, turret) < ((4 * bombRadius * bombScale) + (turretScale * turretRadius)))
             {

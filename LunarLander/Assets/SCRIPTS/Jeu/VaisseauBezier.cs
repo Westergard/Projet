@@ -12,10 +12,14 @@ public class VaisseauBezier : MonoBehaviour
     public Text YVelocity;
     public Text Perdu;
     public Sprite newSprite;
+
+    public LogicScriptBezier logic;
+
     Animator m_Animator;
 
     void Start()
     {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptBezier>(); 
         m_Animator = gameObject.GetComponent<Animator>();
         Perdu.enabled = false;
     }
@@ -73,6 +77,22 @@ public class VaisseauBezier : MonoBehaviour
         altitude.text = alt.ToString("F2");
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
+
+        altitude.text = alt.ToString("F2");
+        XVelocity.text = velocity.x.ToString("F3");
+        YVelocity.text = velocity.y.ToString("F3");
+
+        logic.playerPos = transform.position;
+        logic.playerV = velocity;
+
+        if (!logic.gameActive)
+        {
+            altitude.text = "0.00";
+            XVelocity.text = "0.000";
+            YVelocity.text = "0.000";
+            Perdu.enabled = true;
+            Destroy(gameObject);
+        }
     }
 
     public void bords()
@@ -106,6 +126,9 @@ public class VaisseauBezier : MonoBehaviour
             YVelocity.text = "0.000";
             Perdu.enabled = true;
             Destroy(gameObject);
+
+            logic.timerIsRunning = false;
+            logic.gameActive = false;
         }
     }
 }
