@@ -5,24 +5,23 @@ using UnityEngine;
 public class MapBezier : MonoBehaviour
 {
     public Path path;
-    int SEGMENT_COUNT = 10, SEGMENT_COUNT_Halve;
+    int SEGMENT_COUNT = 10, SEGMENT_COUNT_Half;
     LineRenderer lineRenderer;
     EdgeCollider2D edgeCollider;
-    Vector3 Offset = new Vector2(-12, -3);
+    Vector3 Offset = new Vector2(-12, -3); // la class path commence en bas a gauche, avec se offset la. 
     //Color c1 = Color.yellow;
     //Color c2 = Color.red;
     TourelleBezier tourelle;
     public GameObject tourel;
     Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
     public float PenteTourette = 180;
-    private SpriteRenderer m_SpriteRenderer;
+    //private SpriteRenderer m_SpriteRenderer;
 
-    // Start is called before the first frame update
     void Start()
     {
-        SEGMENT_COUNT_Halve = (int)Mathf.Floor(SEGMENT_COUNT * .5f);
+        SEGMENT_COUNT_Half = (int)Mathf.Floor(SEGMENT_COUNT * .5f); // utiliser pour calculer la position de la tourelle et de la cible
         tourelle = tourel.GetComponent<TourelleBezier>();
-        path = new Path(transform.position + Offset);
+        path = new Path(transform.position + Offset); // retourne just une list de point pour fait la courbe de Bezier. 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
         //lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
@@ -59,7 +58,7 @@ public class MapBezier : MonoBehaviour
         edgeCollider.SetPoints(edges);
         int temp;
         do{
-            temp = Random.Range(SEGMENT_COUNT_Halve + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Halve);
+            temp = Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half);
             CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
         } while (PenteTourette > 50|| PenteTourette < -50 );
         PositionTourelle = lineRenderer.GetPosition(temp);
@@ -131,6 +130,6 @@ public class MapBezier : MonoBehaviour
     }
 
     /**/Vector3 PositionSurMap(){
-        return lineRenderer.GetPosition(Random.Range(SEGMENT_COUNT_Halve + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Halve));
+        return lineRenderer.GetPosition(Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half));
     }
 }
