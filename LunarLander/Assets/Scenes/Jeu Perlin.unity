@@ -367,7 +367,7 @@ MonoBehaviour:
   newSprite: {fileID: 0}
   explosion: {fileID: 102976833}
   reacteur: {fileID: 102976837}
-  logic: {fileID: 0}
+  logic: {fileID: 2099974699}
 --- !u!1 &107717109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2093,10 @@ PrefabInstance:
     - target: {fileID: 3976508662678375733, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976508662678375734, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3976508662678375734, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
       propertyPath: m_GravityScale
