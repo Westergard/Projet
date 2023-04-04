@@ -816,7 +816,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000026703, y: 206.9231}
-  m_SizeDelta: {x: 454.231, y: 73.1538}
+  m_SizeDelta: {x: 489.62, y: 73.1538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362989260
 MonoBehaviour:
@@ -851,7 +851,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Choix de terrain : \n"
+  m_Text: "Terrain Generation : \n"
 --- !u!222 &362989261
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bruits de Perlin
+  m_text: Perlin Noise
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1852,7 +1852,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Effet sonore
+  m_Text: Sound Effects
 --- !u!222 &762269681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2625,9 +2625,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Bruits de Perlin
+    - m_Text: Perlin Noise
       m_Image: {fileID: 0}
-    - m_Text: "Courbe de B\xE9zier"
+    - m_Text: "B\xE9zier Curve"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3001,7 +3001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sauvegarder
+  m_Text: Save
 --- !u!222 &1237257369
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3688,7 +3688,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Musique
+  m_Text: Music
 --- !u!222 &1435207051
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4092,7 +4092,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Volume principal
+  m_Text: Master
 --- !u!222 &1520102433
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4490,7 +4490,6 @@ MonoBehaviour:
   m_SliderVolumePincipale: {fileID: 1269987768}
   m_SliderEffetSonore: {fileID: 955167539}
   m_SliderMusique: {fileID: 129671043}
-  audio: {fileID: 0}
 --- !u!1 &1745052679
 GameObject:
   m_ObjectHideFlags: 0
