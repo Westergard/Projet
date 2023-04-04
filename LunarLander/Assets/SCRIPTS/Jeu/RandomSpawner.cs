@@ -7,42 +7,34 @@ public class RandomSpawner : MonoBehaviour
     public GameObject[] options;
     public GameObject tourelle;
 
-    bool enCollision;
+    float temps = 1.5f;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < options.Length; i++)
-        {
-            while(enCollision = false)
-            {
-                options[i].transform.position = new Vector2(transform.position.x, (transform.position.y - 0.01f));
-            }
 
-            enCollision = false;
-        }
-
-        int randOptions = Random.Range(0, options.Length);
-
-        Instantiate(tourelle, options[randOptions].transform.position, transform.rotation);
-
-        for(int i = 0; i < options.Length; i++)
-        {
-            Destroy(options[i]);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if (temps > 0)
+        {
+            temps -= Time.deltaTime;
+        }
+        else
+        {
+            int randOptions = Random.Range(0, options.Length);
 
-    void OnCollisionEnter(Collision col)
-    {
-        enCollision = true;
+            Instantiate(tourelle, options[randOptions].transform.position, transform.rotation);
+
+            for (int i = 0; i < options.Length; i++)
+            {
+                Destroy(options[i]);
+            }
+        }
     }
 
 }
