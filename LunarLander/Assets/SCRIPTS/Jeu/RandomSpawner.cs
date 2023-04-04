@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
-    public Transform[] options;
+    public GameObject[] options;
     public GameObject tourelle;
 
     bool enCollision;
@@ -18,7 +18,7 @@ public class RandomSpawner : MonoBehaviour
         {
             while(enCollision = false)
             {
-                options[i].position = new Vector2(transform.position.x, (transform.position.y - 0.01f));
+                options[i].transform.position = new Vector2(transform.position.x, (transform.position.y - 0.01f));
             }
 
             enCollision = false;
@@ -26,7 +26,12 @@ public class RandomSpawner : MonoBehaviour
 
         int randOptions = Random.Range(0, options.Length);
 
-        Instantiate(tourelle, options[randOptions].position, transform.rotation);
+        Instantiate(tourelle, options[randOptions].transform.position, transform.rotation);
+
+        for(int i = 0; i < options.Length; i++)
+        {
+            Destroy(options[i]);
+        }
     }
 
     // Update is called once per frame
