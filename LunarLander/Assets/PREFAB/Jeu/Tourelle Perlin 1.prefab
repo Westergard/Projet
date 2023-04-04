@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8205873505621554363}
   - component: {fileID: 8205873505621554342}
   - component: {fileID: 8205873505621554343}
-  - component: {fileID: 8205873505621554336}
+  - component: {fileID: 2075736078243410642}
+  - component: {fileID: 1996600929461371789}
   m_Layer: 0
   m_Name: Tourelle Perlin 1
   m_TagString: Untagged
@@ -155,7 +156,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.12, y: 1.25}
   m_EdgeRadius: 0
---- !u!114 &8205873505621554336
+--- !u!114 &2075736078243410642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +165,105 @@ MonoBehaviour:
   m_GameObject: {fileID: 8205873505621554362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a498726f4c0a2b4388d1c51cee05e06, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b7e537af84a6249bb2a73442876a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  Vaisseau: {fileID: 3976508662678375733, guid: f99b1bb260c42b84e83f182bd9c98a2b, type: 3}
+  audioSource: {fileID: 1996600929461371789}
+  Vaisseau: {fileID: 7723040790794527508, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
   Laser: {fileID: 2046729471075100678, guid: 34269e7972aa8ec4697d620e7b05c169, type: 3}
-  bezier: {fileID: 0}
+--- !u!82 &1996600929461371789
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8205873505621554362}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ff9ebfb8b5788d34e836cd04c00ce31a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

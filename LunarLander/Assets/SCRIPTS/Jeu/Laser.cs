@@ -11,11 +11,11 @@ public class Laser : MonoBehaviour
     void Start()
     {
         Vaisseau = GameObject.Find("Vaisseau");
-        Tourelle = GameObject.Find("Tourelle");
+        Tourelle = GameObject.Find("Tourelle Perlin 1(Clone)");
 
         Vector2 positionTourelle = Tourelle.transform.position;
         Vector2 positionVaisseau = Vaisseau.transform.position;
-        myRigidBody.position = new Vector2(positionTourelle.x, positionTourelle.y + 0.1f);
+        myRigidBody.position = new Vector2(positionTourelle.x, positionTourelle.y + 5f);
         float Xposition = positionVaisseau.x - myRigidBody.position.x;
         float Yposition = positionVaisseau.y - myRigidBody.position.y;
         float Xvelocity = Xposition / 2;
@@ -30,7 +30,7 @@ public class Laser : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "Vaisseau" || c.gameObject.name == "tile(Clone)")
+        if (c.gameObject.name == "Vaisseau" || c.gameObject.name == "Grass(Clone)")
         {
             Destroy(gameObject);
         }

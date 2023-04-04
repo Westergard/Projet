@@ -13,6 +13,7 @@ public class TourellePerlin : MonoBehaviour
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
+        Vaisseau = GameObject.Find("Vaisseau");
     }
 
     void Update()

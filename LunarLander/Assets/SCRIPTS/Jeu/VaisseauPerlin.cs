@@ -115,15 +115,15 @@ public class VaisseauPerlin : MonoBehaviour
         }
     }
 
-    IEnumerator OnCollisionEnter2D(Collision2D c)
+    void OnCollisionEnter2D(Collision2D c)
     {
         if (c.gameObject.name == "Grass(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
         {
             spriteRenderer.sprite = newSprite;
-            gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
-            m_Animator.SetTrigger("Explosion");
+            //gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
+            //m_Animator.SetTrigger("Explosion");
             explosion.Play();
-            yield return new WaitForSeconds(2);
+            //yield return new WaitForSeconds(1);
             altitude.text = "0.00";
             XVelocity.text = "0.000";
             YVelocity.text = "0.000";
