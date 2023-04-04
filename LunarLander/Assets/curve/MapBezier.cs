@@ -5,10 +5,12 @@ using UnityEngine;
 public class MapBezier : MonoBehaviour
 {
     public Path path;
-    int SEGMENT_COUNT = 10;
+    int SEGMENT_COUNT = 10, SEGMENT_COUNT_Halve;
+    LineRenderer lineRenderer;
+    EdgeCollider2D edgeCollider;
     Vector3 Offset = new Vector2(-12, -3);
-    Color c1 = Color.yellow;
-    Color c2 = Color.red;
+    //Color c1 = Color.yellow;
+    //Color c2 = Color.red;
     TourelleBezier tourelle;
     public GameObject tourel;
     Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
@@ -18,13 +20,14 @@ public class MapBezier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SEGMENT_COUNT_Halve = (int)Mathf.Floor(SEGMENT_COUNT * .5f);
         tourelle = tourel.GetComponent<TourelleBezier>();
         path = new Path(transform.position + Offset);
-        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-        EdgeCollider2D edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
         //lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.SetColors(c1, c2);
-        lineRenderer.SetWidth(0.07f, 0.07f);
+        //lineRenderer.SetColors(c1, c2);
+        //lineRenderer.SetWidth(0.07f, 0.07f);
         lineRenderer.SetVertexCount(SEGMENT_COUNT * path.NumSegments);
         DrawCurve();
         MeshOfTriangle(lineRenderer);
@@ -38,8 +41,8 @@ public class MapBezier : MonoBehaviour
      void DrawCurve()
     {
         List<Vector2> edges = new List<Vector2>();
-        LineRenderer lineRenderer = GetComponent<LineRenderer>();
-        EdgeCollider2D edgeCollider = GetComponent<EdgeCollider2D>();
+        //LineRenderer lineRenderer = GetComponent<LineRenderer>();
+        //EdgeCollider2D edgeCollider = GetComponent<EdgeCollider2D>();
         var PointsLineRender = new Vector3[SEGMENT_COUNT * path.NumSegments];
         for (int j = 0; j < path.NumSegments; j++)
         {
@@ -54,7 +57,7 @@ public class MapBezier : MonoBehaviour
         }
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
-        int temp, SEGMENT_COUNT_Halve = (int)Mathf.Floor(SEGMENT_COUNT * .5f);
+        int temp;
         do{
             temp = Random.Range(SEGMENT_COUNT_Halve + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Halve);
             CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
@@ -93,9 +96,9 @@ public class MapBezier : MonoBehaviour
     for (int j = 0; j < myLine.positionCount; ++j) {
         MeshVertices[2 * j] = new Vector3(myLine.GetPosition(j).x, -6, -1);
         MeshVertices[2 * j + 1] = myLine.GetPosition(j);
-        uv[2 * j] = new Vector2(j%50 *.02f, 1);
-        uv[2 * j + 1] = new Vector2(j%50*.02f, 0); 
-    }
+        uv[2 * j] = new Vector2(j%70*.0285f-1, -1);
+        uv[2 * j + 1] = new Vector2(j%70*.0285f-1, myLine.GetPosition(j).y * 0.15f); 
+    }   
  
      int numTriangles = (myLine.positionCount -1) * 2; // le premier point n'a pas de triangle et les autre n'on deux chaque.
      int[] triangles = new int[numTriangles * 3]; 
@@ -125,6 +128,9 @@ public class MapBezier : MonoBehaviour
          
         //materials[0].color = c1;
         
+    }
 
+    /**/Vector3 PositionSurMap(){
+        return lineRenderer.GetPosition(Random.Range(SEGMENT_COUNT_Halve + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Halve));
     }
 }
