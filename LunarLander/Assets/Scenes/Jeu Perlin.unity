@@ -443,6 +443,18 @@ PrefabInstance:
       propertyPath: logic
       value: 
       objectReference: {fileID: 2099974699}
+    - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
+      propertyPath: altitude
+      value: 
+      objectReference: {fileID: 1104990938}
+    - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
+      propertyPath: XVelocity
+      value: 
+      objectReference: {fileID: 756485820}
+    - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
+      propertyPath: YVelocity
+      value: 
+      objectReference: {fileID: 2043762795}
     - target: {fileID: 7723040790794527508, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
       propertyPath: m_Name
       value: Vaisseau
@@ -491,6 +503,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7723040790794527513, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d980df01159ffc045a63dc14df36b922, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
 --- !u!50 &552817921
