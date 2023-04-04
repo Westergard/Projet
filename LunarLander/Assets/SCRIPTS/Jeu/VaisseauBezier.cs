@@ -12,6 +12,7 @@ public class VaisseauBezier : MonoBehaviour
     public Text YVelocity;
     public Text Perdu;
     public Sprite newSprite;
+    public AudioSource explosion, reacteur;
 
     public LogicScriptBezier logic;
 
@@ -26,6 +27,11 @@ public class VaisseauBezier : MonoBehaviour
 
     void Update()
     {
+        if(this!=null)
+        {
+            Perdu.enabled = false;
+        }
+
         float alt = (gameObject.transform.position.y + 5) * 10;
         Vector2 velocity = myRigidBody.velocity;
         bords();
@@ -38,14 +44,14 @@ public class VaisseauBezier : MonoBehaviour
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
+                myRigidBody.AddForce(new Vector2(1f * -pushX, 1f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(0.06f * -pushX, 0.1f * pushY));
+                myRigidBody.AddForce(new Vector2(1f * -pushX, 1f * pushY));
             }
 
         }
@@ -56,13 +62,14 @@ public class VaisseauBezier : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             m_Animator.SetTrigger("Feu");
+            reacteur.Play();
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             if (myRigidBody.transform.rotation.z < 0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.2));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)1));
 
             }
         }
@@ -70,7 +77,7 @@ public class VaisseauBezier : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z > -0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.2));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-1));
             }
         }
 
@@ -115,11 +122,12 @@ public class VaisseauBezier : MonoBehaviour
 
     IEnumerator OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "tile(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
+        if (c.gameObject.name == "bezier" || c.gameObject.name == "Tourelle Bézier" || c.gameObject.name == "LaserBezier(Clone)")
         {
             spriteRenderer.sprite = newSprite;
             gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
             m_Animator.SetTrigger("Explosion");
+            explosion.Play();
             yield return new WaitForSeconds(1);
             altitude.text = "0.00";
             XVelocity.text = "0.000";
