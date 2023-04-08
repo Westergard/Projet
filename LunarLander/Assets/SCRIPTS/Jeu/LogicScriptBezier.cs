@@ -59,13 +59,16 @@ public class LogicScriptBezier : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Vector3.Distance(playerPos, targetPos) < deliveryDist && packageAllowed)
+            if (gameActive)
             {
-                sendPackage();
-            }
-            else if (bombAllowed)
-            {
-                dropBomb();
+                if (Vector3.Distance(playerPos, targetPos) < deliveryDist && packageAllowed)
+                {
+                    sendPackage();
+                }
+                else if (bombAllowed)
+                {
+                    dropBomb();
+                }
             }
         }
 

@@ -7,6 +7,7 @@ public class TourellePerlin : MonoBehaviour
     public AudioSource audioSource;
     public GameObject Vaisseau;
     public GameObject Laser;
+    public LogicScriptPerlin logic;
     Animator m_Animator;
     GameObject newLaser;
 
@@ -14,12 +15,13 @@ public class TourellePerlin : MonoBehaviour
     {
         m_Animator = gameObject.GetComponent<Animator>();
         Vaisseau = GameObject.Find("Vaisseau");
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
     }
 
     void Update()
     {
 
-        if (Vaisseau != null)
+        if (logic.gameActive && !logic.turretEliminated)
         {
             if (newLaser == null)
             {
@@ -34,6 +36,11 @@ public class TourellePerlin : MonoBehaviour
             {
                 m_Animator.SetTrigger("Gauche");
             }
+        }
+
+        if (logic.turretEliminated)
+        {
+            Destroy(gameObject);
         }
     }
 }

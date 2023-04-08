@@ -18,13 +18,15 @@ public class LogicScriptPerlin : MonoBehaviour
     public Vector3 targetPos;
     public Vector3 playerPos;
     public Vector2 playerV;
-    public Vector3[] turretPositions = new Vector3[maxNumTurrets];
+    public Vector3 turretPosition;
 
     public bool packageAllowed = true;
     public bool changeTarget = false;
     public bool bombAllowed = true;
     public bool timerIsRunning = true;
     public bool gameActive = true;
+    public bool turretEliminated = false;
+    public bool changeTurret = false;
 
     public float bombDelay = 2.0f;
 
@@ -59,12 +61,16 @@ public class LogicScriptPerlin : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(Vector3.Distance(playerPos, targetPos) < deliveryDist && packageAllowed)
+            if (gameActive)
             {
-                sendPackage();
-            }else if (bombAllowed)
-            {
-                dropBomb();
+                if(Vector3.Distance(playerPos, targetPos) < deliveryDist && packageAllowed)
+                {
+                    sendPackage();
+                }
+                else if (bombAllowed)
+                {
+                    dropBomb();
+                }
             }
         }
 
@@ -156,25 +162,23 @@ public class LogicScriptPerlin : MonoBehaviour
         score.text = playerScore.ToString();
     }
 
+    public void addTime(float timeToAdd)
+    {
+        timeRemaining += timeToAdd;
+    }
+
     public bool checkPackageTargetDist(Vector3 packagePos)
     {
-        return (Vector3.Distance(packagePos, targetPos) < ((2 * packageRadius * packageScale) + (targetRadius * targetScale)));
+        return (Vector3.Distance(packagePos, targetPos) <= (1.1 * ((packageRadius * packageScale) + (targetRadius * targetScale))));
     }
 
     public bool checkBombTurretDist(Vector3 bombPos)
     {
-        foreach(Vector3 turret in turretPositions)
-        {
-            if (Vector3.Distance(bombPos, turret) < ((4 * bombRadius * bombScale) + (turretScale * turretRadius)))
-            {
-                return true;
-            }
-        }
-        return false;
+        return (Vector3.Distance(bombPos, turretPosition) <= (1.35 * ((bombRadius * bombScale) + (turretRadius * turretScale))));
     }
 
-    public bool checkBombTargetDist(Vector3 packagePos)
+    public bool checkBombTargetDist(Vector3 bombPos)
     {
-        return (Vector3.Distance(packagePos, targetPos) < ((4 * bombRadius * bombScale) + (targetRadius * targetScale)));
+        return (Vector3.Distance(bombPos, targetPos) <= (1.35 * ((bombRadius * bombScale) + (targetRadius * targetScale))));
     }
 }

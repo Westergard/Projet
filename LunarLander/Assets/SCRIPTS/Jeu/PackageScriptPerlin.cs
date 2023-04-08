@@ -52,6 +52,7 @@ public class PackageScriptPerlin : MonoBehaviour
         {
             logic.changeTarget = true;
             logic.addScore(SCORE_FOR_TARGET);
+            logic.addTime(2);
         }
         Destroy(gameObject);
         logic.packageAllowed = true;

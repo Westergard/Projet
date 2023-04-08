@@ -8,6 +8,7 @@ public class BombScriptPerlin : MonoBehaviour
     public Rigidbody2D myRigidBody;
 
     private int SCORE_FOR_TURRET = 100;
+    private int SCORE_FOR_TARGET = 25;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +26,16 @@ public class BombScriptPerlin : MonoBehaviour
     {
         if (logic.checkBombTurretDist(transform.position))
         {
-            //kill turret
+            logic.turretEliminated = true;
+            logic.changeTurret = true;
+            logic.turretPosition = Vector3.zero;
             logic.addScore(SCORE_FOR_TURRET);
+            logic.addTime(5);
         }
         if (logic.checkBombTargetDist(transform.position))
         {
             logic.changeTarget = true;
+            logic.addScore(SCORE_FOR_TARGET);
         }
         Destroy(gameObject);
     }
