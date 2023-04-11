@@ -18,13 +18,15 @@ public class LogicScriptBezier : MonoBehaviour
     public Vector3 targetPos;
     public Vector3 playerPos;
     public Vector2 playerV;
-    public Vector3[] turretPositions = new Vector3[maxNumTurrets];
+    public Vector3 turretPosition;
 
     public bool packageAllowed = true;
     public bool changeTarget = false;
     public bool bombAllowed = true;
     public bool timerIsRunning = true;
     public bool gameActive = true;
+    public bool turretEliminated = false;
+    public bool changeTurret = false;
 
     public float bombDelay = 2.0f;
 
@@ -34,10 +36,10 @@ public class LogicScriptBezier : MonoBehaviour
 
     public int playerScore = 0;
 
-    public float deliveryDist = 20.0f;
+    public float deliveryDist = 0.2025f;
 
     public float shipRadius = 3.168f;
-    public float shipScale = 0.2810039f;
+    public float shipScale = 0.2686947f;
     public float packageRadius = 0.1f;
     public float packageScale = 0.15f;
     public float bombRadius = 4.34f;
@@ -45,7 +47,7 @@ public class LogicScriptBezier : MonoBehaviour
     public float targetRadius = 0.2f;
     public float targetScale = 1.25f;
     public float turretRadius = 1.25f;
-    public float turretScale = 0.83f;
+    public float turretScale = 0.6515145f;
 
     // Start is called before the first frame update
     void Start()
@@ -151,13 +153,18 @@ public class LogicScriptBezier : MonoBehaviour
 
     public void spawnTarget()
     {
-        Instantiate(target, new Vector3(Random.Range(40.0f, 200.0f), Random.Range(100.0f, 150.0f), playerPos.z), Quaternion.identity);
+        Instantiate(target, new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-2.0f, 2.5f), playerPos.z), Quaternion.identity);
     }
 
     public void addScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
         score.text = playerScore.ToString();
+    }
+
+    public void addTime(float timeToAdd)
+    {
+        timeRemaining += timeToAdd;
     }
 
     public bool checkPackageTargetDist(Vector3 packagePos)
@@ -167,18 +174,11 @@ public class LogicScriptBezier : MonoBehaviour
 
     public bool checkBombTurretDist(Vector3 bombPos)
     {
-        foreach (Vector3 turret in turretPositions)
-        {
-            if (Vector3.Distance(bombPos, turret) < ((4 * bombRadius * bombScale) + (turretScale * turretRadius)))
-            {
-                return true;
-            }
-        }
-        return false;
+        return (Vector3.Distance(bombPos, turretPosition) < ((4 * bombRadius * bombScale) + (turretRadius * turretScale)));
     }
 
-    public bool checkBombTargetDist(Vector3 packagePos)
+    public bool checkBombTargetDist(Vector3 bombPos)
     {
-        return (Vector3.Distance(packagePos, targetPos) < ((4 * bombRadius * bombScale) + (targetRadius * targetScale)));
+        return (Vector3.Distance(bombPos, targetPos) < ((4 * bombRadius * bombScale) + (targetRadius * targetScale)));
     }
 }
