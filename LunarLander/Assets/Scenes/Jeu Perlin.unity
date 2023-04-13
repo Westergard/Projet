@@ -1232,6 +1232,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104990936}
   m_CullTransparentMesh: 1
+--- !u!82 &1135977793 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7723040789930202833, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
+  m_PrefabInstance: {fileID: 552178547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1229433641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3753905174569294093, guid: 9902d90d8f22fc948b40fcf1c8b19e27, type: 3}
@@ -1464,6 +1469,7 @@ MonoBehaviour:
   - {fileID: 583109186}
   - {fileID: 1071233187}
   tourelle: {fileID: 8205873505621554362, guid: 118666f605856d849a77724ef67ff1b3, type: 3}
+  logic: {fileID: 0}
 --- !u!1 &1544824401 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2428413884460103915, guid: eb5a6c3d7fd44674cbe2fa8c174b3d9c, type: 3}
@@ -2779,15 +2785,14 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   playerPos: {x: 0, y: 0, z: 0}
   playerV: {x: 0, y: 0}
-  turretPositions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  turretPosition: {x: 0, y: 0, z: 0}
   packageAllowed: 1
   changeTarget: 0
   bombAllowed: 1
   timerIsRunning: 0
   gameActive: 1
+  turretEliminated: 0
+  changeTurret: 0
   bombDelay: 2
   firstTargetDelay: 1
   timeRemaining: 90
@@ -2897,7 +2902,7 @@ PrefabInstance:
     - target: {fileID: 8178061604559917774, guid: dbdf68ac7d331004fb818089e4df0204, type: 3}
       propertyPath: Vaisseau
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1135977793}
     - target: {fileID: 8178061604559917775, guid: dbdf68ac7d331004fb818089e4df0204, type: 3}
       propertyPath: m_RootOrder
       value: 6
