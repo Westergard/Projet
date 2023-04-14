@@ -3345,7 +3345,7 @@ PrefabInstance:
     - target: {fileID: 8178061604559917774, guid: dbdf68ac7d331004fb818089e4df0204, type: 3}
       propertyPath: Tourelle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1996600929461371789, guid: 118666f605856d849a77724ef67ff1b3, type: 3}
     - target: {fileID: 8178061604559917774, guid: dbdf68ac7d331004fb818089e4df0204, type: 3}
       propertyPath: Vaisseau
       value: 
