@@ -30,17 +30,11 @@ public class TourelleBezier : MonoBehaviour
             }
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
-                //m_Animator.SetTrigger("Droite");
-                transform.rotation = Quaternion.Euler(0, 180, -map.PenteTourette);
-                //transform.rotation = Quaternion.Euler(0, 180, -30);
+                transform.rotation = Quaternion.Euler(0, 180, -map.PenteTourette); // On tourne de 180 en Y donc la pente est devenue négative.
             }
             else if (Vaisseau.transform.position.x < gameObject.transform.position.x)
-            {
-                //m_Animator.SetTrigger("Gauche");
-                //map.Tourne180Degreer = 0f;
-                //map.PenteTourette *= -1;
+            {    
                 transform.rotation = Quaternion.Euler(0, 0f, map.PenteTourette);
-                //transform.rotation = Quaternion.Euler(0, 0, 30);
             }
         }
     }
