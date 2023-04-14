@@ -446,17 +446,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2099974699}
     - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
-      propertyPath: restart
-      value: 
-      objectReference: {fileID: 730395982}
-    - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
       propertyPath: altitude
       value: 
       objectReference: {fileID: 1104990938}
-    - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
-      propertyPath: backmain
-      value: 
-      objectReference: {fileID: 1928942750}
     - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
       propertyPath: XVelocity
       value: 
@@ -820,7 +812,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730395980}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.46, y: 3.46, z: 3.46}
   m_ConstrainProportionsScale: 1
@@ -938,7 +930,7 @@ Animator:
   m_GameObject: {fileID: 730395980}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cac6a79df1ae4944b849838dfd2efe81, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4a9749496228a8d4386b9a4075650c69, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2723,7 +2715,7 @@ Animator:
   m_GameObject: {fileID: 1928942748}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e14a36d399b226445abe2cbfe51cb0a1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4a9749496228a8d4386b9a4075650c69, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
