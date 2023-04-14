@@ -189,10 +189,7 @@ public class LogicScriptBezier : MonoBehaviour
         score.text = playerScore.ToString();
     }
 
-    public void addTime(float timeToAdd)
-    {
-        timeRemaining += timeToAdd;
-    }
+    public void addTime(float timeToAdd) => timeRemaining += timeToAdd;
 
     public bool checkPackageTargetDist(Vector3 packagePos)
     {
