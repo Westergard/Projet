@@ -6,27 +6,21 @@ public class MapBezier : MonoBehaviour
 {
     public Path path;
     int SEGMENT_COUNT = 10, SEGMENT_COUNT_Half;
-    LineRenderer lineRenderer;
+    LineRenderer lineRenderer; 
     EdgeCollider2D edgeCollider;
-    Vector3 Offset = new Vector2(-12, -3); // la class path commence en bas a gauche, avec se offset la. 
-    //Color c1 = Color.yellow;
-    //Color c2 = Color.red;
+    Vector3 Offset = new Vector2(-12, -3); // la class path commence en bas a gauche, avec ce offset. 
     TourelleBezier tourelle;
     public GameObject tourel;
     Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
     public float PenteTourette = 90;
-    //private SpriteRenderer m_SpriteRenderer;
 
     void Start()
     {
-        SEGMENT_COUNT_Half = (int)Mathf.Floor(SEGMENT_COUNT * .5f); // utiliser pour calculer la position de la tourelle et de la cible
+        SEGMENT_COUNT_Half = (int)Mathf.Floor(SEGMENT_COUNT * .5f); // utiliser pour trouvere une position a la tourelle et la cible
         tourelle = tourel.GetComponent<TourelleBezier>();
         path = new Path(transform.position + Offset); // retourne just une list de point pour fait la courbe de Bezier. 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
-        //lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        //lineRenderer.SetColors(c1, c2);
-        //lineRenderer.SetWidth(0.07f, 0.07f);
         lineRenderer.SetVertexCount(SEGMENT_COUNT * path.NumSegments);
         DrawCurve();
         MeshOfTriangle(lineRenderer);
@@ -34,14 +28,12 @@ public class MapBezier : MonoBehaviour
     
     void Update()
     {
-        //tourelle.transform.position = PositionTourelle;
+        
     }
     
      void DrawCurve()
     {
         List<Vector2> edges = new List<Vector2>();
-        //LineRenderer lineRenderer = GetComponent<LineRenderer>();
-        //EdgeCollider2D edgeCollider = GetComponent<EdgeCollider2D>();
         var PointsLineRender = new Vector3[SEGMENT_COUNT * path.NumSegments];
         for (int j = 0; j < path.NumSegments; j++)
         {
@@ -110,26 +102,26 @@ public class MapBezier : MonoBehaviour
      var materials  = GetComponent<Renderer>().materials;
     }
 
-    public Vector3 PositionSurMap(){
+    public Vector3 PositionSurMap(){// changer la position de la cible sur la map (pas trop proche des extrémités  de la map)
         return lineRenderer.GetPosition(Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half));
     }
 
     public void ChangerPositionTourelle(){
         int temp;
         do{     
-            temp = Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half);
-            CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
-        } while (PenteTourette > 50|| PenteTourette < -50 );
+            temp = Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half);// un point sur la map pas trop proche des extrémités
+            CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));// temp-1 et temp+1 pour avoir une pente plus précis.
+        } while (PenteTourette > 40|| PenteTourette < -40 );// pour que la tourelle ne soit pas trop sur le coter.
         PositionTourelle = lineRenderer.GetPosition(temp);
         tourelle.transform.position = PositionTourelle;
     }
 
-    void CalculePente (Vector3 Point1, Vector3 Point2){
+    void CalculePente (Vector3 Point1, Vector3 Point2){// La pente va être utilisé dans la script TourelleBezier.
         float DeltaY, DeltaX, Pent;
         DeltaX = Point1.x - Point2.x;
         DeltaY = Point1.y - Point2.y;
         Pent = DeltaY / DeltaX;
 
-        PenteTourette = Mathf.Atan(Pent) * 180 / 3.1416f;
+        PenteTourette = Mathf.Atan(Pent) * 180 / 3.1416f;//de RAD en DEG
     }
 }

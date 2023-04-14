@@ -24,9 +24,9 @@ public class Path {
         };
         for (int i = 2; i <= 6; i++)
         {
-            AddSegment(centre + Vector2.right * i * 3 + Vector2.down * Random.Range(-12,8) * .055f );
+            AddSegment(centre + Vector2.right * i * 3 + Vector2.down * Random.Range(-12,8) * .055f ); // Rajouter des segments tout au long de la map.
         }
-        AddSegment(centre + Vector2.right * 22); // un dernier point a la même hauteur que le premier point. 
+        AddSegment(centre + Vector2.right * 22); // un dernier point a la même hauteur que le premier point. ()
     }
 
     public Vector2 this[int i]
@@ -71,7 +71,7 @@ public class Path {
         points.Add(NextAnchorPoint);
     }
 
-    public Vector2[] GetPointsInSegment(int i)
+    public Vector2[] GetPointsInSegment(int i) // Retourne les quatre point demander pour faire une courbe de Béziers.
     {
         return new Vector2[] { points[i * 3], points[i * 3 + 1], points[i * 3 + 2], points[i * 3 + 3] };
     }
