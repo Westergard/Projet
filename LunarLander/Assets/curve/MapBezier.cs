@@ -35,7 +35,6 @@ public class MapBezier : MonoBehaviour
     void Update()
     {
         //tourelle.transform.position = PositionTourelle;
-        //tourelle.transform.rotation = Quaternion.Euler(0, 180, 90);
     }
     
      void DrawCurve()
@@ -57,13 +56,7 @@ public class MapBezier : MonoBehaviour
         }
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
-        int temp;
-        do{     
-            temp = Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half);
-            CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
-        } while (PenteTourette > 50|| PenteTourette < -50 );
-        PositionTourelle = lineRenderer.GetPosition(temp);
-        tourelle.transform.position = PositionTourelle;
+        ChangerPositionTourelle();
         
         
     }
@@ -82,14 +75,7 @@ public class MapBezier : MonoBehaviour
         
         return p;
     }
-    void CalculePente (Vector3 Point1, Vector3 Point2){
-        float DeltaY, DeltaX, Pent;
-        DeltaX = Point1.x - Point2.x;
-        DeltaY = Point1.y - Point2.y;
-        Pent = DeltaY / DeltaX;
-
-        PenteTourette = Mathf.Atan(Pent) * 180 / 3.1416f;
-    }
+    
     void MeshOfTriangle(LineRenderer myLine){
 
     Vector2[] uv = new Vector2[myLine.positionCount * 2];
@@ -121,20 +107,29 @@ public class MapBezier : MonoBehaviour
      mesh.uv = uv;
      mesh.triangles = triangles;
      GetComponent<MeshFilter>().mesh = mesh;
-
      var materials  = GetComponent<Renderer>().materials;
-        // foreach (var material in materials) {
-        //     Debug.Log(material);
-        // }
-         
-        //materials[0].color = c1;
-        
     }
 
     public Vector3 PositionSurMap(){
         return lineRenderer.GetPosition(Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half));
     }
+
     public void ChangerPositionTourelle(){
-        
+        int temp;
+        do{     
+            temp = Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half);
+            CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
+        } while (PenteTourette > 50|| PenteTourette < -50 );
+        PositionTourelle = lineRenderer.GetPosition(temp);
+        tourelle.transform.position = PositionTourelle;
+    }
+
+    void CalculePente (Vector3 Point1, Vector3 Point2){
+        float DeltaY, DeltaX, Pent;
+        DeltaX = Point1.x - Point2.x;
+        DeltaY = Point1.y - Point2.y;
+        Pent = DeltaY / DeltaX;
+
+        PenteTourette = Mathf.Atan(Pent) * 180 / 3.1416f;
     }
 }
