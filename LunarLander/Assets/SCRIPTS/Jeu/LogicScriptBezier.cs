@@ -13,6 +13,9 @@ public class LogicScriptBezier : MonoBehaviour
     public Rigidbody2D bomb;
     public MapBezier mapBezier;
 
+    TourelleBezier tourelle;
+    public GameObject tourel;
+
     public Text score;
     public Text time;
 
@@ -28,6 +31,8 @@ public class LogicScriptBezier : MonoBehaviour
     public bool gameActive = true;
     public bool turretEliminated = false;
     public bool changeTurret = false;
+
+    public float turretDelay;
 
     public float bombDelay = 2.0f;
 
@@ -53,6 +58,7 @@ public class LogicScriptBezier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tourelle = tourel.GetComponent<TourelleBezier>();
         timerIsRunning = true;
         gameActive = true;
     }
@@ -109,6 +115,26 @@ public class LogicScriptBezier : MonoBehaviour
                 gameActive = false;
             }
         }
+
+        if (turretEliminated)
+        {
+            tourelle.transform.position = new Vector3(0,-3,0);
+            turretEliminated = false;
+            turretDelay = 1;
+        }
+
+        if(changeTurret && !turretEliminated)
+        {
+            if(turretDelay > 0)
+            {
+                turretDelay -= Time.deltaTime;
+            }
+            else
+            {
+                mapBezier.ChangerPositionTourelle();
+                changeTurret = false;
+            }
+        }
     }
 
     //le code pour le "timer" est pris d'Internet
@@ -163,10 +189,7 @@ public class LogicScriptBezier : MonoBehaviour
         score.text = playerScore.ToString();
     }
 
-    public void addTime(float timeToAdd)
-    {
-        timeRemaining += timeToAdd;
-    }
+    public void addTime(float timeToAdd) => timeRemaining += timeToAdd;
 
     public bool checkPackageTargetDist(Vector3 packagePos)
     {
@@ -175,7 +198,7 @@ public class LogicScriptBezier : MonoBehaviour
 
     public bool checkBombTurretDist(Vector3 bombPos)
     {
-        return (Vector3.Distance(bombPos, turretPosition) < ((4 * bombRadius * bombScale) + (turretRadius * turretScale)));
+        return (Vector3.Distance(bombPos, tourelle.transform.position) < ((4 * bombRadius * bombScale) + (turretRadius * turretScale)));
     }
 
     public bool checkBombTargetDist(Vector3 bombPos)
