@@ -1273,6 +1273,7 @@ MonoBehaviour:
   package: {fileID: 6437212689423125851, guid: b29545d6398a5a54ba1106562ecff441, type: 3}
   bomb: {fileID: 5876885691671013740, guid: 39a9e5fded207d845aed9fe1b0aea772, type: 3}
   mapBezier: {fileID: 589145267}
+  tourel: {fileID: 358647707}
   score: {fileID: 1351551936}
   time: {fileID: 1464907343}
   targetPos: {x: 0, y: 0, z: 0}
