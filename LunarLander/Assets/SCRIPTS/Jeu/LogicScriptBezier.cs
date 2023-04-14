@@ -11,6 +11,7 @@ public class LogicScriptBezier : MonoBehaviour
     public GameObject turret;
     public Rigidbody2D package;
     public Rigidbody2D bomb;
+    public MapBezier mapBezier;
 
     public Text score;
     public Text time;
@@ -153,7 +154,7 @@ public class LogicScriptBezier : MonoBehaviour
 
     public void spawnTarget()
     {
-        Instantiate(target, new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-2.0f, 2.5f), playerPos.z), Quaternion.identity);
+        Instantiate(target, mapBezier.PositionSurMap()/* + Vector3.up * 0.5f*/, Quaternion.identity);
     }
 
     public void addScore(int scoreToAdd)

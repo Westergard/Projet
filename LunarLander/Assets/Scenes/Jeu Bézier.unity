@@ -1272,6 +1272,7 @@ MonoBehaviour:
   turret: {fileID: 8205873505621554362, guid: 2ccb64d87e64f6d4c8f2339713325a36, type: 3}
   package: {fileID: 6437212689423125851, guid: b29545d6398a5a54ba1106562ecff441, type: 3}
   bomb: {fileID: 5876885691671013740, guid: 39a9e5fded207d845aed9fe1b0aea772, type: 3}
+  mapBezier: {fileID: 589145267}
   score: {fileID: 1351551936}
   time: {fileID: 1464907343}
   targetPos: {x: 0, y: 0, z: 0}
@@ -1289,7 +1290,7 @@ MonoBehaviour:
   firstTargetDelay: 1
   timeRemaining: 90
   playerScore: 0
-  deliveryDist: 20
+  deliveryDist: 0.2025
   shipRadius: 3.168
   shipScale: 0.2810039
   packageRadius: 0.1
@@ -1471,11 +1472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7723040790794527510, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.59
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 7723040790794527510, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.47
+      value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 7723040790794527510, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: m_LocalPosition.z
