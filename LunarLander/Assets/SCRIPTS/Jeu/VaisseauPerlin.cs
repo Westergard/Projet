@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class VaisseauPerlin : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class VaisseauPerlin : MonoBehaviour
     public Text XVelocity;
     public Text YVelocity;
     public Text Perdu;
+    public TMPro.TMP_Button restart, backmain;
     public Sprite newSprite;
     public AudioSource explosion, reacteur;
 
