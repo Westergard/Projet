@@ -12,7 +12,7 @@ public class VaisseauPerlin : MonoBehaviour
     public Text XVelocity;
     public Text YVelocity;
     public Text Perdu;
-    public Button restart, backmain;
+    public GameObject restart, backmain;
     public Sprite newSprite;
     public AudioSource explosion, reacteur;
 
@@ -25,8 +25,8 @@ public class VaisseauPerlin : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
         m_Animator = gameObject.GetComponent<Animator>();
         Perdu.enabled = false;
-        restart.enabled = false;
-        backmain.enabled = false;
+        restart.SetActive(false);
+        backmain.SetActive(false);
     }
 
     void Update()
@@ -132,8 +132,8 @@ public class VaisseauPerlin : MonoBehaviour
             XVelocity.text = "0.000";
             YVelocity.text = "0.000";
             Perdu.enabled = true;
-            restart.enabled = true;
-            backmain.enabled = true;
+            restart.SetActive(true);
+            backmain.SetActive(true);
             Destroy(gameObject);
 
             logic.timerIsRunning = false;

@@ -9,6 +9,7 @@ using TMPro;
 public class ChangementScene : MonoBehaviour
 {
     public TMPro.TMP_Dropdown m_Dropdown;
+    public TMPro.TMP_Dropdown m_level;
     public Slider m_SliderVolumePincipale;
     public Slider m_SliderEffetSonore;
     public Slider m_SliderMusique;
@@ -50,6 +51,7 @@ public class ChangementScene : MonoBehaviour
         PlayerPrefs.SetFloat("VolumePrincipale", m_SliderVolumePincipale.value);
         PlayerPrefs.SetFloat("EffetSonore", m_SliderEffetSonore.value);
         PlayerPrefs.SetFloat("Musique", m_SliderMusique.value);
+        PlayerPrefs.SetInt("Level", m_level.value);
 
 
         SceneManager.LoadScene("MainMenu");

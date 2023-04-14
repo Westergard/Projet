@@ -15,10 +15,4 @@ public class Choix : MonoBehaviour
         m_Dropdown.value = choixScene;
 
     }
-
-
-    void Update()
-    {
-        
-    }
 }
