@@ -14,7 +14,7 @@ public class MapBezier : MonoBehaviour
     TourelleBezier tourelle;
     public GameObject tourel;
     Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
-    public float PenteTourette = 180;
+    public float PenteTourette = 90;
     //private SpriteRenderer m_SpriteRenderer;
 
     void Start()
@@ -34,7 +34,8 @@ public class MapBezier : MonoBehaviour
     
     void Update()
     {
-        tourelle.transform.position = PositionTourelle;
+        //tourelle.transform.position = PositionTourelle;
+        //tourelle.transform.rotation = Quaternion.Euler(0, 180, 90);
     }
     
      void DrawCurve()
@@ -57,11 +58,12 @@ public class MapBezier : MonoBehaviour
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
         int temp;
-        do{
+        do{     
             temp = Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half);
             CalculePente(lineRenderer.GetPosition(temp-1), lineRenderer.GetPosition(temp+1));
         } while (PenteTourette > 50|| PenteTourette < -50 );
         PositionTourelle = lineRenderer.GetPosition(temp);
+        tourelle.transform.position = PositionTourelle;
         
         
     }
@@ -129,7 +131,10 @@ public class MapBezier : MonoBehaviour
         
     }
 
-    /**/Vector3 PositionSurMap(){
+    public Vector3 PositionSurMap(){
         return lineRenderer.GetPosition(Random.Range(SEGMENT_COUNT_Half + SEGMENT_COUNT ,lineRenderer.positionCount - SEGMENT_COUNT_Half));
+    }
+    public void ChangerPositionTourelle(){
+        
     }
 }
