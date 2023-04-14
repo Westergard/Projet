@@ -31,6 +31,9 @@ public class VaisseauPerlin : MonoBehaviour
 
     void Update()
     {
+        Perdu.enabled = false;
+        restart.SetActive(false);
+        backmain.SetActive(false);
         float alt = (gameObject.transform.position.y + 5) * 10;
         Vector2 velocity = myRigidBody.velocity;
         bords();
