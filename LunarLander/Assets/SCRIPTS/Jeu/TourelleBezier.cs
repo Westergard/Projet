@@ -32,6 +32,7 @@ public class TourelleBezier : MonoBehaviour
             {
                 //m_Animator.SetTrigger("Droite");
                 transform.rotation = Quaternion.Euler(0, 180, -map.PenteTourette);
+                //transform.rotation = Quaternion.Euler(0, 180, -30);
             }
             else if (Vaisseau.transform.position.x < gameObject.transform.position.x)
             {
@@ -39,6 +40,7 @@ public class TourelleBezier : MonoBehaviour
                 //map.Tourne180Degreer = 0f;
                 //map.PenteTourette *= -1;
                 transform.rotation = Quaternion.Euler(0, 0f, map.PenteTourette);
+                //transform.rotation = Quaternion.Euler(0, 0, 30);
             }
         }
     }
