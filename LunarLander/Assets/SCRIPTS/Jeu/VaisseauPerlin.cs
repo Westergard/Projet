@@ -75,7 +75,7 @@ public class VaisseauPerlin : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z < 0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)0.8));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)1));
 
             }
         }
@@ -83,7 +83,7 @@ public class VaisseauPerlin : MonoBehaviour
         {
             if (myRigidBody.transform.rotation.z > -0.715)
             {
-                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-0.8));
+                myRigidBody.transform.Rotate(new Vector3(0, 0, (float)-1));
             }
         }
 
