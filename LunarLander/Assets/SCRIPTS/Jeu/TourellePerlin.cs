@@ -11,20 +11,54 @@ public class TourellePerlin : MonoBehaviour
     Animator m_Animator;
     GameObject newLaser;
     public AudioSource explosion;
+    private LineRenderer Line;
+    private bool vue = true;
+    EdgeCollider2D edgeCollider;
 
     void Start()
     {
+        edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+        Line = GetComponent<LineRenderer>();
         m_Animator = gameObject.GetComponent<Animator>();
         Vaisseau = GameObject.Find("Vaisseau");
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
+        //for (int i = 0; i < 100; i++)
+        //{
+            //p[i] = Instantiate(point);
+        //}
     }
 
     void Update()
     {
+        Vector2 positionTourelle = transform.position;
+        Vector2 positionVaisseau = Vaisseau.transform.position;
+        Line.SetPosition(0, new Vector2(positionTourelle.x, positionTourelle.y + 6f));
+        Line.SetPosition(1,positionVaisseau);
+
+        List<Vector2> col = new List<Vector2>();
+        col.Add(positionTourelle);
+        col.Add(positionVaisseau);
+        edgeCollider.SetPoints(col);
+        edgeCollider.isTrigger = true;
+
+
+
+
+        //float a = (positionVaisseau.y - (positionTourelle.y + 6f))/(positionVaisseau.x - positionTourelle.x);
+        //float b = (positionVaisseau.y - (a * positionVaisseau.x));
+
+        //float longueurLigne = Mathf.Sqrt(Mathf.Pow(positionVaisseau.x - positionTourelle.x, 2) + Mathf.Pow(positionVaisseau.y - (positionTourelle.y + 6f), 2));
+        //float distXEntrePoints = (positionVaisseau.x - positionTourelle.x)/100;
+
+        //for(int i = 0; i < 100; i++)
+        //{
+        // p[i].transform.position = new Vector2(positionTourelle.x + i * distXEntrePoints, (a * positionTourelle.x + (i + 1) * distXEntrePoints) + b);
+        //}
+
 
         if (logic.gameActive && !logic.turretEliminated)
         {
-            if (newLaser == null)
+            if (newLaser == null && vue)
             {
                 newLaser = Instantiate(Laser);
                 audioSource.Play();

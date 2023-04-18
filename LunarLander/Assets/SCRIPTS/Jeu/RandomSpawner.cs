@@ -36,6 +36,8 @@ public class RandomSpawner : MonoBehaviour
             Instantiate(tourelle, options[randOptions].transform.position, transform.rotation);
             logic.turretPosition = options[randOptions].transform.position;
             logic.turretEliminated = false;
+            
+            
 
             /*
             for (int i = 0; i < options.Length; i++)
