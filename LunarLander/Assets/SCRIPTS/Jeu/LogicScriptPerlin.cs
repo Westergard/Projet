@@ -27,12 +27,16 @@ public class LogicScriptPerlin : MonoBehaviour
     public bool gameActive = true;
     public bool turretEliminated = false;
     public bool changeTurret = false;
+    public bool checkStats = true;
+    public bool scoreHigher = false;
+    public bool timeHigher = false;
 
     public float bombDelay = 2.0f;
 
     public float firstTargetDelay = 1.0f;
 
     public float timeRemaining = 90.0f;
+    public float timePlayed = 0;
 
     public int playerScore = 0;
 
@@ -48,6 +52,8 @@ public class LogicScriptPerlin : MonoBehaviour
     public float targetScale = 10.5f;
     public float turretRadius = 1.25f;
     public float turretScale = 6.15f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -108,6 +114,52 @@ public class LogicScriptPerlin : MonoBehaviour
                 gameActive = false;
             }
         }
+
+        if (gameActive)
+        {
+            timePlayed += Time.deltaTime;
+        }
+
+        if(checkStats && !gameActive)
+        {
+            checkStats = false;
+
+            if(PlayerPrefs.HasKey("high score"))
+            {
+                if(playerScore > PlayerPrefs.GetInt("high score"))
+                {
+                    PlayerPrefs.SetInt("high score", playerScore);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt("high score", playerScore);
+            }
+
+            if(PlayerPrefs.HasKey("high time"))
+            {
+                if(timePlayed > PlayerPrefs.GetFloat("high time"))
+                {
+                    PlayerPrefs.SetFloat("high time", timePlayed);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("high time", timePlayed);
+            }
+        }
+
+        if(!scoreHigher && playerScore > PlayerPrefs.GetInt("high score"))
+        {
+            score.color = Color.yellow;
+            scoreHigher = true;
+        }
+
+        if (!timeHigher && timePlayed > PlayerPrefs.GetFloat("high time"))
+        {
+            time.color = Color.yellow;
+            timeHigher = false;
+        }
     }
 
     //le code pour le "timer" est pris d'Internet
@@ -125,7 +177,7 @@ public class LogicScriptPerlin : MonoBehaviour
     {
         packageAllowed = false;
 
-        float time = 1.5f;
+        float time = 1 * PlayerPrefs.GetInt("level");
         float acceleration = -0.101547565f;
         float v_x = ((targetPos.x - playerPos.x) / time);
         float v_y = ((targetPos.y - (playerPos.y + (0.5f * time * time * acceleration))) / time);

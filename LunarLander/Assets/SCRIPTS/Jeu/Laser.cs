@@ -40,7 +40,8 @@ public class Laser : MonoBehaviour
 
     void Update()
     {
-        
+        var line = gameObject.AddComponent<LineRenderer>();
+
     }
 
     void OnCollisionEnter2D(Collision2D c)
