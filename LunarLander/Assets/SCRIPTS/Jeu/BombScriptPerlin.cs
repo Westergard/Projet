@@ -57,4 +57,6 @@ public class BombScriptPerlin : MonoBehaviour
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
         }
     }
+
+
 }

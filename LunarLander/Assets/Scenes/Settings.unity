@@ -1120,7 +1120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5516668, y: 0.5}
-  m_AnchoredPosition: {x: -11.6, y: -49}
+  m_AnchoredPosition: {x: -49.6, y: -49}
   m_SizeDelta: {x: -21.4035, y: 35.694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371703197
@@ -1760,7 +1760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.707672, y: 63.49939}
+  m_AnchoredPosition: {x: 8.0002, y: 47}
   m_SizeDelta: {x: 507.9852, y: 56.5037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534431603
@@ -1796,7 +1796,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Choix de niveaux : \n"
+  m_Text: 'Level selector :
+
+
+'
 --- !u!222 &534431604
 CanvasRenderer:
   m_ObjectHideFlags: 0
