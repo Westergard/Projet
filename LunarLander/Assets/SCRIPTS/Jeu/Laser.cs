@@ -7,9 +7,11 @@ public class Laser : MonoBehaviour
     private GameObject Vaisseau;
     private GameObject Tourelle;
     public Rigidbody2D myRigidBody;
+    private LineRenderer Line;
 
     void Start()
     {
+        Line = GetComponent<LineRenderer>();
         Vaisseau = GameObject.Find("Vaisseau");
         Tourelle = GameObject.Find("Tourelle Perlin 1(Clone)");
 
@@ -36,11 +38,16 @@ public class Laser : MonoBehaviour
             Yvelocity = (1.5f) * (((-0.01f) * Mathf.Pow(2, 3) + 2 * Yposition) / (4));
         }
         myRigidBody.velocity = new Vector2(Xvelocity, Yvelocity);
+        transform.rotation = Quaternion.Euler(0f, 0f, CalculePente(myRigidBody.position, positionVaisseau));
+        //transform.rotation = Quaternion.Euler(0, 0f, temp);
     }
 
     void Update()
     {
-        var line = gameObject.AddComponent<LineRenderer>();
+        Vector2 positionTourelle = Tourelle.transform.position;
+        Vector2 positionVaisseau = Vaisseau.transform.position;
+        Line.SetPosition(0, new Vector2(positionTourelle.x, positionTourelle.y + 5f));
+        Line.SetPosition(1, positionVaisseau);
 
     }
 
@@ -55,5 +62,15 @@ public class Laser : MonoBehaviour
     public void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    float CalculePente(Vector2 Point1, Vector2 Point2)
+    {
+        float DeltaY, DeltaX, Pent;
+        DeltaX = Point1.x - Point2.x;
+        DeltaY = Point1.y - Point2.y;
+        Pent = DeltaY / DeltaX;
+
+        return (Mathf.Atan(Pent) * 180 / 3.1416f)+90;//de RAD en DEG
     }
 }
