@@ -11,6 +11,7 @@ public class VaisseauBezier : MonoBehaviour
     public Text XVelocity;
     public Text YVelocity;
     public Text Perdu;
+    public GameObject restart, backmain;
     public Sprite newSprite;
     public AudioSource explosion, reacteur;
 
@@ -31,6 +32,8 @@ public class VaisseauBezier : MonoBehaviour
         {
             Perdu.enabled = false;
         }
+        restart.SetActive(false);
+        backmain.SetActive(false);
 
         float alt = (gameObject.transform.position.y + 5) * 10;
         Vector2 velocity = myRigidBody.velocity;
@@ -133,6 +136,8 @@ public class VaisseauBezier : MonoBehaviour
             XVelocity.text = "0.000";
             YVelocity.text = "0.000";
             Perdu.enabled = true;
+            restart.SetActive(true);
+            backmain.SetActive(true);
             Destroy(gameObject);
 
             logic.timerIsRunning = false;
