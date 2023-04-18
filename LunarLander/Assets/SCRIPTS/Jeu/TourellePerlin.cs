@@ -49,7 +49,7 @@ public class TourellePerlin : MonoBehaviour
     {
         if (c.gameObject.name == "Caca")
         {
-            spriteRenderer.sprite = newSprite;
+            //spriteRenderer.sprite = newSprite;
             //gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
             m_Animator.SetTrigger("Explosion");
             explosion.Play();
