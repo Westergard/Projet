@@ -14,6 +14,8 @@ public class MapBezier : MonoBehaviour
     Vector3 PositionTourelle = new Vector3(1.0f, 1.0f, 1.0f);
     public float PenteTourette = 90;
 
+    public float delaiTourelle = 1;
+
     void Start()
     {
         SEGMENT_COUNT_Half = (int)Mathf.Floor(SEGMENT_COUNT * .5f); // utiliser pour trouvere une position a la tourelle et la cible
@@ -24,11 +26,21 @@ public class MapBezier : MonoBehaviour
         lineRenderer.SetVertexCount(SEGMENT_COUNT * path.NumSegments);
         DrawCurve();
         MeshOfTriangle(lineRenderer);
+
+        tourelle.transform.position = new Vector3(0, -5, 0);
     }
     
     void Update()
     {
-        
+        if(delaiTourelle > 0)
+        {
+            delaiTourelle -= Time.deltaTime;
+        }
+        else if (delaiTourelle < 0)
+        {
+            delaiTourelle = 0;
+            ChangerPositionTourelle();
+        }
     }
     
      void DrawCurve()
@@ -48,7 +60,7 @@ public class MapBezier : MonoBehaviour
         }
         lineRenderer.SetPositions(PointsLineRender);
         edgeCollider.SetPoints(edges);
-        ChangerPositionTourelle();
+        //ChangerPositionTourelle();
         
         
     }

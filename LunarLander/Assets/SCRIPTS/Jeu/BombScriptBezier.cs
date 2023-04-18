@@ -40,20 +40,20 @@ public class BombScriptBezier : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void bords()
+    public void bords()
     {
 
-        if (gameObject.transform.position.x >= 210)
+        if (gameObject.transform.position.x >= 9.2)
         {
-            gameObject.transform.position = new Vector2(29.5f, transform.position.y);
+            gameObject.transform.position = new Vector2(-9.1f, transform.position.y);
         }
-        else if (gameObject.transform.position.x <= 29.5)
+        else if (gameObject.transform.position.x <= -9.2)
         {
-            gameObject.transform.position = new Vector2(210, transform.position.y);
+            gameObject.transform.position = new Vector2(9.1f, transform.position.y);
         }
-        else if (gameObject.transform.position.y >= 158.5)
+        else if (gameObject.transform.position.y >= 5)
         {
-            gameObject.transform.position = new Vector2(transform.position.x, 158.5f);
+            gameObject.transform.position = new Vector2(transform.position.x, 5);
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
         }
     }

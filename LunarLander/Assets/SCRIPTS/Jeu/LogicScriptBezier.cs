@@ -42,7 +42,7 @@ public class LogicScriptBezier : MonoBehaviour
 
     public int playerScore = 0;
 
-    public float deliveryDist = 0.2025f;
+    public float deliveryDist = 2;
 
     public float shipRadius = 3.168f;
     public float shipScale = 0.2686947f;
@@ -61,6 +61,8 @@ public class LogicScriptBezier : MonoBehaviour
         tourelle = tourel.GetComponent<TourelleBezier>();
         timerIsRunning = true;
         gameActive = true;
+
+        deliveryDist = 2.5f;
     }
 
     // Update is called once per frame
@@ -118,7 +120,7 @@ public class LogicScriptBezier : MonoBehaviour
 
         if (turretEliminated)
         {
-            tourelle.transform.position = new Vector3(0,-3,0);
+            tourelle.transform.position = new Vector3(0,-5,0);
             turretEliminated = false;
             turretDelay = 1;
         }
