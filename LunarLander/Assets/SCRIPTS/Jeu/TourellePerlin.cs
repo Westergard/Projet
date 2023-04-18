@@ -10,6 +10,7 @@ public class TourellePerlin : MonoBehaviour
     public LogicScriptPerlin logic;
     Animator m_Animator;
     GameObject newLaser;
+    public AudioSource explosion;
 
     void Start()
     {
@@ -41,6 +42,18 @@ public class TourellePerlin : MonoBehaviour
         if (logic.turretEliminated)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.gameObject.name == "Caca")
+        {
+            //spriteRenderer.sprite = newSprite;
+            //gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
+            m_Animator.SetTrigger("Explosion");
+            explosion.Play();
+            //yield return new WaitForSeconds(1);
         }
     }
 }

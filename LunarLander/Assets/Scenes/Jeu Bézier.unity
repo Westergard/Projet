@@ -537,6 +537,7 @@ MonoBehaviour:
     points: []
   tourel: {fileID: 358647707}
   PenteTourette: 180
+  delaiTourelle: 1
 --- !u!33 &589145268
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1296,7 +1297,7 @@ MonoBehaviour:
   firstTargetDelay: 1
   timeRemaining: 90
   playerScore: 0
-  deliveryDist: 0.2025
+  deliveryDist: 2
   shipRadius: 3.168
   shipScale: 0.2810039
   packageRadius: 0.1
