@@ -51,7 +51,7 @@ public class ChangementScene : MonoBehaviour
         PlayerPrefs.SetFloat("VolumePrincipale", m_SliderVolumePincipale.value);
         PlayerPrefs.SetFloat("EffetSonore", m_SliderEffetSonore.value);
         PlayerPrefs.SetFloat("Musique", m_SliderMusique.value);
-        PlayerPrefs.SetInt("Level", m_level.value);
+        PlayerPrefs.SetInt("Level", m_level.value+1);
 
 
         SceneManager.LoadScene("MainMenu");
