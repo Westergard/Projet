@@ -439,7 +439,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7723040789930202790, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
       propertyPath: Perdu
@@ -3299,9 +3299,13 @@ MonoBehaviour:
   gameActive: 1
   turretEliminated: 0
   changeTurret: 0
+  checkStats: 1
+  scoreHigher: 0
+  timeHigher: 0
   bombDelay: 2
   firstTargetDelay: 1
   timeRemaining: 90
+  timePlayed: 0
   playerScore: 0
   deliveryDist: 20
   shipRadius: 3.168

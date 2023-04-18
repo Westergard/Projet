@@ -22,10 +22,6 @@ public class TourellePerlin : MonoBehaviour
         m_Animator = gameObject.GetComponent<Animator>();
         Vaisseau = GameObject.Find("Vaisseau");
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
-        //for (int i = 0; i < 100; i++)
-        //{
-            //p[i] = Instantiate(point);
-        //}
     }
 
     void Update()
@@ -40,8 +36,6 @@ public class TourellePerlin : MonoBehaviour
         col.Add(positionVaisseau);
         edgeCollider.SetPoints(col);
         edgeCollider.isTrigger = true;
-
-
 
 
         //float a = (positionVaisseau.y - (positionTourelle.y + 6f))/(positionVaisseau.x - positionTourelle.x);
