@@ -1158,6 +1158,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Game Over
       objectReference: {fileID: 0}
+    - target: {fileID: 4915739614037291283, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
 --- !u!1 &1351551934
