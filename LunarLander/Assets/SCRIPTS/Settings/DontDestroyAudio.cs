@@ -13,7 +13,7 @@ public class DontDestroyAudio : MonoBehaviour
         audio.volume = PlayerPrefs.GetFloat("BGM");
 
         string currentScene = SceneManager.GetActiveScene().name;
-        if (currentScene == "Jeu Perlin")
+        if (currentScene == "Jeu Perlin" || currentScene == "Jeu Bézier")
         {
             Destroy(this.gameObject);
             return;
