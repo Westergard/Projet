@@ -7,11 +7,9 @@ public class Laser : MonoBehaviour
     private GameObject Vaisseau;
     private GameObject Tourelle;
     public Rigidbody2D myRigidBody;
-    private LineRenderer Line;
 
     void Start()
     {
-        Line = GetComponent<LineRenderer>();
         Vaisseau = GameObject.Find("Vaisseau");
         Tourelle = GameObject.Find("Tourelle Perlin 1(Clone)");
 
@@ -40,15 +38,6 @@ public class Laser : MonoBehaviour
         myRigidBody.velocity = new Vector2(Xvelocity, Yvelocity);
         transform.rotation = Quaternion.Euler(0f, 0f, CalculePente(myRigidBody.position, positionVaisseau));
         //transform.rotation = Quaternion.Euler(0, 0f, temp);
-    }
-
-    void Update()
-    {
-        Vector2 positionTourelle = Tourelle.transform.position;
-        Vector2 positionVaisseau = Vaisseau.transform.position;
-        Line.SetPosition(0, new Vector2(positionTourelle.x, positionTourelle.y + 5f));
-        Line.SetPosition(1, positionVaisseau);
-
     }
 
     void OnCollisionEnter2D(Collision2D c)
