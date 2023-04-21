@@ -174,7 +174,6 @@ MonoBehaviour:
   Laser: {fileID: 2046729471075100678, guid: 34269e7972aa8ec4697d620e7b05c169, type: 3}
   logic: {fileID: 0}
   explosion: {fileID: 0}
-  point: {fileID: 8261313891589304707, guid: 63efba1b55933e74aa7d901fa1e1e3b9, type: 3}
 --- !u!82 &1996600929461371789
 AudioSource:
   m_ObjectHideFlags: 0
@@ -187,7 +186,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ff9ebfb8b5788d34e836cd04c00ce31a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0

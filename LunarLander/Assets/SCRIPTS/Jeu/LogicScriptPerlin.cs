@@ -7,6 +7,7 @@ public class LogicScriptPerlin : MonoBehaviour
 {
     private static int maxNumTurrets = 3;
 
+    public GameObject[] options;
     public GameObject target;
     public GameObject turret;
     public Rigidbody2D package;
@@ -19,6 +20,7 @@ public class LogicScriptPerlin : MonoBehaviour
     public Vector3 playerPos;
     public Vector2 playerV;
     public Vector3 turretPosition;
+    public Vector3 ciblePosition;
 
     public bool packageAllowed = true;
     public bool changeTarget = false;
@@ -26,10 +28,13 @@ public class LogicScriptPerlin : MonoBehaviour
     public bool timerIsRunning = true;
     public bool gameActive = true;
     public bool turretEliminated = false;
+    public bool cibleEliminated = false;
     public bool changeTurret = false;
+    public bool changeCible = false;
     public bool checkStats = true;
     public bool scoreHigher = false;
     public bool timeHigher = false;
+    public bool spawnCible = false;
 
     public float bombDelay = 2.0f;
 
@@ -211,7 +216,40 @@ public class LogicScriptPerlin : MonoBehaviour
 
     public void spawnTarget()
     {
-        Instantiate(target, new Vector3(Random.Range(40.0f, 200.0f), Random.Range(100.0f, 150.0f), playerPos.z), Quaternion.identity);
+        if (firstTargetDelay > 0)
+        {
+            firstTargetDelay -= Time.deltaTime;
+        }
+        else if (spawnCible)
+        {
+            spawnCible = false;
+
+            int randOptions = Random.Range(0, options.Length);
+
+            Instantiate(target, options[randOptions].transform.position, transform.rotation);
+            ciblePosition = options[randOptions].transform.position;
+            cibleEliminated = false;
+
+            /*
+            for (int i = 0; i < options.Length; i++)
+            {
+                Destroy(options[i]);
+            }
+            */
+        }
+
+        if (firstTargetDelay <= 0)
+        {
+            foreach (GameObject a in options)
+            {
+                a.GetComponent<BoxCollider2D>().enabled = false;
+                a.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+        }
+        if (cibleEliminated)
+        {
+            spawnTarget();
+        }
     }
 
     public void addScore(int scoreToAdd)

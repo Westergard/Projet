@@ -1699,7 +1699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.7729, y: -0.000057224}
+  m_AnchoredPosition: {x: 244.77344, y: -0.000057224}
   m_SizeDelta: {x: 136.9019, y: 71.258}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489691596
@@ -1823,6 +1823,7 @@ GameObject:
   - component: {fileID: 1698207445}
   - component: {fileID: 1698207447}
   - component: {fileID: 1698207446}
+  - component: {fileID: 1698207448}
   m_Layer: 5
   m_Name: HighScore
   m_TagString: Untagged
@@ -1893,6 +1894,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698207444}
   m_CullTransparentMesh: 1
+--- !u!95 &1698207448
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698207444}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a839166380f11d4098cd25a2d52f7e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1799760489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2053,7 @@ GameObject:
   - component: {fileID: 2068047804}
   - component: {fileID: 2068047806}
   - component: {fileID: 2068047805}
+  - component: {fileID: 2068047807}
   m_Layer: 5
   m_Name: Longest game
   m_TagString: Untagged
@@ -2102,6 +2124,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068047803}
   m_CullTransparentMesh: 1
+--- !u!95 &2068047807
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068047803}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b11cc6f2f9c31c845a015560304f50f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2094135396
 GameObject:
   m_ObjectHideFlags: 0
