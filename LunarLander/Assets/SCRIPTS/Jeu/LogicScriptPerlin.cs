@@ -177,7 +177,13 @@ public class LogicScriptPerlin : MonoBehaviour
     {
         packageAllowed = false;
 
-        float time = 1 * PlayerPrefs.GetInt("level");
+        float time = 1;
+
+        if (PlayerPrefs.HasKey("level"))
+        {
+            time *= PlayerPrefs.GetInt("level");
+        }
+        
         float acceleration = -0.101547565f;
         float v_x = ((targetPos.x - playerPos.x) / time);
         float v_y = ((targetPos.y - (playerPos.y + (0.5f * time * time * acceleration))) / time);
