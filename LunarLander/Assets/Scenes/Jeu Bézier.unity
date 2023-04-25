@@ -1064,6 +1064,7 @@ MonoBehaviour:
   m_SliderVolumePincipale: {fileID: 0}
   m_SliderEffetSonore: {fileID: 0}
   m_SliderMusique: {fileID: 0}
+  t: {fileID: 0}
 --- !u!1 &756485818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,10 +1632,14 @@ MonoBehaviour:
   gameActive: 1
   turretEliminated: 0
   changeTurret: 0
+  checkStats: 1
+  scoreHigher: 0
+  timeHigher: 0
   turretDelay: 0
   bombDelay: 2
   firstTargetDelay: 1
   timeRemaining: 90
+  timePlayed: 0
   playerScore: 0
   deliveryDist: 2
   shipRadius: 3.168
@@ -1981,11 +1986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7723040790794527510, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.23
+      value: -6.01
       objectReference: {fileID: 0}
     - target: {fileID: 7723040790794527510, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.67
+      value: 1.53
       objectReference: {fileID: 0}
     - target: {fileID: 7723040790794527510, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2022,6 +2027,10 @@ PrefabInstance:
     - target: {fileID: 7723040790794527510, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723040790794527511, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
