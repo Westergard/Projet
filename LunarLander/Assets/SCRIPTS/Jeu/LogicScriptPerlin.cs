@@ -36,7 +36,7 @@ public class LogicScriptPerlin : MonoBehaviour
     public bool timeHigher = false;
     public bool spawnCible = false;
 
-    public float bombDelay = 2.0f;
+    public float bombDelay = 1.5f;
 
     public float firstTargetDelay = 1.0f;
 
@@ -65,6 +65,11 @@ public class LogicScriptPerlin : MonoBehaviour
     {
         timerIsRunning = true;
         gameActive = true;
+
+        if (PlayerPrefs.HasKey("Level"))
+        {
+            bombDelay *= PlayerPrefs.GetInt("Level");
+        }
     }
 
     // Update is called once per frame
@@ -184,9 +189,9 @@ public class LogicScriptPerlin : MonoBehaviour
 
         float time = 1;
 
-        if (PlayerPrefs.HasKey("level"))
+        if (PlayerPrefs.HasKey("Level"))
         {
-            time *= PlayerPrefs.GetInt("level");
+            time *= PlayerPrefs.GetInt("Level");
         }
         
         float acceleration = -0.101547565f;
