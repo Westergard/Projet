@@ -8,7 +8,6 @@ public class Choix : MonoBehaviour
 {
     public TMPro.TMP_Dropdown m_Dropdown;
     public TMPro.TMP_Dropdown m_Level;
-    public Toggle t;
 
     void Start()
     {
