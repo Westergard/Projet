@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2046729471075100681}
   - component: {fileID: 2046729471075100679}
   - component: {fileID: 2046729471075100683}
-  - component: {fileID: -3682228701259271654}
+  - component: {fileID: -8411123060575595887}
   m_Layer: 0
   m_Name: LaserBezier 4
   m_TagString: Untagged
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3682228701259271654
+--- !u!114 &-8411123060575595887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2046729471075100678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea7b739c3fed9e4e858e19d1a37caeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fd30c2e0c40af74d94d16cf6f99bac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRigidBody: {fileID: 2046729471075100679}

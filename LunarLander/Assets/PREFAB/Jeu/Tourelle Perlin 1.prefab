@@ -172,7 +172,7 @@ MonoBehaviour:
   Vaisseau: {fileID: 7723040790794527508, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
   Laser: {fileID: 2046729471075100678, guid: 34269e7972aa8ec4697d620e7b05c169, type: 3}
   logic: {fileID: 0}
-  explosion: {fileID: 0}
+  explosion: {fileID: 1996600929461371789}
 --- !u!82 &1996600929461371789
 AudioSource:
   m_ObjectHideFlags: 0
