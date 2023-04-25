@@ -57,6 +57,11 @@ public class ChangementScene : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ClickSecretButton()
+    {
+        
+    }
+
     public void QuitGame()
     {
 #if UNITY_EDITOR
