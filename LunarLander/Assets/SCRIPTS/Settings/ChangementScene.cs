@@ -15,13 +15,15 @@ public class ChangementScene : MonoBehaviour
     public Slider m_SliderEffetSonore;
     public Slider m_SliderMusique;
     public Toggle t;
+    public Toggle SecretToggle;
+    public Text MessageSecret;
 
     TMPro.TMP_Dropdown m_levelSecret1;
 
     void Start()
     {
-        m_levelSecret1 = Instanciate(m_levelSecret);
-        m_levelSecret.gameObject.SetActive(false);
+        SecretToggle.gameObject.SetActive(false);
+        MessageSecret.gameObject.SetActive(false);
     }
 
     void Update()
@@ -70,8 +72,16 @@ public class ChangementScene : MonoBehaviour
 
     public void ClickSecretButton()
     {
-        m_level.gameObject.SetActive(false);
-        m_levelSecret.gameObject.SetActive(true);
+        SecretToggle.gameObject.SetActive(true);
+        MessageSecret.gameObject.SetActive(true);
+        IEnumerator CoUpdate()
+        {
+            MessageSecret.gameObject.SetActive(false);
+
+            // Very important, this tells Unity to move onto next frame. Everything crashes without this
+            yield return null;
+        }
+        
     }
 
     public void QuitGame()
