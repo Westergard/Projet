@@ -13,6 +13,7 @@ public class ChangementScene : MonoBehaviour
     public Slider m_SliderVolumePincipale;
     public Slider m_SliderEffetSonore;
     public Slider m_SliderMusique;
+    public Toggle t;
 
     void Start()
     {
@@ -53,6 +54,11 @@ public class ChangementScene : MonoBehaviour
         PlayerPrefs.SetFloat("Musique", m_SliderMusique.value);
         PlayerPrefs.SetInt("Level", m_level.value+1);
 
+        if(t.isOn)
+        {
+            PlayerPrefs.SetInt("high score", 0);
+            PlayerPrefs.SetFloat("high time", 0);
+        }
 
         SceneManager.LoadScene("MainMenu");
     }
