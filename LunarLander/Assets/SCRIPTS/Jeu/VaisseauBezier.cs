@@ -47,14 +47,14 @@ public class VaisseauBezier : MonoBehaviour
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(25f * -pushX, 70f * pushY));
+                myRigidBody.AddForce(new Vector2(18 * -pushX, 50 * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(25f * -pushX, 70f * pushY));
+                myRigidBody.AddForce(new Vector2(18 * -pushX, 50 * pushY));
             }
 
         }
@@ -108,17 +108,17 @@ public class VaisseauBezier : MonoBehaviour
     public void bords()
     {
 
-        if (gameObject.transform.position.x >= 9.2)
+        if (gameObject.transform.position.x >= 10)
         {
-            gameObject.transform.position = new Vector2(-9.1f, transform.position.y);
+            gameObject.transform.position = new Vector2(-10f, transform.position.y);
         }
-        else if (gameObject.transform.position.x <= -9.2)
+        else if (gameObject.transform.position.x <= -10)
         {
-            gameObject.transform.position = new Vector2(9.1f, transform.position.y);
+            gameObject.transform.position = new Vector2(10f, transform.position.y);
         }
-        else if (gameObject.transform.position.y >= 5)
+        else if (gameObject.transform.position.y >= 5.5f)
         {
-            gameObject.transform.position = new Vector2(transform.position.x, 5);
+            gameObject.transform.position = new Vector2(transform.position.x, 5.5f);
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
         }
     }
@@ -127,6 +127,7 @@ public class VaisseauBezier : MonoBehaviour
     {
         if (c.gameObject.name == "bezier" || c.gameObject.name == "Tourelle Bézier" || c.gameObject.name == "LaserBezier(Clone)")
         {
+            Destroy(myRigidBody);
             spriteRenderer.sprite = newSprite;
             gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
             m_Animator.SetTrigger("Explosion");
