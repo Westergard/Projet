@@ -6,10 +6,13 @@ public class RandomSpawner : MonoBehaviour
 {
     public GameObject[] options;
     public GameObject tourelle;
+    public GameObject tourelle2;
+    public GameObject tourelle3;
+    public GameObject tourell4;
 
     public LogicScriptPerlin logic;
 
-    float temps = 1.5f;
+    float temps = 1;
 
     bool spawnTurret = true;
 
@@ -36,8 +39,6 @@ public class RandomSpawner : MonoBehaviour
             Instantiate(tourelle, options[randOptions].transform.position, transform.rotation);
             logic.turretPosition = options[randOptions].transform.position;
             logic.turretEliminated = false;
-            
-            
 
             /*
             for (int i = 0; i < options.Length; i++)

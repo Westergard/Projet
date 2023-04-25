@@ -21,11 +21,9 @@ public class TourellePerlin : MonoBehaviour
 
     void Update()
     {
-        int vue = PlayerPrefs.GetInt("Vue");
-
         if (logic.gameActive && !logic.turretEliminated)
         {
-            if (newLaser == null && vue == 0)
+            if (newLaser == null)
             {
                 newLaser = Instantiate(Laser);
                 audioSource.Play();
