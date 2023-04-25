@@ -169,5 +169,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   Vaisseau: {fileID: 0}
-  Laser: {fileID: 2046729471075100678, guid: 34269e7972aa8ec4697d620e7b05c169, type: 3}
+  Laser: {fileID: 2046729471075100678, guid: 3fd94428af0f9d64a9a0853f1cea3502, type: 3}
   bezier: {fileID: 0}

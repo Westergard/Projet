@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2046729471075100682}
   - component: {fileID: 2046729471075100681}
-  - component: {fileID: 2046729471075100680}
   - component: {fileID: 2046729471075100679}
   - component: {fileID: 2046729471075100683}
   - component: {fileID: -7937272639963224173}
+  - component: {fileID: -1034061338669393018}
   m_Layer: 0
   m_Name: Laser 3
   m_TagString: Untagged
@@ -52,19 +52,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00535088, y: -0.0031270892}
   m_Size: {x: 0.28397712, y: 1.1127591}
   m_Direction: 0
---- !u!114 &2046729471075100680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046729471075100678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145a64d693b9e4240be035fd180ee72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidBody: {fileID: 2046729471075100679}
 --- !u!50 &2046729471075100679
 Rigidbody2D:
   serializedVersion: 4
@@ -237,3 +224,15 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &-1034061338669393018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046729471075100678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0917da96e3e029478748bd2fe6be4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

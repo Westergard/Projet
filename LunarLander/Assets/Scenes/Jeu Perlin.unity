@@ -3282,6 +3282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f4be14b794fff4abafabe11070b720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  options: []
   target: {fileID: 2384664981512992377, guid: fe838e625cf5c0145acb9fd5ba8ca61f, type: 3}
   turret: {fileID: 8205873505621554362, guid: 118666f605856d849a77724ef67ff1b3, type: 3}
   package: {fileID: 6437212689423125851, guid: 32ba17a07960a8b478cb712241abf131, type: 3}
@@ -3305,6 +3306,7 @@ MonoBehaviour:
   checkStats: 1
   scoreHigher: 0
   timeHigher: 0
+  spawnCible: 0
   bombDelay: 2
   firstTargetDelay: 1
   timeRemaining: 90
