@@ -59,13 +59,19 @@ public class ChangementScene : MonoBehaviour
         PlayerPrefs.SetFloat("VolumePrincipale", m_SliderVolumePincipale.value);
         PlayerPrefs.SetFloat("EffetSonore", m_SliderEffetSonore.value);
         PlayerPrefs.SetFloat("Musique", m_SliderMusique.value);
-        PlayerPrefs.SetInt("Level", m_level.value+1);
-
-       /* if(t.isOn)
+        
+        if(t.isOn)
         {
             PlayerPrefs.SetInt("high score", 0);
             PlayerPrefs.SetFloat("high time", 0);
-        } */
+        }
+        if (t.isOn)
+        {
+            PlayerPrefs.SetInt("Level", 4);
+        }else
+        {
+            PlayerPrefs.SetInt("Level", m_level.value + 1);
+        }
 
         SceneManager.LoadScene("MainMenu");
     }
@@ -78,7 +84,6 @@ public class ChangementScene : MonoBehaviour
         {
             MessageSecret.gameObject.SetActive(false);
 
-            // Very important, this tells Unity to move onto next frame. Everything crashes without this
             yield return null;
         }
         
