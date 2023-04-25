@@ -18,12 +18,6 @@ public class ChangementScene : MonoBehaviour
 
     TMPro.TMP_Dropdown m_levelSecret1;
 
-    void Start()
-    {
-        m_levelSecret1 = Instanciate(m_levelSecret);
-        m_levelSecret.gameObject.SetActive(false);
-    }
-
     void Update()
     {
     }
