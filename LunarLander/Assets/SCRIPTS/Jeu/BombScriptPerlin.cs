@@ -7,7 +7,7 @@ public class BombScriptPerlin : MonoBehaviour
     public LogicScriptPerlin logic;
     public Rigidbody2D myRigidBody;
 
-    private int SCORE_FOR_TURRET = 100;
+    private int SCORE_FOR_TURRET = 75;
     private int SCORE_FOR_TARGET = 25;
 
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class BombScriptPerlin : MonoBehaviour
             logic.changeTurret = true;
             logic.turretPosition = Vector3.zero;
             logic.addScore(SCORE_FOR_TURRET);
-            logic.addTime(5);
+            logic.addTime(2);
         }
         if (logic.checkBombTargetDist(transform.position))
         {

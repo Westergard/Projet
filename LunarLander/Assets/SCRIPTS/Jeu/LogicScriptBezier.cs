@@ -46,7 +46,7 @@ public class LogicScriptBezier : MonoBehaviour
 
     public int playerScore = 0;
 
-    public float deliveryDist = 2;
+    public float deliveryDist = 3.5f;
 
     public float shipRadius = 3.168f;
     public float shipScale = 0.2686947f;
@@ -66,7 +66,7 @@ public class LogicScriptBezier : MonoBehaviour
         timerIsRunning = true;
         gameActive = true;
 
-        deliveryDist = 2.5f;
+        deliveryDist = 3.0f;
 
         if (PlayerPrefs.HasKey("Level"))
         {

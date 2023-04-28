@@ -65,10 +65,11 @@ public class ChangementScene : MonoBehaviour
             PlayerPrefs.SetInt("high score", 0);
             PlayerPrefs.SetFloat("high time", 0);
         }
-        if (t.isOn)
+        if (SecretToggle.isOn)
         {
             PlayerPrefs.SetInt("Level", 4);
-        }else
+        }
+        if(!SecretToggle.isOn)
         {
             PlayerPrefs.SetInt("Level", m_level.value + 1);
         }
