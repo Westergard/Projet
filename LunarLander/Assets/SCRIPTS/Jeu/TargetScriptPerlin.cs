@@ -16,9 +16,9 @@ public class TargetScriptPerlin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (logic.changeTarget)
+        if (logic.targetReached)
         {
-            logic.changeTarget = false;
+            logic.targetReached = false;
             Destroy(gameObject);
             logic.spawnTarget();
         }
