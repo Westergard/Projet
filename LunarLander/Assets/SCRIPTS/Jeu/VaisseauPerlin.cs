@@ -87,6 +87,7 @@ public class VaisseauPerlin : MonoBehaviour
             }
         }
 
+        alt = ((alt - 1200)/4) + 100;
         altitude.text = alt.ToString("F2");
         XVelocity.text = velocity.x.ToString("F3");
         YVelocity.text = velocity.y.ToString("F3");
