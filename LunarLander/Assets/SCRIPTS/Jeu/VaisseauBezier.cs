@@ -101,6 +101,8 @@ public class VaisseauBezier : MonoBehaviour
             XVelocity.text = "0.000";
             YVelocity.text = "0.000";
             Perdu.enabled = true;
+            restart.SetActive(true);
+            backmain.SetActive(true);
             Destroy(gameObject);
         }
     }
