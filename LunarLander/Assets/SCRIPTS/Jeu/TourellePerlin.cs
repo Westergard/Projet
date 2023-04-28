@@ -12,6 +12,8 @@ public class TourellePerlin : MonoBehaviour
     GameObject newLaser;
     public AudioSource explosion;
 
+    public float delay = 1;
+
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
@@ -23,10 +25,26 @@ public class TourellePerlin : MonoBehaviour
     {
         if (logic.gameActive && !logic.turretEliminated)
         {
-            if (newLaser == null)
+            if(PlayerPrefs.GetInt("Level") == 1 || PlayerPrefs.GetInt("Level") == 2 || PlayerPrefs.GetInt("Level") == 3)
             {
-                newLaser = Instantiate(Laser);
-                audioSource.Play();
+                if (newLaser == null)
+                {
+                    newLaser = Instantiate(Laser);
+                    audioSource.Play();
+                }
+            }
+            if(PlayerPrefs.GetInt("Level") == 4)
+            {
+                if(delay > 0)
+                {
+                    delay -= Time.deltaTime;
+                }
+                else
+                {
+                    delay = 1;
+                    newLaser = Instantiate(Laser);
+                    audioSource.Play();
+                }
             }
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
