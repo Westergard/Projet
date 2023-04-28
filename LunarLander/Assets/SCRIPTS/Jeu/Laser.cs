@@ -35,6 +35,11 @@ public class Laser : MonoBehaviour
             Xvelocity = (1.5f) * Xposition / 2;
             Yvelocity = (1.5f) * (((-0.01f) * Mathf.Pow(2, 3) + 2 * Yposition) / (4));
         }
+        else if (PlayerPrefs.GetInt("Level") == 4)
+        {
+            Xvelocity = (2) * Xposition / 2;
+            Yvelocity = (2) * (((-0.01f) * Mathf.Pow(2, 3) + 2 * Yposition) / (4));
+        }
         myRigidBody.velocity = new Vector2(Xvelocity, Yvelocity);
         transform.rotation = Quaternion.Euler(0f, 0f, CalculePente(myRigidBody.position, positionVaisseau));
         //transform.rotation = Quaternion.Euler(0, 0f, temp);
