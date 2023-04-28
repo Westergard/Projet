@@ -30,10 +30,7 @@ public class LaserBezier : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "VaisseauBezier" || c.gameObject.name == "bezier")
-        {
             Destroy(gameObject);
-        }
     }
 
     public void OnBecameInvisible()

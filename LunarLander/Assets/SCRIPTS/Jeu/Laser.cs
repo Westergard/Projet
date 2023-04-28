@@ -47,10 +47,7 @@ public class Laser : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.name == "Vaisseau" || c.gameObject.name == "Grass(Clone)")
-        {
-            Destroy(gameObject);
-        }
+            Destroy(gameObject);   
     }
 
     public void OnBecameInvisible()
