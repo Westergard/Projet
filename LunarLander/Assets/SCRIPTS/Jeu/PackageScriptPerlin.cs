@@ -51,6 +51,7 @@ public class PackageScriptPerlin : MonoBehaviour
         if(logic.checkPackageTargetDist(transform.position))
         {
             logic.changeTarget = true;
+            logic.targetReached = true;
             logic.addScore(SCORE_FOR_TARGET);
             logic.addTime(2);
         }
