@@ -35,6 +35,7 @@ public class BombScriptPerlin : MonoBehaviour
         if (logic.checkBombTargetDist(transform.position))
         {
             logic.changeTarget = true;
+            logic.targetReached = true;
             logic.addScore(SCORE_FOR_TARGET);
         }
         Destroy(gameObject);

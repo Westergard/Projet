@@ -24,13 +24,13 @@ public class LogicScriptPerlin : MonoBehaviour
 
     public bool packageAllowed = true;
     public bool changeTarget = false;
+    public bool targetReached = false;
     public bool bombAllowed = true;
     public bool timerIsRunning = true;
     public bool gameActive = true;
     public bool turretEliminated = false;
     public bool cibleEliminated = false;
     public bool changeTurret = false;
-    public bool changeCible = false;
     public bool checkStats = true;
     public bool scoreHigher = false;
     public bool timeHigher = false;

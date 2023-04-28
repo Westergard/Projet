@@ -56,10 +56,10 @@ public class RandomSpawnerCible : MonoBehaviour
             }
         }
 
-        if (logic.changeCible)
+        if (logic.changeTarget)
         {
             temps = 1;
-            logic.changeCible = false;
+            logic.changeTarget = false;
             spawnCible = true;
         }
     }
