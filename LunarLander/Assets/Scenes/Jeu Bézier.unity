@@ -1061,10 +1061,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Dropdown: {fileID: 0}
   m_level: {fileID: 0}
+  m_levelSecret: {fileID: 0}
   m_SliderVolumePincipale: {fileID: 0}
   m_SliderEffetSonore: {fileID: 0}
   m_SliderMusique: {fileID: 0}
   t: {fileID: 0}
+  SecretToggle: {fileID: 0}
+  MessageSecret: {fileID: 0}
 --- !u!1 &756485818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,7 +1503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915739614037291283, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 90
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 346cba1bda5e7204390737fbc1ff0794, type: 3}
