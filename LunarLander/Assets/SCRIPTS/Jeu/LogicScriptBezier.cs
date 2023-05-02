@@ -97,7 +97,7 @@ public class LogicScriptBezier : MonoBehaviour
             bombDelay -= Time.deltaTime;
             if (bombDelay <= 0)
             {
-                bombDelay = 2;
+                bombDelay = 1.5f * PlayerPrefs.GetInt("Level");
                 bombAllowed = true;
             }
         }
