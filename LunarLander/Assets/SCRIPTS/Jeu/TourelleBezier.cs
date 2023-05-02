@@ -24,7 +24,7 @@ public class TourelleBezier : MonoBehaviour
 
     void Update()
     {
-        float timing = 1 * (4.5f - PlayerPrefs.GetInt("Level"));
+        float timing = (4.5f - PlayerPrefs.GetInt("Level"));
 
         if (Vaisseau != null)
         {
