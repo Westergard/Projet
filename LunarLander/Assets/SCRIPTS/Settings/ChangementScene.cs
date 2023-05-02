@@ -83,6 +83,12 @@ public class ChangementScene : MonoBehaviour
         MessageSecret.gameObject.SetActive(true);
     }
 
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1);
+        MessageSecret.gameObject.SetActive(true);
+    }
+
     public void QuitGame()
     {
 #if UNITY_EDITOR
