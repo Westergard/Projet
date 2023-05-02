@@ -24,7 +24,7 @@ public class ProceduralGeneration : MonoBehaviour
             int maxStoneSpawnDistance = height - maxStoneHeight;
             int totalStoneSpawnDistance = Random.Range(minStoneSpawnDistance, maxStoneSpawnDistance);
             //Perlin noise.
-            for (int y = 0; y < height; y++)//This will help spawn a tile on the y axis
+            for (int y = 59; y < height; y++)//This will help spawn a tile on the y axis
             {
                 if (y < totalStoneSpawnDistance)
                 {
