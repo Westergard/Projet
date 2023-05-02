@@ -24,6 +24,7 @@ public class VaisseauBezier : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptBezier>(); 
         m_Animator = gameObject.GetComponent<Animator>();
         Perdu.enabled = false;
+        myRigidBody.transform.Rotate(new Vector3(0, 0, 0.001f));
     }
 
     void Update()
