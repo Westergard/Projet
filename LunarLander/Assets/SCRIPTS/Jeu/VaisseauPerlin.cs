@@ -27,6 +27,7 @@ public class VaisseauPerlin : MonoBehaviour
         Perdu.enabled = false;
         restart.SetActive(false);
         backmain.SetActive(false);
+        myRigidBody.transform.Rotate(new Vector3(0, 0, 0.001f));
     }
 
     void Update()
