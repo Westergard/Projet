@@ -45,15 +45,42 @@ public class VaisseauPerlin : MonoBehaviour
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90f) / 0.72f) * Mathf.Deg2Rad);
+                if(PlayerPrefs.GetInt("Level") == 1)
+                {
+                    myRigidBody.AddForce(new Vector2(70f * -pushX, 120f * pushY));
+                }else if (PlayerPrefs.GetInt("Level") == 2)
+                {
+                    myRigidBody.AddForce(new Vector2(120f * -pushX, 170f * pushY));
+                }else if (PlayerPrefs.GetInt("Level") == 3)
+                {
+                    myRigidBody.AddForce(new Vector2(170f * -pushX, 220f * pushY));
+                }else if (PlayerPrefs.GetInt("Level") == 4)
+                {
+                    myRigidBody.AddForce(new Vector2(220f * -pushX, 270f * pushY));
+                }
 
-                myRigidBody.AddForce(new Vector2(50f * -pushX, 100f * pushY));
             }
             if (myRigidBody.transform.rotation.z > -0.72 && myRigidBody.transform.rotation.z < 0)
             {
                 pushX = 0.2f * Mathf.Sin(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
                 pushY = 0.2f * Mathf.Cos(((myRigidBody.transform.rotation.z * 90) / 0.72f) * Mathf.Deg2Rad);
 
-                myRigidBody.AddForce(new Vector2(50f * -pushX, 100f * pushY));
+                if (PlayerPrefs.GetInt("Level") == 1)
+                {
+                    myRigidBody.AddForce(new Vector2(70f * -pushX, 120f * pushY));
+                }
+                else if (PlayerPrefs.GetInt("Level") == 2)
+                {
+                    myRigidBody.AddForce(new Vector2(120f * -pushX, 170f * pushY));
+                }
+                else if (PlayerPrefs.GetInt("Level") == 3)
+                {
+                    myRigidBody.AddForce(new Vector2(170f * -pushX, 220f * pushY));
+                }
+                else if (PlayerPrefs.GetInt("Level") == 4)
+                {
+                    myRigidBody.AddForce(new Vector2(220f * -pushX, 270f * pushY));
+                }
             }
 
         }
