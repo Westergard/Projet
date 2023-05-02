@@ -12,19 +12,29 @@ public class TourelleBezier : MonoBehaviour
     MapBezier map;
     public GameObject bezier;
 
+    public float delay = 3;
+
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
         map = bezier.GetComponent<MapBezier>();
+
+        delay = 2.5f;
     }
 
     void Update()
     {
-        
-        if (Vaisseau!= null)
+        float timing = 1 * (4.5f - PlayerPrefs.GetInt("Level"));
+
+        if (Vaisseau != null)
         {
-            if (newLaser == null)
+            if (delay > 0)
             {
+                delay -= Time.deltaTime;
+            }
+            else
+            {
+                delay = timing;
                 newLaser = Instantiate(Laser);
                 audioSource.Play();
             }

@@ -12,40 +12,34 @@ public class TourellePerlin : MonoBehaviour
     GameObject newLaser;
     public AudioSource explosion;
 
-    public float delay = 1;
+    public float delay = 3;
 
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
         Vaisseau = GameObject.Find("Vaisseau");
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptPerlin>();
+
+        delay = 2.5f;
     }
 
     void Update()
     {
+        float timing = 1 * (4.5f - PlayerPrefs.GetInt("Level"));
+
         if (logic.gameActive && !logic.turretEliminated)
         {
-            if(PlayerPrefs.GetInt("Level") == 1 || PlayerPrefs.GetInt("Level") == 2 || PlayerPrefs.GetInt("Level") == 3)
+            if(delay > 0)
             {
-                if (newLaser == null)
-                {
-                    newLaser = Instantiate(Laser);
-                    audioSource.Play();
-                }
+                delay -= Time.deltaTime;
             }
-            if(PlayerPrefs.GetInt("Level") == 4)
+            else
             {
-                if(delay > 0)
-                {
-                    delay -= Time.deltaTime;
-                }
-                else
-                {
-                    delay = 1;
-                    newLaser = Instantiate(Laser);
-                    audioSource.Play();
-                }
+                delay = timing;
+                newLaser = Instantiate(Laser);
+                audioSource.Play();
             }
+
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
                 m_Animator.SetTrigger("Droite");
