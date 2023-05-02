@@ -590,8 +590,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 240
   height: 70
-  minStoneheight: 15
-  maxStoneHeight: 20
+  minStoneheight: 10
+  maxStoneHeight: 10
   dirt: {fileID: 5520414610922587621, guid: fa516869bbb85a5448605acc83a16f24, type: 3}
   grass: {fileID: 6370623533345086395, guid: 7d642c4ed7b94c24eb23d21a5088595d, type: 3}
   stone: {fileID: 7552659669931605951, guid: 86d1aaaed14a6e6479827ea092e237c4, type: 3}
@@ -800,6 +800,8 @@ MonoBehaviour:
   m_SliderEffetSonore: {fileID: 0}
   m_SliderMusique: {fileID: 0}
   t: {fileID: 0}
+  SecretToggle: {fileID: 0}
+  MessageSecret: {fileID: 0}
 --- !u!1 &730395980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,13 +3303,13 @@ MonoBehaviour:
   ciblePosition: {x: 0, y: 0, z: 0}
   packageAllowed: 1
   changeTarget: 0
+  targetReached: 0
   bombAllowed: 1
   timerIsRunning: 0
   gameActive: 1
   turretEliminated: 0
   cibleEliminated: 0
   changeTurret: 0
-  changeCible: 0
   checkStats: 1
   scoreHigher: 0
   timeHigher: 0
