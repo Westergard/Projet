@@ -81,13 +81,6 @@ public class ChangementScene : MonoBehaviour
     {
         SecretToggle.gameObject.SetActive(true);
         MessageSecret.gameObject.SetActive(true);
-        IEnumerator CoUpdate()
-        {
-            MessageSecret.gameObject.SetActive(false);
-
-            yield return null;
-        }
-        
     }
 
     public void QuitGame()
