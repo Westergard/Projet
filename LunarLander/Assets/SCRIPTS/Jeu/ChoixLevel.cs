@@ -12,7 +12,7 @@ public class ChoixLevel : MonoBehaviour
     {
         int choixLevel = (PlayerPrefs.GetInt("Level"));
 
-        m_Level.value = choixLevel;
+        m_Level.value = choixLevel-1;
 
     }
 }
