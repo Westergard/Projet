@@ -14,6 +14,7 @@ public class VaisseauBezier : MonoBehaviour
     public GameObject restart, backmain;
     public Sprite newSprite;
     public AudioSource explosion, reacteur;
+    public CapsuleCollider2D collider;
 
     public LogicScriptBezier logic;
 
@@ -160,10 +161,10 @@ public class VaisseauBezier : MonoBehaviour
     {
         if (c.gameObject.name == "bezier" || c.gameObject.name == "Tourelle Bézier" || c.gameObject.name == "LaserBezier(Clone)")
         {
-            Destroy(myRigidBody);
+            collider.enabled = false;
             spriteRenderer.sprite = newSprite;
-            gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
-            m_Animator.SetTrigger("Explosion");
+            myRigidBody.velocity = new Vector2(0, 0);
+            m_Animator.SetTrigger("explosion");
             explosion.Play();
             yield return new WaitForSeconds(1);
             altitude.text = "0.00";

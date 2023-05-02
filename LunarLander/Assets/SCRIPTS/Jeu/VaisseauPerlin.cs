@@ -15,6 +15,7 @@ public class VaisseauPerlin : MonoBehaviour
     public GameObject restart, backmain;
     public Sprite newSprite;
     public AudioSource explosion, reacteur;
+    public CapsuleCollider2D collider;
 
     public LogicScriptPerlin logic;
 
@@ -153,15 +154,16 @@ public class VaisseauPerlin : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D c)
+    IEnumerator OnCollisionEnter2D(Collision2D c)
     {
         if (c.gameObject.name == "Grass(Clone)" || c.gameObject.name == "Tourelle" || c.gameObject.name == "Laser(Clone)")
         {
             spriteRenderer.sprite = newSprite;
-            //gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0);
-            //m_Animator.SetTrigger("Explosion");
+            collider.enabled = false;
+            myRigidBody.velocity = new Vector2(0, 0);
+            m_Animator.SetTrigger("Explosion");
             explosion.Play();
-            //yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1);
             altitude.text = "0.00";
             XVelocity.text = "0.000";
             YVelocity.text = "0.000";

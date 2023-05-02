@@ -43,11 +43,19 @@ public class TourelleBezier : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 180, -map.PenteTourette); // On tourne de 180 en Y donc la pente est devenue négative.
             }
             else if (Vaisseau.transform.position.x < gameObject.transform.position.x)
-            {    
+            {
                 transform.rotation = Quaternion.Euler(0, 0f, map.PenteTourette);
             }
         }
     }
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.gameObject.name == "BombeBezier(Clone)")
+        {
+            m_Animator.SetTrigger("Explosion");
+        }
+
+    }
+
 }
-
-

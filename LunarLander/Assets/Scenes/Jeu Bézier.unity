@@ -810,6 +810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Tourelle B\xE9zier"
       objectReference: {fileID: 0}
+    - target: {fileID: 8205873505621554363, guid: 2ccb64d87e64f6d4c8f2339713325a36, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8205873505621554342, guid: 2ccb64d87e64f6d4c8f2339713325a36, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ccb64d87e64f6d4c8f2339713325a36, type: 3}
@@ -2038,6 +2042,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 379043929}
     - target: {fileID: -7467601378407764262, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1563686184}
+    - target: {fileID: -7467601378407764262, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
       propertyPath: reacteur
       value: 
       objectReference: {fileID: 1563686179}
@@ -2129,6 +2137,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 7723040790794527513, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 34a51383e07bafc47831894d87eaa4b2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
 --- !u!82 &1563686179 stripped
@@ -2149,6 +2161,11 @@ Rigidbody2D:
 --- !u!212 &1563686182 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7723040790794527509, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
+  m_PrefabInstance: {fileID: 1563686178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1563686184 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7723040789930202790, guid: c39b671e2346c254da8e69d416c348d5, type: 3}
   m_PrefabInstance: {fileID: 1563686178}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1644780592

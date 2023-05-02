@@ -462,6 +462,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1928942748}
     - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 2103328868}
+    - target: {fileID: 7723040789930202840, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
       propertyPath: XVelocity
       value: 
       objectReference: {fileID: 756485820}
@@ -3345,6 +3349,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &2103328868 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7723040789930202790, guid: ce5cdfe49d3a09249a8edb00e5e48f56, type: 3}
+  m_PrefabInstance: {fileID: 552178547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1495236769589268805
 PrefabInstance:
   m_ObjectHideFlags: 0

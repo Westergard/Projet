@@ -6,6 +6,7 @@ public class BombScriptBezier : MonoBehaviour
 {
     public LogicScriptBezier logic;
     public Rigidbody2D myRigidBody;
+    public AudioSource explosion;
 
     private int SCORE_FOR_TURRET = 75;
     private int SCORE_FOR_TARGET = 25;
@@ -31,6 +32,7 @@ public class BombScriptBezier : MonoBehaviour
             logic.turretPosition = Vector3.zero;
             logic.addScore(SCORE_FOR_TURRET);
             logic.addTime(2);
+            explosion.Play();
         }
         if (logic.checkBombTargetDist(transform.position))
         {

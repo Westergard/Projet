@@ -6,6 +6,7 @@ public class BombScriptPerlin : MonoBehaviour
 {
     public LogicScriptPerlin logic;
     public Rigidbody2D myRigidBody;
+    public AudioSource explosion;
 
     private int SCORE_FOR_TURRET = 75;
     private int SCORE_FOR_TARGET = 25;
@@ -38,6 +39,7 @@ public class BombScriptPerlin : MonoBehaviour
             logic.targetReached = true;
             logic.addScore(SCORE_FOR_TARGET);
         }
+        explosion.Play();
         Destroy(gameObject);
     }
 

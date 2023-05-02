@@ -140,9 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
   myRigidBody: {fileID: 5876885691671013740}
-  explosion: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  newSprite: {fileID: 0}
+  explosion: {fileID: 5717398652302055042}
 --- !u!95 &-8567096288316908519
 Animator:
   serializedVersion: 5
@@ -174,7 +172,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eb68116b24c1a344980f17a42cc3d7d1, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.331
   m_Pitch: 1
   Loop: 0

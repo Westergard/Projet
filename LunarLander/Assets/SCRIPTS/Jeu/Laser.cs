@@ -42,7 +42,6 @@ public class Laser : MonoBehaviour
         }
         myRigidBody.velocity = new Vector2(Xvelocity, Yvelocity);
         transform.rotation = Quaternion.Euler(0f, 0f, CalculePente(myRigidBody.position, positionVaisseau));
-        //transform.rotation = Quaternion.Euler(0, 0f, temp);
     }
 
     void OnCollisionEnter2D(Collision2D c)
