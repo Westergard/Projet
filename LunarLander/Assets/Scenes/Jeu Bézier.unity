@@ -806,6 +806,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8205873505621554343, guid: 2ccb64d87e64f6d4c8f2339713325a36, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8205873505621554362, guid: 2ccb64d87e64f6d4c8f2339713325a36, type: 3}
       propertyPath: m_Name
       value: "Tourelle B\xE9zier"
