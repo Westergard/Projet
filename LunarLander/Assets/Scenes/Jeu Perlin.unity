@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 240
-  height: 100
+  height: 85
   minStoneheight: 10
   maxStoneHeight: 10
   dirt: {fileID: 5520414610922587621, guid: fa516869bbb85a5448605acc83a16f24, type: 3}
