@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 240
-  height: 85
+  height: 100
   minStoneheight: 10
   maxStoneHeight: 10
   dirt: {fileID: 5520414610922587621, guid: fa516869bbb85a5448605acc83a16f24, type: 3}
@@ -2270,11 +2270,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428413884744371551, guid: eb5a6c3d7fd44674cbe2fa8c174b3d9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 113.87252
+      value: 120.3
       objectReference: {fileID: 0}
     - target: {fileID: 2428413884744371551, guid: eb5a6c3d7fd44674cbe2fa8c174b3d9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 105.43636
+      value: 135.2
       objectReference: {fileID: 0}
     - target: {fileID: 2428413884744371551, guid: eb5a6c3d7fd44674cbe2fa8c174b3d9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3540,7 +3540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6101335925528614545, guid: 9e1127d3435e2444e8a563dbd2b961ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 117.09971
+      value: 129.9
       objectReference: {fileID: 0}
     - target: {fileID: 6101335925528614545, guid: 9e1127d3435e2444e8a563dbd2b961ef, type: 3}
       propertyPath: m_LocalPosition.z
