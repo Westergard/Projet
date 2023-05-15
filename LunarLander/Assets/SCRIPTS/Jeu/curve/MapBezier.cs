@@ -52,12 +52,12 @@ public class MapBezier : MonoBehaviour
         for (int j = 0; j < path.NumSegments; j++) // j = le nombre de segments
         {
             Vector2[] PointsBerzier = path.GetPointsInSegment(j); // les quatres points utiliser pour faire une courbes de bézier cubiques.
-            for (int i = 1; i <= SEGMENT_COUNT; i++) // i = le nombre de point dans un segments
+            for (int i = 1; i <= SEGMENT_COUNT; i++) // i = le nombre du point dans un segments
            {
                 float t = i / (float)SEGMENT_COUNT;// 0 ≤ t ≤ 1, donc t passe de 0 a 1 avec le nombre de point dans le segment.
                 Vector2 pixel = CalculateCubicBezierPoint(t, PointsBerzier[0], PointsBerzier[1], PointsBerzier[2], PointsBerzier[3]);
                 CurvePoint.Add(pixel);
-                PointsLineRender[(j * SEGMENT_COUNT) + (i - 1)] = new Vector3(pixel.x, pixel.y, 0); // i - 1 puisque il commence a 1
+                PointsLineRender[(j * SEGMENT_COUNT) + (i - 1)] = new Vector3(pixel.x, pixel.y, 0);  // i - 1 puisque i commence a 1
             }
         }
         lineRenderer.SetPositions(PointsLineRender);
@@ -82,7 +82,6 @@ public class MapBezier : MonoBehaviour
         return p;
     }
 
-   //t = ((i/m-b))+b
     void MeshOfTriangle(LineRenderer myLine){
 
     Vector2[] uv = new Vector2[myLine.positionCount * 2]; // égale au nombre de point pour faire les triangle (la ligne suivante)
