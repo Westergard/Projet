@@ -27,6 +27,7 @@ public class TourellePerlin : MonoBehaviour
     {
         float timing = 1 * (4.5f - PlayerPrefs.GetInt("Level"));
 
+        //Fait apparaitre les lasers à un certain interval de temps
         if (logic.gameActive && !logic.turretEliminated)
         {
             if(delay > 0)
@@ -40,6 +41,7 @@ public class TourellePerlin : MonoBehaviour
                 audioSource.Play();
             }
 
+            //Tourner selon la position en x du vaisseau
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
                 m_Animator.SetTrigger("Droite");

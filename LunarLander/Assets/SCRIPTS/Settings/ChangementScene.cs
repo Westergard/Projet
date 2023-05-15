@@ -26,13 +26,11 @@ public class ChangementScene : MonoBehaviour
         MessageSecret.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-    }
-
+    //Fonction qui s'exécute lorsque l'on pèse sur le bouton start
     public void ClickStart()
     {
-        if(PlayerPrefs.GetInt("Scene") == 0)
+        //Charge la bonne scène
+        if (PlayerPrefs.GetInt("Scene") == 0)
         {
             SceneManager.LoadScene("Jeu Perlin");
         }
@@ -43,18 +41,22 @@ public class ChangementScene : MonoBehaviour
         
     }
 
+    //Fonction qui s'exécute lorsque l'on pèse sur le bouton settings
     public void ClickSettings()
     {
         SceneManager.LoadScene("Settings");
     }
 
+    //Fonction qui s'exécute lorsque l'on pèse sur le bouton pour revenir au menu principale
     public void ClickBackToMain()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
+    //Fonction qui s'exécute lorsque l'on pèse sur le bouton save des settings
     public void ClickSaveSettings()
     {
+        //Sauvegarde les données dans des variables globales
         PlayerPrefs.SetInt("Scene", m_Dropdown.value);
         PlayerPrefs.SetFloat("VolumePrincipale", m_SliderVolumePincipale.value);
         PlayerPrefs.SetFloat("EffetSonore", m_SliderEffetSonore.value);
@@ -77,6 +79,7 @@ public class ChangementScene : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    //Fonction qui s'exécute lorsque l'on pèse sur le bouton caché sur la barre du haut du E de SETTINGS
     public void ClickSecretButton()
     {
         SecretToggle.gameObject.SetActive(true);
