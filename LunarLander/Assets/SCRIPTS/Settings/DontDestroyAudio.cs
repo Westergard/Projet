@@ -8,6 +8,7 @@ public class DontDestroyAudio : MonoBehaviour
     public static DontDestroyAudio instance;
     public AudioSource audio;
 
+    //Fonction qui vérifie la scène actuelle pour arrêter la musique lorsqu'on est rendu dans le jeu
     void Update()
     {
         audio.volume = PlayerPrefs.GetFloat("BGM");

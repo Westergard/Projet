@@ -26,6 +26,7 @@ public class TourelleBezier : MonoBehaviour
     {
         float timing = (4.5f - PlayerPrefs.GetInt("Level"));
 
+        //Fait apparaitre les lasers à un certain interval de temps
         if (Vaisseau != null)
         {
             if (delay > 0)
@@ -38,6 +39,7 @@ public class TourelleBezier : MonoBehaviour
                 newLaser = Instantiate(Laser);
                 audioSource.Play();
             }
+            //Tourner selon la position en x du vaisseau
             if (Vaisseau.transform.position.x > gameObject.transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0, 180, -map.PenteTourette); // On tourne de 180 en Y donc la pente est devenue négative.

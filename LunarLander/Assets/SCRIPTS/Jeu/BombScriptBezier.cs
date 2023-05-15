@@ -11,13 +11,11 @@ public class BombScriptBezier : MonoBehaviour
     private int SCORE_FOR_TURRET = 75;
     private int SCORE_FOR_TARGET = 25;
 
-    // Start is called before the first frame update
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScriptBezier>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         bords();

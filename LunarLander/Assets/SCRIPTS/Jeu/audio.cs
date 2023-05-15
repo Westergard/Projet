@@ -8,6 +8,7 @@ public class audioPerlin : MonoBehaviour
     public AudioSource Vaisseau;
     public AudioSource Tourelle;
 
+    //Fonction qui s'exécute pour régler le son selon les paramètres choisis par le joueur
     void Start()
     {
         float vP = PlayerPrefs.GetFloat("VolumePrincipale");

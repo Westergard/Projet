@@ -13,6 +13,7 @@ public class Laser : MonoBehaviour
         Vaisseau = GameObject.Find("Vaisseau");
         Tourelle = GameObject.Find("Tourelle Perlin 1(Clone)");
 
+        //Avoir les données
         Vector2 positionTourelle = Tourelle.transform.position;
         Vector2 positionVaisseau = Vaisseau.transform.position;
         myRigidBody.position = new Vector2(positionTourelle.x, positionTourelle.y + 5f);
@@ -21,39 +22,46 @@ public class Laser : MonoBehaviour
         float Xvelocity = 0;
         float Yvelocity = 0;
 
+
+        //Régler le niveau difficulté
         if (PlayerPrefs.GetInt("Level") == 1)
         {
-            Xvelocity = (0.5f) * Xposition / 2;
+            Xvelocity = (0.5f) * Xposition / 3;
             Yvelocity = (0.5f) * (((-0.01f) * Mathf.Pow(2, 3) + 2 * Yposition) / (4));
         }else if(PlayerPrefs.GetInt("Level") == 2)
         {
-            Xvelocity = Xposition / 2;
+            Xvelocity = Xposition / 3;
             Yvelocity = (((-0.01f) * Mathf.Pow(2, 3) + 2 * Yposition) / (4));
         }
         else if(PlayerPrefs.GetInt("Level") == 3)
         {
-            Xvelocity = (1.5f) * Xposition / 2;
+            Xvelocity = (1.5f) * Xposition / 3;
             Yvelocity = (1.5f) * (((-0.01f) * Mathf.Pow(2, 3) + 2 * Yposition) / (4));
         }
         else if (PlayerPrefs.GetInt("Level") == 4)
         {
-            Xvelocity = (2) * Xposition / 2;
+            Xvelocity = (2) * Xposition / 3;
             Yvelocity = (2) * (((-0.01f) * Mathf.Pow(2, 3) + 2 * Yposition) / (4));
         }
+        //Ajouter la vélocité au laser
         myRigidBody.velocity = new Vector2(Xvelocity, Yvelocity);
+        //Faire tourner le laser pour l'orienter vers le vaisseau
         transform.rotation = Quaternion.Euler(0f, 0f, CalculePente(myRigidBody.position, positionVaisseau));
     }
 
+    //Détruire le laser lors d'une collision
     void OnCollisionEnter2D(Collision2D c)
     {
             Destroy(gameObject);   
     }
 
+    //Détruire le laser lorsqu'il sort du cadre de la caméra
     public void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
 
+    //Calculer la pente entre le laser et le vaisseau
     float CalculePente(Vector2 Point1, Vector2 Point2)
     {
         float DeltaY, DeltaX, Pent;
